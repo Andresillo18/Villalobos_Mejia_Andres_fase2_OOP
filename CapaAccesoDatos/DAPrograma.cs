@@ -242,7 +242,7 @@ namespace CapaAccesoDatos
 
             string sentencia = string.Format("SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA FROM PROGRAMAS WHERE COD_PROGRAMA = {0}", cod_programa);
 
-            comando.Connection = conexion; 
+            comando.Connection = conexion;
             comando.CommandText = sentencia;
 
             try
@@ -258,15 +258,15 @@ namespace CapaAccesoDatos
 
                     //Obtiene el valor de cada columna
                     programa.Cod_programa = dataReader.GetInt32(0); // Se convierte por ser un número
-                    programa.Nombre_programa= dataReader.GetString(1);
+                    programa.Nombre_programa = dataReader.GetString(1);
                     programa.Nombre_programa = dataReader.GetString(2);
-                    programa.Descripcion_programa= dataReader.GetString(3);
-                    programa.Estado= dataReader.GetString(4);
-                    programa.Cupo_programa= dataReader.GetInt32(5);
-                    programa.Telefono_programa= dataReader.GetString(6);
-                    programa.Email_programa= dataReader.GetString(7);
-                    programa.Provincia_programa= dataReader.GetString(8);
-                    programa.Fecha_inicio_programa= dataReader.GetDateTime(9);
+                    programa.Descripcion_programa = dataReader.GetString(3);
+                    programa.Estado = dataReader.GetString(4);
+                    programa.Cupo_programa = dataReader.GetInt32(5);
+                    programa.Telefono_programa = dataReader.GetString(6);
+                    programa.Email_programa = dataReader.GetString(7);
+                    programa.Provincia_programa = dataReader.GetString(8);
+                    programa.Fecha_inicio_programa = dataReader.GetDateTime(9);
                     programa.Observaciones_programa = dataReader.GetString(10);
                     programa.Existe = true;
                 }
@@ -278,9 +278,41 @@ namespace CapaAccesoDatos
             conexion.Close();
 
             return programa;
-        }       
+        }
         #endregion
 
+        #region Método para eliminar un programa
 
+        public int EliminarRegistro(int cod_programa)
+        {
+            int filasAfectadas = 0;
+
+            SqlConnection conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand comando = new SqlCommand();
+
+            String sentencia = string.Format("DELETE FROM PROGRAMAS WHERE cod_programa= {0} ", cod_programa);
+
+            comando.CommandText = sentencia;
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                filasAfectadas = comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Dispose();
+                comando.Dispose();
+            }
+
+            return filasAfectadas;
+        }
+        #endregion
     }
 }
