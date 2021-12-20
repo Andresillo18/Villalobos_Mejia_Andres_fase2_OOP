@@ -271,8 +271,20 @@ namespace CapaAccesoDatos
                     programa.Cod_programa = dataReader.GetInt32(0); // Se convierte por ser un número
                     programa.Nombre_programa = dataReader.GetString(1);
                     programa.Descripcion_programa = dataReader.GetString(2);
-                    programa.Estado = dataReader.GetString(3);
-                    programa.Cupo_programa = dataReader.GetInt32(4);
+
+                    // En la BD es booleano y la entidad maneja String entonces se hace un cast
+                    bool estado = dataReader.GetBoolean(3);
+                    if (estado == true)
+                    {
+                        programa.Estado = "Activo";
+                    }
+                    else if (estado == false)
+                    {
+                        programa.Estado = "Inactivo";
+
+                    }
+
+                    programa.Cupo_programa = dataReader.GetByte(4);
                     programa.Telefono_programa = dataReader.GetString(5);
                     programa.Email_programa = dataReader.GetString(6);
                     programa.Provincia_programa = dataReader.GetString(7);

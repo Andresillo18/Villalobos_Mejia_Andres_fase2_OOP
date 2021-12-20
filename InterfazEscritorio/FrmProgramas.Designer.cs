@@ -53,9 +53,6 @@ namespace InterfazEscritorio
             this.RDActivo = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.grdListaProgramas = new System.Windows.Forms.DataGridView();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.cod_programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +64,9 @@ namespace InterfazEscritorio
             this.fecha_inicio_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_fin_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observaciones_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaProgramas)).BeginInit();
             this.SuspendLayout();
@@ -329,44 +329,6 @@ namespace InterfazEscritorio
             this.grdListaProgramas.TabIndex = 13;
             this.grdListaProgramas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaProgramas_CellDoubleClick);
             // 
-            // btnCrear
-            // 
-            this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(242, 471);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(130, 69);
-            this.btnCrear.TabIndex = 14;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCrear.UseVisualStyleBackColor = false;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(566, 471);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(130, 69);
-            this.btnEliminar.TabIndex = 16;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(408, 471);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(130, 69);
-            this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // cod_programa
             // 
             this.cod_programa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -458,6 +420,45 @@ namespace InterfazEscritorio
             this.observaciones_prog.Name = "observaciones_prog";
             this.observaciones_prog.Visible = false;
             // 
+            // btnCrear
+            // 
+            this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
+            this.btnCrear.Location = new System.Drawing.Point(242, 471);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(130, 69);
+            this.btnCrear.TabIndex = 14;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
+            this.btnEliminar.Location = new System.Drawing.Point(566, 471);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(130, 69);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(408, 471);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(130, 69);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // FrmProgramas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -469,6 +470,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.grdListaProgramas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmProgramas";
             this.Text = "Programas";

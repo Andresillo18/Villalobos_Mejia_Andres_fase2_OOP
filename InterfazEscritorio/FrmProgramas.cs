@@ -230,5 +230,45 @@ namespace InterfazEscritorio
 
         #endregion
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EntidadadPrograma programa;
+            int resultado; // Lo que retornará los métodos al obtener un progreso
+            BLPrograma logica = new BLPrograma(Configuracion.getConnectionString);
+
+            try
+            {
+                if (!String.IsNullOrEmpty(txtCod.Text)) //Debe tener datos en los txtboxs para poder eliminar
+                {
+                    //busca primero el programa antes de borrarlo para ver si existe
+                    programa = logica.ObtenerPrograma(Convert.ToInt32(txtCod.Text));
+
+                    if (programa != null)
+                    {
+                        MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                        resultado = logica.EliminarPrograma(Convert.ToInt32(txtCod.Text)); // Si pudo encontralo lo borra
+
+                        MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                        MostrarListDS();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El cliente no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    // No se sucede nada si no lo selecciona
+                    MessageBox.Show("Debe Seleccionar un programa antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

@@ -49,5 +49,10 @@ namespace InterfazEscritorio
             //Se envia en los parámetros el formulario que se quiere abrir
             AbrirFormInPanel(new FrmProgramas());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmModulos());
+        }
     }
 }
