@@ -175,7 +175,7 @@ namespace InterfazEscritorio
             try
             {
                 // Hace que todos los campos sean obligatorios
-                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtCupo.Text) && !string.IsNullOrEmpty(txtTelefono.Text) && !string.IsNullOrEmpty(txtProvincia.Text) && !string.IsNullOrEmpty(txtObservaciones.Text))
+                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtCupo.Text) && !string.IsNullOrEmpty(txtTelefono.Text) && !string.IsNullOrEmpty(txtObservaciones.Text))
                 {
                     programa = GenerarEntidad();
                     if (!programa.Existe)
@@ -193,12 +193,16 @@ namespace InterfazEscritorio
 
                         MessageBox.Show("Operación exitosa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        //MostrarListDS();
+                        MostrarListDS();
                     }
                     else
                     {
                         MessageBox.Show("No se pudó realizar la modificación correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Los datos son obligatorios", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -214,7 +218,8 @@ namespace InterfazEscritorio
             int cod = 0;
             try
             {
-                cod = Convert.ToInt32(grdListaProgramas.SelectedRows[0].Cells[0].Value);//Se toma la primera columna de la fila seleccionada
+                cod = (int)grdListaProgramas.SelectedRows[0].Cells[0].Value; //Se toma la primera columna de la fila seleccionada
+                MessageBox.Show(cod.ToString());
                 cargarElPrograma(cod);
             }
             catch (Exception ex)

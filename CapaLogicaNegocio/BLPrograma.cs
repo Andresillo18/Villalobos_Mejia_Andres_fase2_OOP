@@ -132,6 +132,7 @@ namespace CapaLogicaNegocio
             try
             {
                 programa = accesoDatos.ObtenerPrograma(cod);
+                
             }
             catch (Exception)
             {

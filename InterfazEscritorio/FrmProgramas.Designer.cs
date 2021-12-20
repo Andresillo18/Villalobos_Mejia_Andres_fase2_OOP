@@ -53,6 +53,9 @@ namespace InterfazEscritorio
             this.RDActivo = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.grdListaProgramas = new System.Windows.Forms.DataGridView();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.cod_programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +67,6 @@ namespace InterfazEscritorio
             this.fecha_inicio_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_fin_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observaciones_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaProgramas)).BeginInit();
             this.SuspendLayout();
@@ -304,7 +304,6 @@ namespace InterfazEscritorio
             // 
             this.grdListaProgramas.AllowUserToAddRows = false;
             this.grdListaProgramas.AllowUserToDeleteRows = false;
-            this.grdListaProgramas.AllowUserToOrderColumns = true;
             this.grdListaProgramas.AllowUserToResizeColumns = false;
             this.grdListaProgramas.AllowUserToResizeRows = false;
             this.grdListaProgramas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -329,98 +328,6 @@ namespace InterfazEscritorio
             this.grdListaProgramas.Size = new System.Drawing.Size(945, 213);
             this.grdListaProgramas.TabIndex = 13;
             this.grdListaProgramas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaProgramas_CellDoubleClick);
-            // 
-            // cod_programa
-            // 
-            this.cod_programa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cod_programa.DataPropertyName = "COD_PROGRAMA";
-            this.cod_programa.HeaderText = "Cod";
-            this.cod_programa.MinimumWidth = 6;
-            this.cod_programa.Name = "cod_programa";
-            this.cod_programa.Width = 65;
-            // 
-            // nombre_prog
-            // 
-            this.nombre_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_prog.DataPropertyName = "NOMBRE_PROGRAMA";
-            this.nombre_prog.HeaderText = "Nombre";
-            this.nombre_prog.MinimumWidth = 6;
-            this.nombre_prog.Name = "nombre_prog";
-            // 
-            // descripcion_prog
-            // 
-            this.descripcion_prog.DataPropertyName = "DESCRIPCION_PROGRAMA";
-            this.descripcion_prog.HeaderText = "Descripción";
-            this.descripcion_prog.MinimumWidth = 6;
-            this.descripcion_prog.Name = "descripcion_prog";
-            this.descripcion_prog.Visible = false;
-            this.descripcion_prog.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estado.DataPropertyName = "ESTADO";
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            // 
-            // cupo_prog
-            // 
-            this.cupo_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cupo_prog.DataPropertyName = "CUPO_PROGRAMA";
-            this.cupo_prog.HeaderText = "Cupo";
-            this.cupo_prog.MinimumWidth = 6;
-            this.cupo_prog.Name = "cupo_prog";
-            this.cupo_prog.Width = 73;
-            // 
-            // telefono_prog
-            // 
-            this.telefono_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.telefono_prog.DataPropertyName = "TELEFONO_PROGRAMA";
-            this.telefono_prog.HeaderText = "Teléfono";
-            this.telefono_prog.MinimumWidth = 6;
-            this.telefono_prog.Name = "telefono_prog";
-            // 
-            // email_prog
-            // 
-            this.email_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.email_prog.DataPropertyName = "EMAIL_PROGRAMA";
-            this.email_prog.HeaderText = "Email";
-            this.email_prog.MinimumWidth = 6;
-            this.email_prog.Name = "email_prog";
-            // 
-            // provincia_prog
-            // 
-            this.provincia_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.provincia_prog.DataPropertyName = "PROVINCIA_PROGRAMA";
-            this.provincia_prog.HeaderText = "Provincia";
-            this.provincia_prog.MinimumWidth = 6;
-            this.provincia_prog.Name = "provincia_prog";
-            // 
-            // fecha_inicio_prog
-            // 
-            this.fecha_inicio_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fecha_inicio_prog.DataPropertyName = "FECHA_INICIO_PROGRAMA";
-            this.fecha_inicio_prog.HeaderText = "Inicio";
-            this.fecha_inicio_prog.MinimumWidth = 6;
-            this.fecha_inicio_prog.Name = "fecha_inicio_prog";
-            // 
-            // fecha_fin_prog
-            // 
-            this.fecha_fin_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fecha_fin_prog.DataPropertyName = "FECHA_FIN_PROGRAMA";
-            this.fecha_fin_prog.HeaderText = "Fin";
-            this.fecha_fin_prog.MinimumWidth = 6;
-            this.fecha_fin_prog.Name = "fecha_fin_prog";
-            // 
-            // observaciones_prog
-            // 
-            this.observaciones_prog.DataPropertyName = "OBSERVACIONES_PROGRAMA";
-            this.observaciones_prog.HeaderText = "Observaciones";
-            this.observaciones_prog.MinimumWidth = 6;
-            this.observaciones_prog.Name = "observaciones_prog";
-            this.observaciones_prog.Visible = false;
-            this.observaciones_prog.Width = 125;
             // 
             // btnCrear
             // 
@@ -459,6 +366,97 @@ namespace InterfazEscritorio
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // cod_programa
+            // 
+            this.cod_programa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cod_programa.DataPropertyName = "COD_PROGRAMA";
+            this.cod_programa.HeaderText = "Cod";
+            this.cod_programa.MinimumWidth = 6;
+            this.cod_programa.Name = "cod_programa";
+            this.cod_programa.Width = 65;
+            // 
+            // nombre_prog
+            // 
+            this.nombre_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_prog.DataPropertyName = "NOMBRE_PROGRAMA";
+            this.nombre_prog.HeaderText = "Nombre";
+            this.nombre_prog.MinimumWidth = 6;
+            this.nombre_prog.Name = "nombre_prog";
+            // 
+            // descripcion_prog
+            // 
+            this.descripcion_prog.DataPropertyName = "DESCRIPCION_PROGRAMA";
+            this.descripcion_prog.HeaderText = "Descripción";
+            this.descripcion_prog.MinimumWidth = 6;
+            this.descripcion_prog.Name = "descripcion_prog";
+            this.descripcion_prog.Visible = false;
+            this.descripcion_prog.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estado.DataPropertyName = "ESTADO";
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            // 
+            // cupo_prog
+            // 
+            this.cupo_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cupo_prog.DataPropertyName = "CUPO_PROGRAMA";
+            this.cupo_prog.HeaderText = "Cupo";
+            this.cupo_prog.MinimumWidth = 6;
+            this.cupo_prog.Name = "cupo_prog";
+            // 
+            // telefono_prog
+            // 
+            this.telefono_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefono_prog.DataPropertyName = "TELEFONO_PROGRAMA";
+            this.telefono_prog.HeaderText = "Teléfono";
+            this.telefono_prog.MinimumWidth = 6;
+            this.telefono_prog.Name = "telefono_prog";
+            // 
+            // email_prog
+            // 
+            this.email_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email_prog.DataPropertyName = "EMAIL_PROGRAMA";
+            this.email_prog.HeaderText = "Email";
+            this.email_prog.MinimumWidth = 6;
+            this.email_prog.Name = "email_prog";
+            // 
+            // provincia_prog
+            // 
+            this.provincia_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.provincia_prog.DataPropertyName = "PROVINCIA_PROGRAMA";
+            this.provincia_prog.HeaderText = "Provincia";
+            this.provincia_prog.MinimumWidth = 6;
+            this.provincia_prog.Name = "provincia_prog";
+            // 
+            // fecha_inicio_prog
+            // 
+            this.fecha_inicio_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fecha_inicio_prog.DataPropertyName = "FECHA_INICIO_PROGRAMA";
+            this.fecha_inicio_prog.HeaderText = "Inicio";
+            this.fecha_inicio_prog.MinimumWidth = 6;
+            this.fecha_inicio_prog.Name = "fecha_inicio_prog";
+            // 
+            // fecha_fin_prog
+            // 
+            this.fecha_fin_prog.DataPropertyName = "FECHA_FIN_PROGRAMA";
+            this.fecha_fin_prog.HeaderText = "Fin";
+            this.fecha_fin_prog.MinimumWidth = 6;
+            this.fecha_fin_prog.Name = "fecha_fin_prog";
+            this.fecha_fin_prog.Width = 102;
+            // 
+            // observaciones_prog
+            // 
+            this.observaciones_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.observaciones_prog.DataPropertyName = "OBSERVACIONES_PROGRAMA";
+            this.observaciones_prog.HeaderText = "Observaciones";
+            this.observaciones_prog.MinimumWidth = 6;
+            this.observaciones_prog.Name = "observaciones_prog";
+            this.observaciones_prog.Visible = false;
             // 
             // FrmProgramas
             // 

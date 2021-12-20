@@ -54,14 +54,25 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA" + "VALUES (@nombre_programa,  @descripcion_programa, @estado, @cupo_programa, @telefono_programa, @email_programa, @provincia_programa, @fecha_inicio_programa, @observaciones_programa)" + "@@IDENTITY";
+            string sentencia = "INSERT INTO PROGRAMAS (NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA, EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA)" + "VALUES (@nombre_programa,  @descripcion_programa, @estado, @cupo_programa, @telefono_programa, @email_programa, @provincia_programa, @fecha_inicio_programa, @observaciones_programa)" + "SELECT @@IDENTITY";
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
             // Se le pasan los parámetros que recibirá por el objeto comando
             comando.Parameters.AddWithValue("@nombre_programa", programa.Nombre_programa);
             comando.Parameters.AddWithValue("@descripcion_programa", programa.Descripcion_programa);
-            comando.Parameters.AddWithValue("@estado", programa.Estado);
+
+            byte estado_Actual = 0;
+            if (programa.Estado == "Activo")
+            {
+                estado_Actual = 1;
+            }
+            else if (programa.Estado == "Inactivo")
+            {
+                estado_Actual = 0;
+            }
+            
+            comando.Parameters.AddWithValue("@estado", estado_Actual);
             comando.Parameters.AddWithValue("@cupo_programa", programa.Cupo_programa);
             comando.Parameters.AddWithValue("@telefono_programa", programa.Telefono_programa);
             comando.Parameters.AddWithValue("@email_programa", programa.Email_programa);
@@ -269,12 +280,12 @@ namespace CapaAccesoDatos
                     programa.Observaciones_programa = dataReader.GetString(9);
                     programa.Existe = true;
                 }
+                conexion.Close();
             }
             catch (Exception)
             {
                 throw;
             }
-            conexion.Close();
 
             return programa;
         }
