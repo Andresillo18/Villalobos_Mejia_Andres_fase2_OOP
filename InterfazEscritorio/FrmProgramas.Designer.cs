@@ -29,6 +29,7 @@ namespace InterfazEscritorio
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProgramas));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,10 +62,9 @@ namespace InterfazEscritorio
             this.fecha_inicio_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_fin_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observaciones_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaProgramas)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,7 @@ namespace InterfazEscritorio
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(125, 27);
             this.txtCod.TabIndex = 1;
+            this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -193,7 +194,7 @@ namespace InterfazEscritorio
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(202, 56);
-            this.txtObservaciones.TabIndex = 21;
+            this.txtObservaciones.TabIndex = 8;
             // 
             // RDInactivo
             // 
@@ -233,7 +234,7 @@ namespace InterfazEscritorio
             this.txtProvincia.MaxLength = 20;
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(125, 27);
-            this.txtProvincia.TabIndex = 18;
+            this.txtProvincia.TabIndex = 6;
             // 
             // DTFechaInicio
             // 
@@ -242,7 +243,7 @@ namespace InterfazEscritorio
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
-            this.DTFechaInicio.TabIndex = 11;
+            this.DTFechaInicio.TabIndex = 7;
             // 
             // txtCupo
             // 
@@ -251,7 +252,7 @@ namespace InterfazEscritorio
             this.txtCupo.MaxLength = 200;
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(125, 27);
-            this.txtCupo.TabIndex = 19;
+            this.txtCupo.TabIndex = 4;
             // 
             // txtTelefono
             // 
@@ -260,7 +261,7 @@ namespace InterfazEscritorio
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(125, 27);
-            this.txtTelefono.TabIndex = 20;
+            this.txtTelefono.TabIndex = 5;
             // 
             // RBActivo
             // 
@@ -404,51 +405,51 @@ namespace InterfazEscritorio
             this.observaciones_prog.Visible = false;
             this.observaciones_prog.Width = 125;
             // 
-            // button1
+            // btnCrear
             // 
-            this.button1.Location = new System.Drawing.Point(14, 471);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 69);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
+            this.btnCrear.Location = new System.Drawing.Point(242, 471);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(130, 69);
+            this.btnCrear.TabIndex = 14;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // button2
+            // btnEliminar
             // 
-            this.button2.Location = new System.Drawing.Point(350, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 69);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
+            this.btnEliminar.Location = new System.Drawing.Point(566, 471);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(130, 69);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnGuardar
             // 
-            this.button5.Location = new System.Drawing.Point(180, 471);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(130, 69);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(514, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 69);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(408, 471);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(130, 69);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.Text = "Crear";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // FrmProgramas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 552);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.grdListaProgramas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -486,10 +487,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.DataGridView grdListaProgramas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_programa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_prog;
@@ -501,5 +499,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_fin_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones_prog;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

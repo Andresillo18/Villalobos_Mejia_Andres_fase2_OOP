@@ -73,6 +73,26 @@ namespace InterfazEscritorio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_clear_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_clear_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_create_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_create_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_library_books_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("outline_library_books_black_24dp", resourceCulture);
