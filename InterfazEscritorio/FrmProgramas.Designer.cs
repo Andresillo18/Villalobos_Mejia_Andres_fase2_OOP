@@ -39,23 +39,34 @@ namespace InterfazEscritorio
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.RBActivo = new System.Windows.Forms.RadioButton();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.RDInactivo = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtProvincia = new System.Windows.Forms.TextBox();
+            this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RBActivo = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.grdListaProgramas = new System.Windows.Forms.DataGridView();
+            this.cod_programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cupo_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincia_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicio_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_fin_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observaciones_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListaProgramas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +122,7 @@ namespace InterfazEscritorio
             this.txtDescripcion.AcceptsTab = true;
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(551, 13);
+            this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(174, 55);
@@ -130,6 +142,7 @@ namespace InterfazEscritorio
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(298, 12);
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
             this.txtNombre.TabIndex = 2;
@@ -172,23 +185,15 @@ namespace InterfazEscritorio
             this.panel1.Size = new System.Drawing.Size(945, 233);
             this.panel1.TabIndex = 12;
             // 
-            // DTFechaInicio
+            // txtObservaciones
             // 
-            this.DTFechaInicio.Location = new System.Drawing.Point(124, 164);
-            this.DTFechaInicio.Name = "DTFechaInicio";
-            this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
-            this.DTFechaInicio.TabIndex = 11;
-            // 
-            // RBActivo
-            // 
-            this.RBActivo.AutoSize = true;
-            this.RBActivo.Location = new System.Drawing.Point(825, 10);
-            this.RBActivo.Name = "RBActivo";
-            this.RBActivo.Size = new System.Drawing.Size(72, 24);
-            this.RBActivo.TabIndex = 12;
-            this.RBActivo.TabStop = true;
-            this.RBActivo.Text = "Activo";
-            this.RBActivo.UseVisualStyleBackColor = true;
+            this.txtObservaciones.Enabled = false;
+            this.txtObservaciones.Location = new System.Drawing.Point(585, 163);
+            this.txtObservaciones.MaxLength = 500;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(202, 56);
+            this.txtObservaciones.TabIndex = 21;
             // 
             // RDInactivo
             // 
@@ -221,6 +226,53 @@ namespace InterfazEscritorio
             this.label10.TabIndex = 16;
             this.label10.Text = "Fecha Inicio:";
             // 
+            // txtProvincia
+            // 
+            this.txtProvincia.Enabled = false;
+            this.txtProvincia.Location = new System.Drawing.Point(551, 96);
+            this.txtProvincia.MaxLength = 20;
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(125, 27);
+            this.txtProvincia.TabIndex = 18;
+            // 
+            // DTFechaInicio
+            // 
+            this.DTFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DTFechaInicio.Location = new System.Drawing.Point(124, 164);
+            this.DTFechaInicio.Name = "DTFechaInicio";
+            this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
+            this.DTFechaInicio.TabIndex = 11;
+            // 
+            // txtCupo
+            // 
+            this.txtCupo.Enabled = false;
+            this.txtCupo.Location = new System.Drawing.Point(88, 96);
+            this.txtCupo.MaxLength = 200;
+            this.txtCupo.Name = "txtCupo";
+            this.txtCupo.Size = new System.Drawing.Size(125, 27);
+            this.txtCupo.TabIndex = 19;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(309, 96);
+            this.txtTelefono.MaxLength = 15;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(125, 27);
+            this.txtTelefono.TabIndex = 20;
+            // 
+            // RBActivo
+            // 
+            this.RBActivo.AutoSize = true;
+            this.RBActivo.Location = new System.Drawing.Point(825, 10);
+            this.RBActivo.Name = "RBActivo";
+            this.RBActivo.Size = new System.Drawing.Size(72, 24);
+            this.RBActivo.TabIndex = 12;
+            this.RBActivo.TabStop = true;
+            this.RBActivo.Text = "Activo";
+            this.RBActivo.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -231,48 +283,126 @@ namespace InterfazEscritorio
             this.label11.TabIndex = 17;
             this.label11.Text = "Teléfono:";
             // 
-            // txtProvincia
+            // grdListaProgramas
             // 
-            this.txtProvincia.Enabled = false;
-            this.txtProvincia.Location = new System.Drawing.Point(551, 96);
-            this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(125, 27);
-            this.txtProvincia.TabIndex = 18;
+            this.grdListaProgramas.AllowUserToAddRows = false;
+            this.grdListaProgramas.AllowUserToDeleteRows = false;
+            this.grdListaProgramas.AllowUserToOrderColumns = true;
+            this.grdListaProgramas.AllowUserToResizeColumns = false;
+            this.grdListaProgramas.AllowUserToResizeRows = false;
+            this.grdListaProgramas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListaProgramas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cod_programa,
+            this.nombre_prog,
+            this.descripcion_prog,
+            this.estado,
+            this.cupo_prog,
+            this.telefono_prog,
+            this.email_prog,
+            this.provincia_prog,
+            this.fecha_inicio_prog,
+            this.fecha_fin_prog,
+            this.observaciones_prog});
+            this.grdListaProgramas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.grdListaProgramas.Location = new System.Drawing.Point(0, 239);
+            this.grdListaProgramas.Name = "grdListaProgramas";
+            this.grdListaProgramas.RowHeadersWidth = 51;
+            this.grdListaProgramas.RowTemplate.Height = 29;
+            this.grdListaProgramas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdListaProgramas.Size = new System.Drawing.Size(945, 213);
+            this.grdListaProgramas.TabIndex = 13;
             // 
-            // txtCupo
+            // cod_programa
             // 
-            this.txtCupo.Enabled = false;
-            this.txtCupo.Location = new System.Drawing.Point(88, 96);
-            this.txtCupo.Name = "txtCupo";
-            this.txtCupo.Size = new System.Drawing.Size(125, 27);
-            this.txtCupo.TabIndex = 19;
+            this.cod_programa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cod_programa.DataPropertyName = "COD_PROGRAMA";
+            this.cod_programa.HeaderText = "Cod";
+            this.cod_programa.MinimumWidth = 6;
+            this.cod_programa.Name = "cod_programa";
+            this.cod_programa.Width = 65;
             // 
-            // txtTelefono
+            // nombre_prog
             // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(309, 96);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(125, 27);
-            this.txtTelefono.TabIndex = 20;
+            this.nombre_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_prog.DataPropertyName = "NOMBRE_PROGRAMA";
+            this.nombre_prog.HeaderText = "Nombre";
+            this.nombre_prog.MinimumWidth = 6;
+            this.nombre_prog.Name = "nombre_prog";
             // 
-            // txtObservaciones
+            // descripcion_prog
             // 
-            this.txtObservaciones.Enabled = false;
-            this.txtObservaciones.Location = new System.Drawing.Point(585, 163);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(202, 56);
-            this.txtObservaciones.TabIndex = 21;
+            this.descripcion_prog.DataPropertyName = "DESCRIPCION_PROGRAMA";
+            this.descripcion_prog.HeaderText = "Descripción";
+            this.descripcion_prog.MinimumWidth = 6;
+            this.descripcion_prog.Name = "descripcion_prog";
+            this.descripcion_prog.Visible = false;
+            this.descripcion_prog.Width = 125;
             // 
-            // dataGridView1
+            // estado
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(945, 213);
-            this.dataGridView1.TabIndex = 13;
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estado.DataPropertyName = "ESTADO";
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            // 
+            // cupo_prog
+            // 
+            this.cupo_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cupo_prog.DataPropertyName = "CUPO_PROGRAMA";
+            this.cupo_prog.HeaderText = "Cupo";
+            this.cupo_prog.MinimumWidth = 6;
+            this.cupo_prog.Name = "cupo_prog";
+            this.cupo_prog.Width = 73;
+            // 
+            // telefono_prog
+            // 
+            this.telefono_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefono_prog.DataPropertyName = "TELEFONO_PROGRAMA";
+            this.telefono_prog.HeaderText = "Teléfono";
+            this.telefono_prog.MinimumWidth = 6;
+            this.telefono_prog.Name = "telefono_prog";
+            // 
+            // email_prog
+            // 
+            this.email_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.email_prog.DataPropertyName = "EMAIL_PROGRAMA";
+            this.email_prog.HeaderText = "Email";
+            this.email_prog.MinimumWidth = 6;
+            this.email_prog.Name = "email_prog";
+            // 
+            // provincia_prog
+            // 
+            this.provincia_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.provincia_prog.DataPropertyName = "PROVINCIA_PROGRAMA";
+            this.provincia_prog.HeaderText = "Provincia";
+            this.provincia_prog.MinimumWidth = 6;
+            this.provincia_prog.Name = "provincia_prog";
+            // 
+            // fecha_inicio_prog
+            // 
+            this.fecha_inicio_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fecha_inicio_prog.DataPropertyName = "FECHA_FIN_PROGRAMA";
+            this.fecha_inicio_prog.HeaderText = "Inicio";
+            this.fecha_inicio_prog.MinimumWidth = 6;
+            this.fecha_inicio_prog.Name = "fecha_inicio_prog";
+            // 
+            // fecha_fin_prog
+            // 
+            this.fecha_fin_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fecha_fin_prog.DataPropertyName = "FECHA_FIN_PROGRAMA";
+            this.fecha_fin_prog.HeaderText = "Fin";
+            this.fecha_fin_prog.MinimumWidth = 6;
+            this.fecha_fin_prog.Name = "fecha_fin_prog";
+            // 
+            // observaciones_prog
+            // 
+            this.observaciones_prog.DataPropertyName = "OBSERVACIONES_PROGRAMA";
+            this.observaciones_prog.HeaderText = "Observaciones";
+            this.observaciones_prog.MinimumWidth = 6;
+            this.observaciones_prog.Name = "observaciones_prog";
+            this.observaciones_prog.Visible = false;
+            this.observaciones_prog.Width = 125;
             // 
             // button1
             // 
@@ -319,15 +449,16 @@ namespace InterfazEscritorio
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdListaProgramas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "FrmProgramas";
             this.Text = "Programas";
+            this.Load += new System.EventHandler(this.FrmProgramas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListaProgramas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,10 +485,21 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdListaProgramas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_programa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cupo_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provincia_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_fin_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones_prog;
     }
 }

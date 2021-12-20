@@ -44,6 +44,7 @@ namespace InterfazEscritorio
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSlide1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -226,11 +227,13 @@ namespace InterfazEscritorio
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnSlide1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(227, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(915, 50);
+            this.panel2.Size = new System.Drawing.Size(965, 50);
             this.panel2.TabIndex = 1;
             // 
             // btnSlide1
@@ -251,15 +254,26 @@ namespace InterfazEscritorio
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(227, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(915, 635);
+            this.panelContenedor.Size = new System.Drawing.Size(965, 635);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(278, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(351, 35);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Instituto de Triatlón ";
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1142, 685);
+            this.ClientSize = new System.Drawing.Size(1192, 685);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.MenuVertical);
@@ -271,6 +285,7 @@ namespace InterfazEscritorio
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide1)).EndInit();
             this.ResumeLayout(false);
 
@@ -292,6 +307,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
