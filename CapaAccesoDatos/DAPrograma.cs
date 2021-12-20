@@ -42,7 +42,7 @@ namespace CapaAccesoDatos
 
         #region Método para ingresar un nuevo programa
 
-        private int Insertar(EntidadadPrograma programa)
+        public int Insertar(EntidadadPrograma programa)
         {
             int cod = 0; // El retorno
 
@@ -180,7 +180,7 @@ namespace CapaAccesoDatos
 
         #region Método para leer los programas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadadPrograma> ListarProgramas(String condicion)
+        public List<EntidadadPrograma> listarProgramas(String condicion)
         {
             List<EntidadadPrograma> listaProgramas; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
@@ -285,7 +285,7 @@ namespace CapaAccesoDatos
 
         public int EliminarRegistro(int cod_programa)
         {
-            int filasAfectadas = 0;
+            int filasEliminadas = 0;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
@@ -298,7 +298,7 @@ namespace CapaAccesoDatos
             try
             {
                 conexion.Open();
-                filasAfectadas = comando.ExecuteNonQuery();
+                filasEliminadas = comando.ExecuteNonQuery();
                 conexion.Close();
             }
             catch (Exception)
@@ -311,7 +311,7 @@ namespace CapaAccesoDatos
                 comando.Dispose();
             }
 
-            return filasAfectadas;
+            return filasEliminadas;
         }
         #endregion
     }

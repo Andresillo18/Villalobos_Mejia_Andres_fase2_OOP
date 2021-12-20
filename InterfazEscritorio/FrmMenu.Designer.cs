@@ -66,7 +66,7 @@ namespace InterfazEscritorio
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(227, 585);
+            this.MenuVertical.Size = new System.Drawing.Size(227, 685);
             this.MenuVertical.TabIndex = 0;
             // 
             // button8
@@ -230,7 +230,7 @@ namespace InterfazEscritorio
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(227, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(707, 50);
+            this.panel2.Size = new System.Drawing.Size(915, 50);
             this.panel2.TabIndex = 1;
             // 
             // btnSlide1
@@ -251,7 +251,7 @@ namespace InterfazEscritorio
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(227, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(707, 535);
+            this.panelContenedor.Size = new System.Drawing.Size(915, 635);
             this.panelContenedor.TabIndex = 2;
             // 
             // FrmMenu
@@ -259,7 +259,7 @@ namespace InterfazEscritorio
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(934, 585);
+            this.ClientSize = new System.Drawing.Size(1142, 685);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.MenuVertical);
