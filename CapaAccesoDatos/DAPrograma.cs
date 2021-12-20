@@ -63,7 +63,7 @@ namespace CapaAccesoDatos
             comando.Parameters.AddWithValue("@descripcion_programa", programa.Descripcion_programa);
 
             byte estado_Actual = 0;
-            if (programa.Estado == "Activo")
+            if (programa.Estado == "Activo") 
             {
                 estado_Actual = 1;
             }
@@ -117,7 +117,17 @@ namespace CapaAccesoDatos
 
             SqlCommand comando = new SqlCommand();
 
-            string sentencia = "UPDATE PROGRAMAS  SET NOMBRE_PROGRAMA = @nombre_programa, DESCRIPCION_PROGRAMA = @descripcion_programa, ESTADO= @estado, CUPO_PROGRAMA=@cupo_programa, TELEFONO_PROGRAMA =@telefono_programa,EMAIL_PROGRAMA=@email_programa, PROVINCIA_PROGRAMA=@provincia_programa, FECHA_INICIO_PROGRAMA= @fecha_inicio_programa, OBSERVACIONES_PROGRAMA= @observaciones_programa " + "WHERE COD_PROGRAMA = @cod_programa";
+            string sentencia = "UPDATE PROGRAMAS" +
+                "SET NOMBRE_PROGRAMA = @nombre_programa, " +
+                "DESCRIPCION_PROGRAMA = @descripcion_programa, " +
+                "ESTADO= @estado, " +
+                "CUPO_PROGRAMA=@cupo_programa, " +
+                "TELEFONO_PROGRAMA =@telefono_programa," +
+                "EMAIL_PROGRAMA=@email_programa, " +
+                "PROVINCIA_PROGRAMA=@provincia_programa, " +
+                "FECHA_INICIO_PROGRAMA= @fecha_inicio_programa, " +
+                "OBSERVACIONES_PROGRAMA= @observaciones_programa " +
+                "WHERE COD_PROGRAMA = @cod_programa";
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
@@ -125,7 +135,18 @@ namespace CapaAccesoDatos
             comando.Parameters.AddWithValue("@cod_programa", programa.Cod_programa);
             comando.Parameters.AddWithValue("@nombre_programa", programa.Nombre_programa);
             comando.Parameters.AddWithValue("@descripcion_programa", programa.Descripcion_programa);
-            comando.Parameters.AddWithValue("@estado", programa.Estado);
+
+            byte estado_Actual = 0;
+            if (programa.Estado == "Activo")
+            {
+                estado_Actual = 1;
+            }
+            else if (programa.Estado == "Inactivo")
+            {
+                estado_Actual = 0;
+            }
+
+            comando.Parameters.AddWithValue("@estado", estado_Actual);
             comando.Parameters.AddWithValue("@cupo_programa", programa.Cupo_programa);
             comando.Parameters.AddWithValue("@telefono_programa", programa.Telefono_programa);
             comando.Parameters.AddWithValue("@email_programa", programa.Email_programa);
@@ -137,6 +158,7 @@ namespace CapaAccesoDatos
             {
                 conexion.Open();
                 filasAfectadas = comando.ExecuteNonQuery(); // ExecuteNonQuery devuelve las filas afectadas
+                conexion.Close();
             }
             catch (Exception)
             {
@@ -289,7 +311,13 @@ namespace CapaAccesoDatos
                     programa.Email_programa = dataReader.GetString(6);
                     programa.Provincia_programa = dataReader.GetString(7);
                     programa.Fecha_inicio_programa = dataReader.GetDateTime(8);
-                    programa.Observaciones_programa = dataReader.GetString(9);
+
+                    //Al dejar ese espacio en blanco da error, entonces preguntando si el valor esta vacío
+                    if (dataReader[9] != DBNull.Value)
+                    {
+                        programa.Observaciones_programa = dataReader.GetString(9);
+                    }
+
                     programa.Existe = true;
                 }
                 conexion.Close();

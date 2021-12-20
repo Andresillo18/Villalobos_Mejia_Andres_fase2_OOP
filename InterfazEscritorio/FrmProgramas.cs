@@ -175,7 +175,7 @@ namespace InterfazEscritorio
             try
             {
                 // Hace que todos los campos sean obligatorios
-                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtCupo.Text) && !string.IsNullOrEmpty(txtTelefono.Text) && !string.IsNullOrEmpty(txtObservaciones.Text))
+                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtDescripcion.Text) && !string.IsNullOrEmpty(txtCupo.Text) && !string.IsNullOrEmpty(txtTelefono.Text) )
                 {
                     programa = GenerarEntidad();
                     if (!programa.Existe)
@@ -218,8 +218,19 @@ namespace InterfazEscritorio
             int cod = 0;
             try
             {
-                cod = (int)grdListaProgramas.SelectedRows[0].Cells[0].Value; //Se toma la primera columna de la fila seleccionada
-                MessageBox.Show(cod.ToString());
+                //Para saber que tiene cada espacio
+                //MessageBox.Show("Campo 0: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[0].Value));
+                //MessageBox.Show("Campo 1: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[1].Value));
+                //MessageBox.Show("Campo 2: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[2].Value));
+                //MessageBox.Show("Campo 3: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[3].Value));
+                //MessageBox.Show("Campo 4: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[4].Value));
+                //MessageBox.Show("Campo 5: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[5].Value));
+                //MessageBox.Show("Campo 6: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[6].Value));
+                //MessageBox.Show("Campo 7: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[7].Value));
+                //MessageBox.Show("Campo 8: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[8].Value));
+                //MessageBox.Show("Campo 9: " + Convert.ToString(grdListaProgramas.SelectedRows[0].Cells[9].Value));
+
+                cod = (int)grdListaProgramas.SelectedRows[0].Cells[1].Value; //Se toma la primera columna de la fila seleccionada
                 cargarElPrograma(cod);
             }
             catch (Exception ex)
@@ -227,8 +238,6 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-
-        #endregion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -270,5 +279,8 @@ namespace InterfazEscritorio
 
             }
         }
+
+        #endregion
+
     }
 }

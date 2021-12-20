@@ -88,7 +88,7 @@ namespace InterfazEscritorio
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(125, 27);
             this.txtCod.TabIndex = 1;
-            this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -127,7 +127,7 @@ namespace InterfazEscritorio
             this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(174, 55);
+            this.txtDescripcion.Size = new System.Drawing.Size(174, 69);
             this.txtDescripcion.TabIndex = 3;
             // 
             // label5
