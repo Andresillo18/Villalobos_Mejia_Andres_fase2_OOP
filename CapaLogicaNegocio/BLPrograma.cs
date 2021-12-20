@@ -38,9 +38,9 @@ namespace CapaLogicaNegocio
 
         #endregion
 
+        #region Método Insertar
         // Los métodos de la capa de BL son un PUENTE a la capa de DA
         //Y en la capa de BL se aplicarían las comprobaciones y REGLAS DEL NEGOCIO
-        #region Método Inserta
 
         public int Insertar(EntidadadPrograma programa)
         {
@@ -87,7 +87,7 @@ namespace CapaLogicaNegocio
         public DataSet listarProgramas(string condicion, string orden)
         {
             DataSet DS;
-            DAPrograma accesoDatos = new DAPrograma();
+            DAPrograma accesoDatos = new DAPrograma(_cadenaConexion);
 
             try
             {
@@ -147,7 +147,7 @@ namespace CapaLogicaNegocio
         public int EliminarPrograma(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAPrograma accesoDatos = new DAPrograma();
+            DAPrograma accesoDatos = new DAPrograma(_cadenaConexion);
 
             try
             {

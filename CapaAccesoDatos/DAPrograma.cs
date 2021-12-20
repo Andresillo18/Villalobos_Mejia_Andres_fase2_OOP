@@ -102,7 +102,7 @@ namespace CapaAccesoDatos
         {
             int filasAfectadas = -1;
 
-            SqlConnection conexion = new SqlConnection();
+            SqlConnection conexion = new SqlConnection(_cadenaConexion);
 
             SqlCommand comando = new SqlCommand();
 
@@ -149,7 +149,7 @@ namespace CapaAccesoDatos
         {
             DataSet tablaDS = new DataSet(); //Está tabla guardará las consultas SQL
 
-            SqlConnection conexion = new SqlConnection();
+            SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
             string sentencia = "SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA FROM PROGRAMAS";
@@ -234,7 +234,7 @@ namespace CapaAccesoDatos
         public EntidadadPrograma ObtenerPrograma(int cod_programa)
         {
             EntidadadPrograma programa = null; // Se inicaliza null porque lo puede devolver vacío
-            SqlConnection conexion = new SqlConnection();
+            SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
             SqlDataReader dataReader;
@@ -259,15 +259,14 @@ namespace CapaAccesoDatos
                     //Obtiene el valor de cada columna
                     programa.Cod_programa = dataReader.GetInt32(0); // Se convierte por ser un número
                     programa.Nombre_programa = dataReader.GetString(1);
-                    programa.Nombre_programa = dataReader.GetString(2);
-                    programa.Descripcion_programa = dataReader.GetString(3);
-                    programa.Estado = dataReader.GetString(4);
-                    programa.Cupo_programa = dataReader.GetInt32(5);
-                    programa.Telefono_programa = dataReader.GetString(6);
-                    programa.Email_programa = dataReader.GetString(7);
-                    programa.Provincia_programa = dataReader.GetString(8);
-                    programa.Fecha_inicio_programa = dataReader.GetDateTime(9);
-                    programa.Observaciones_programa = dataReader.GetString(10);
+                    programa.Descripcion_programa = dataReader.GetString(2);
+                    programa.Estado = dataReader.GetString(3);
+                    programa.Cupo_programa = dataReader.GetInt32(4);
+                    programa.Telefono_programa = dataReader.GetString(5);
+                    programa.Email_programa = dataReader.GetString(6);
+                    programa.Provincia_programa = dataReader.GetString(7);
+                    programa.Fecha_inicio_programa = dataReader.GetDateTime(8);
+                    programa.Observaciones_programa = dataReader.GetString(9);
                     programa.Existe = true;
                 }
             }

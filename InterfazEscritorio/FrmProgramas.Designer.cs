@@ -40,6 +40,8 @@ namespace InterfazEscritorio
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.RDInactivo = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,7 +50,7 @@ namespace InterfazEscritorio
             this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.RBActivo = new System.Windows.Forms.RadioButton();
+            this.RDActivo = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.grdListaProgramas = new System.Windows.Forms.DataGridView();
             this.cod_programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +94,7 @@ namespace InterfazEscritorio
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(455, 96);
+            this.label2.Location = new System.Drawing.Point(642, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 23);
             this.label2.TabIndex = 2;
@@ -121,7 +123,6 @@ namespace InterfazEscritorio
             // txtDescripcion
             // 
             this.txtDescripcion.AcceptsTab = true;
-            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(551, 13);
             this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
@@ -141,7 +142,6 @@ namespace InterfazEscritorio
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(298, 12);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
@@ -161,6 +161,8 @@ namespace InterfazEscritorio
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtObservaciones);
             this.panel1.Controls.Add(this.RDInactivo);
             this.panel1.Controls.Add(this.label9);
@@ -169,7 +171,7 @@ namespace InterfazEscritorio
             this.panel1.Controls.Add(this.DTFechaInicio);
             this.panel1.Controls.Add(this.txtCupo);
             this.panel1.Controls.Add(this.txtTelefono);
-            this.panel1.Controls.Add(this.RBActivo);
+            this.panel1.Controls.Add(this.RDActivo);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label4);
@@ -186,9 +188,26 @@ namespace InterfazEscritorio
             this.panel1.Size = new System.Drawing.Size(945, 233);
             this.panel1.TabIndex = 12;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(508, 104);
+            this.txtEmail.MaxLength = 20;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(125, 27);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(434, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 23);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Email:";
+            // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Enabled = false;
             this.txtObservaciones.Location = new System.Drawing.Point(585, 163);
             this.txtObservaciones.MaxLength = 500;
             this.txtObservaciones.Multiline = true;
@@ -229,8 +248,7 @@ namespace InterfazEscritorio
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Enabled = false;
-            this.txtProvincia.Location = new System.Drawing.Point(551, 96);
+            this.txtProvincia.Location = new System.Drawing.Point(731, 108);
             this.txtProvincia.MaxLength = 20;
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(125, 27);
@@ -247,7 +265,6 @@ namespace InterfazEscritorio
             // 
             // txtCupo
             // 
-            this.txtCupo.Enabled = false;
             this.txtCupo.Location = new System.Drawing.Point(88, 96);
             this.txtCupo.MaxLength = 200;
             this.txtCupo.Name = "txtCupo";
@@ -256,29 +273,28 @@ namespace InterfazEscritorio
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Enabled = false;
-            this.txtTelefono.Location = new System.Drawing.Point(309, 96);
+            this.txtTelefono.Location = new System.Drawing.Point(303, 99);
             this.txtTelefono.MaxLength = 15;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(125, 27);
             this.txtTelefono.TabIndex = 5;
             // 
-            // RBActivo
+            // RDActivo
             // 
-            this.RBActivo.AutoSize = true;
-            this.RBActivo.Location = new System.Drawing.Point(825, 10);
-            this.RBActivo.Name = "RBActivo";
-            this.RBActivo.Size = new System.Drawing.Size(72, 24);
-            this.RBActivo.TabIndex = 12;
-            this.RBActivo.TabStop = true;
-            this.RBActivo.Text = "Activo";
-            this.RBActivo.UseVisualStyleBackColor = true;
+            this.RDActivo.AutoSize = true;
+            this.RDActivo.Location = new System.Drawing.Point(825, 10);
+            this.RDActivo.Name = "RDActivo";
+            this.RDActivo.Size = new System.Drawing.Size(72, 24);
+            this.RDActivo.TabIndex = 12;
+            this.RDActivo.TabStop = true;
+            this.RDActivo.Text = "Activo";
+            this.RDActivo.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(219, 96);
+            this.label11.Location = new System.Drawing.Point(219, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 23);
             this.label11.TabIndex = 17;
@@ -312,6 +328,7 @@ namespace InterfazEscritorio
             this.grdListaProgramas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdListaProgramas.Size = new System.Drawing.Size(945, 213);
             this.grdListaProgramas.TabIndex = 13;
+            this.grdListaProgramas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaProgramas_CellDoubleClick);
             // 
             // cod_programa
             // 
@@ -383,7 +400,7 @@ namespace InterfazEscritorio
             // fecha_inicio_prog
             // 
             this.fecha_inicio_prog.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fecha_inicio_prog.DataPropertyName = "FECHA_FIN_PROGRAMA";
+            this.fecha_inicio_prog.DataPropertyName = "FECHA_INICIO_PROGRAMA";
             this.fecha_inicio_prog.HeaderText = "Inicio";
             this.fecha_inicio_prog.MinimumWidth = 6;
             this.fecha_inicio_prog.Name = "fecha_inicio_prog";
@@ -438,9 +455,10 @@ namespace InterfazEscritorio
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 17;
-            this.btnGuardar.Text = "Crear";
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmProgramas
             // 
@@ -478,7 +496,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker DTFechaInicio;
         private System.Windows.Forms.RadioButton RDInactivo;
-        private System.Windows.Forms.RadioButton RBActivo;
+        private System.Windows.Forms.RadioButton RDActivo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.TextBox txtCupo;
@@ -488,6 +506,10 @@ namespace InterfazEscritorio
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.DataGridView grdListaProgramas;
         private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_programa;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion_prog;
@@ -499,7 +521,5 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_fin_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones_prog;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnGuardar;
     }
 }
