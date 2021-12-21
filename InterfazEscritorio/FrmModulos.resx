@@ -73,9 +73,6 @@
   <metadata name="cod_modulo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="cod_programa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="nombre_modulo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -85,17 +82,4 @@
   <metadata name="Requesitos_modulo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAGdSURBVGhD7ZhLSsRAEIZn4VJB17oVFy7dufAyegYVnxfQlZcRX3gMFcE7KC5c+Pg/SKBoMpqQ
-        VI0d+oMPxkx3VfUjMT2TQqFQyJZVuScv5ZN8q+Qz1/iONv+ODXkrv1tKW/rMnDl5Ib9kU6G/SR/6EmMm
-        LMk72VRcF4lBrFCYtWnFX8ttyV6fr+Qz1/iuqQ+xQleCpU+LeJRb8i9oQ9u0PzFD4OZL9/y9XJRtoS19
-        bAxihtzYN9ImZja7FF9Dn3QliO3KmrQJsc22mQZ903jkcGNX2mRXsi/EsDHJ4Ub6FNmRfSGGjUkONx6k
-        TTbEcqfbkhxuvEqbbEH2hRg2JjnciBgAL39uRGyhZ+lG9jdxxGOUM4Mb6XLj0P/I1qUrnq8SnNrc8XqZ
-        +5SbMgSP1+kzGcbQB5oPuSJDGepISfH271MZRt9D/blcNtdqT2QoXX9W4Wljb9imNuGDAPZ6+sPWu3yp
-        ru3Lpuc826ZpEMcyG5jx0Q7iSGYDMz7aQRzKbGDGRzuIA5kNzHjWAwA7iOyKr6HwbIsvFAqFbJhMfgBt
-        OlH+SVbQ1gAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

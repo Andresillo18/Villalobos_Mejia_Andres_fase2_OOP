@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CapaLogicaNegocio
 {
-    class BLModulo
+    public class BLModulo
     {
         #region Atributos
 
@@ -101,19 +101,19 @@ namespace CapaLogicaNegocio
 
         public EntidadModulo ObtenerModulo(int cod)
         {
-            EntidadModulo programa;
+            EntidadModulo modulo;
             DAModulo accesoDatos = new DAModulo(_cadenaConexion);
 
             try
             {
-                programa = accesoDatos.ObtenerModulo(cod);
+                modulo = accesoDatos.ObtenerModulo(cod);
 
             }
             catch (Exception)
             {
                 throw;
             }
-            return programa;
+            return modulo;
         }
 
         #endregion

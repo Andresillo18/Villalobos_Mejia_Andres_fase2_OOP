@@ -57,16 +57,18 @@ namespace CapaAccesoDatos
             // Se le pasan los parámetros que recibirá por el objeto comando
             comando.Parameters.AddWithValue("@nombre_modulo", modulo.Nombre_modulo);
             comando.Parameters.AddWithValue("@horas_duracion_modulo", modulo.Horas_duracion);
-            comando.Parameters.AddWithValue("@requesitos_modulo", modulo.Horas_duracion);
+            comando.Parameters.AddWithValue("@requesitos_modulo", modulo.Requesitos_modulo);
 
             //Esta sentencia y su inicialización de los parámetros es para poder actualizar la tabla de unión MODULOS_PROGRAMA***
-            string sentencia2 = "INSERT INTO MODULOS_PROGRAMA (COD_PROGRAMA, COD_MODULO)" + "VALUES (@cod_programa,  @cod_modulo)";
-            comando.Parameters.AddWithValue("@cod_programa", ModProg.Cod_programa);
-            comando.Parameters.AddWithValue("@cod_modulo", ModProg.Cod_modulo);
+            //string sentencia2 = "INSERT INTO MODULOS_PROGRAMA (COD_PROGRAMA, COD_MODULO)" + "VALUES (@cod_programa,  @cod_modulo)" + "SELECT @@IDENTITY";
+            //comando.Parameters.AddWithValue("@cod_programa", ModProg.Cod_programa);
+            //comando.Parameters.AddWithValue("@cod_modulo", ModProg.Cod_modulo);
+
+            //ModProg.IdentityGenerado = Convert.ToInt32(sentencia2);
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
             comando.CommandText = sentencia;
-            comando.CommandText = sentencia2;
+            //comando.CommandText = sentencia2;
 
             //Hasta este punto el objeto SqlCommnado (comando) ya está prepadado para ejecutar la instrucción SQL
 
@@ -196,7 +198,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_MODULO, NOMBRE_MODULO, HORAS_DURACION_MODULO, REQUESITOS_MODULO FROM MODULOS WHERE COD_PROGRAMA = {0}", cod_modulo);
+            string sentencia = string.Format("SELECT COD_MODULO, NOMBRE_MODULO, HORAS_DURACION_MODULO, REQUESITOS_MODULO FROM MODULOS WHERE COD_MODULO = {0}", cod_modulo);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -214,8 +216,8 @@ namespace CapaAccesoDatos
 
                     //Obtiene el valor de cada columna
                     modulo.Cod_modulo = dataReader.GetInt32(0); // Se convierte por ser un número
-                    modulo.Nombre_modulo= dataReader.GetString(1);
-                    modulo.Horas_duracion = dataReader.GetInt32(2);
+                    modulo.Nombre_modulo = dataReader.GetString(1);
+                    modulo.Horas_duracion = dataReader.GetInt16(2);
                     modulo.Requesitos_modulo = dataReader.GetString(3);
                     modulo.Existe = true;
                 }
@@ -239,7 +241,7 @@ namespace CapaAccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
-            String sentencia = string.Format("DELETE FROM MODULOS WHERE cod_programa= {0} ", cod_modulo);
+            String sentencia = string.Format("DELETE FROM MODULOS WHERE cod_modulo= {0} ", cod_modulo);
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
