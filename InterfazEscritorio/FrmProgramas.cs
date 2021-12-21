@@ -72,6 +72,7 @@ namespace InterfazEscritorio
             txtDescripcion.Clear();
             txtCupo.Clear();
             txtTelefono.Clear();
+            txtEmail.Clear();
             txtProvincia.Clear();
             DTFechaInicio.ResetText(); //**refresh
             txtObservaciones.Clear();
@@ -192,7 +193,6 @@ namespace InterfazEscritorio
                         limpiar();
 
                         MessageBox.Show("Operación exitosa!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         MostrarListDS();
                     }
                     else

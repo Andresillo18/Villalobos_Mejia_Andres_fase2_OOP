@@ -54,7 +54,7 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO PROGRAMAS (NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA, EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA)" + "VALUES (@nombre_programa,  @descripcion_programa, @estado, @cupo_programa, @telefono_programa, @email_programa, @provincia_programa, @fecha_inicio_programa, @observaciones_programa)" + "SELECT @@IDENTITY";
+            string sentencia = "INSERT INTO PROGRAMAS (NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA, EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA)" + " VALUES (@nombre_programa,  @descripcion_programa, @estado, @cupo_programa, @telefono_programa, @email_programa, @provincia_programa, @fecha_inicio_programa, @observaciones_programa)" + " SELECT @@IDENTITY";
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
@@ -91,6 +91,7 @@ namespace CapaAccesoDatos
                 conexion.Open();
 
                 cod = Convert.ToInt32(comando.ExecuteScalar()); // Devuelve un valor fijo o en este caso el IDENTITY generado
+                conexion.Close();
             }
             catch (Exception)
             {
@@ -117,7 +118,8 @@ namespace CapaAccesoDatos
 
             SqlCommand comando = new SqlCommand();
 
-            string sentencia = "UPDATE PROGRAMAS" +
+            string sentencia =
+                "UPDATE PROGRAMAS " +
                 "SET NOMBRE_PROGRAMA = @nombre_programa, " +
                 "DESCRIPCION_PROGRAMA = @descripcion_programa, " +
                 "ESTADO= @estado, " +
@@ -127,10 +129,10 @@ namespace CapaAccesoDatos
                 "PROVINCIA_PROGRAMA=@provincia_programa, " +
                 "FECHA_INICIO_PROGRAMA= @fecha_inicio_programa, " +
                 "OBSERVACIONES_PROGRAMA= @observaciones_programa " +
-                "WHERE COD_PROGRAMA = @cod_programa";
+                "WHERE COD_PROGRAMA = @cod_programa ";
 
-            comando.CommandText = sentencia;
             comando.Connection = conexion;
+            comando.CommandText = sentencia;
 
             comando.Parameters.AddWithValue("@cod_programa", programa.Cod_programa);
             comando.Parameters.AddWithValue("@nombre_programa", programa.Nombre_programa);
