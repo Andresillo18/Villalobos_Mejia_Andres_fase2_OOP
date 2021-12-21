@@ -55,7 +55,26 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        //Modificar**
+        #region Método Modificar (Actualizar)
+
+        public int Modificar(EntidadModulo modulo)
+        {
+            int filasAfectadas = 0;
+            DAModulo accesoDatos = new DAModulo(_cadenaConexion);
+
+            try
+            {
+                filasAfectadas = accesoDatos.Modificar(modulo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return filasAfectadas;
+        }
+
+        #endregion
 
         #region Para el método lista un registro
 

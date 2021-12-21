@@ -95,7 +95,49 @@ namespace CapaAccesoDatos
         }
         #endregion
 
-        //Modificar**
+        #region Método Modificar (actualizar)
+
+        public int Modificar(EntidadModulo modulo)
+        {
+            int filasAfectadas = -1;
+
+            SqlConnection conexion = new SqlConnection(_cadenaConexion);
+
+            SqlCommand comando = new SqlCommand();
+
+            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo);
+            comando.Parameters.AddWithValue("@horas_duracion", modulo.Horas_duracion);
+            comando.Parameters.AddWithValue("@requesitos", modulo.Requesitos_modulo);
+            comando.Parameters.AddWithValue("@cod_modulo", modulo.Cod_modulo);
+
+            String sentencia =
+                "UPDATE MODULOS " +
+                "SET HORAS_DURACION_MODULO=@horas_duracion, " +
+                    "REQUESITOS_MODULO=@requesitos WHERE COD_MODULO=@cod_modulo";
+
+            comando.CommandText = sentencia;
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                filasAfectadas = comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexion.Dispose();
+                comando.Dispose();
+            }
+
+            return filasAfectadas;
+        }
+
+        #endregion
 
         #region Método DataSet para leer los registros
 

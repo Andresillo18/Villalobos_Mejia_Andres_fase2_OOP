@@ -119,17 +119,16 @@ namespace CapaAccesoDatos
             SqlCommand comando = new SqlCommand();
 
             string sentencia =
-                "UPDATE PROGRAMAS " +
-                "SET NOMBRE_PROGRAMA = @nombre_programa, " +
-                "DESCRIPCION_PROGRAMA = @descripcion_programa, " +
-                "ESTADO= @estado, " +
+                 "UPDATE PROGRAMAS " +
+                "SET NOMBRE_PROGRAMA=@nombre_programa, " +
+                "DESCRIPCION_PROGRAMA=@descripcion_programa, " +
+                "ESTADO=@estado, " +
                 "CUPO_PROGRAMA=@cupo_programa, " +
-                "TELEFONO_PROGRAMA =@telefono_programa," +
-                "EMAIL_PROGRAMA=@email_programa, " +
+                "TELEFONO_PROGRAMA=@telefono_programa, " +
                 "PROVINCIA_PROGRAMA=@provincia_programa, " +
-                "FECHA_INICIO_PROGRAMA= @fecha_inicio_programa, " +
-                "OBSERVACIONES_PROGRAMA= @observaciones_programa " +
-                "WHERE COD_PROGRAMA = @cod_programa ";
+                "FECHA_INICIO_PROGRAMA=@fecha_inicio_programa, " +
+                "OBSERVACIONES_PROGRAMA=@observaciones_programa " +
+                    "WHERE COD_PROGRAMA=@cod_programa";
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;

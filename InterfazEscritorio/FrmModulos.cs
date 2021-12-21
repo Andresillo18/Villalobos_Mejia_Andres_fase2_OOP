@@ -153,7 +153,7 @@ namespace InterfazEscritorio
                     }
                     else
                     {
-                        //elResultado = logica.Modificar(modulo);
+                        elResultado = logica.Modificar(modulo);
                     }
 
                     if (elResultado > 0) // Si retorna algo alguna función se completa la acción
