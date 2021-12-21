@@ -37,8 +37,8 @@ namespace InterfazEscritorio
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModulos = new System.Windows.Forms.Button();
+            this.btnModAbiertos = new System.Windows.Forms.Button();
             this.btnPrograma = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,8 +60,8 @@ namespace InterfazEscritorio
             this.MenuVertical.Controls.Add(this.button6);
             this.MenuVertical.Controls.Add(this.button5);
             this.MenuVertical.Controls.Add(this.button4);
-            this.MenuVertical.Controls.Add(this.button2);
-            this.MenuVertical.Controls.Add(this.button1);
+            this.MenuVertical.Controls.Add(this.btnModulos);
+            this.MenuVertical.Controls.Add(this.btnModAbiertos);
             this.MenuVertical.Controls.Add(this.btnPrograma);
             this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
@@ -166,38 +166,41 @@ namespace InterfazEscritorio
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModulos
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.SystemColors.Info;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(227, 45);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Módulos";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnModulos.FlatAppearance.BorderSize = 0;
+            this.btnModulos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnModulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModulos.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.btnModulos.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnModulos.Image = ((System.Drawing.Image)(resources.GetObject("btnModulos.Image")));
+            this.btnModulos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModulos.Location = new System.Drawing.Point(0, 153);
+            this.btnModulos.Name = "btnModulos";
+            this.btnModulos.Size = new System.Drawing.Size(227, 45);
+            this.btnModulos.TabIndex = 3;
+            this.btnModulos.Text = "Módulos";
+            this.btnModulos.UseVisualStyleBackColor = true;
+            this.btnModulos.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnModAbiertos
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(227, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnModAbiertos.FlatAppearance.BorderSize = 0;
+            this.btnModAbiertos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnModAbiertos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModAbiertos.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.btnModAbiertos.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnModAbiertos.Image = ((System.Drawing.Image)(resources.GetObject("btnModAbiertos.Image")));
+            this.btnModAbiertos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModAbiertos.Location = new System.Drawing.Point(0, 204);
+            this.btnModAbiertos.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.btnModAbiertos.Name = "btnModAbiertos";
+            this.btnModAbiertos.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnModAbiertos.Size = new System.Drawing.Size(227, 45);
+            this.btnModAbiertos.TabIndex = 2;
+            this.btnModAbiertos.Text = "Abrir Módulo";
+            this.btnModAbiertos.UseVisualStyleBackColor = true;
+            this.btnModAbiertos.Click += new System.EventHandler(this.btnModAbiertos_Click);
             // 
             // btnPrograma
             // 
@@ -265,6 +268,7 @@ namespace InterfazEscritorio
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(227, 50);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(965, 635);
             this.panelContenedor.TabIndex = 2;
@@ -307,8 +311,8 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModulos;
+        private System.Windows.Forms.Button btnModAbiertos;
         private System.Windows.Forms.Label label1;
     }
 }

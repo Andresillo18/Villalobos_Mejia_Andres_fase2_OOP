@@ -7,7 +7,7 @@ using CapaEntidades;
 
 namespace CapaAccesoDatos
 {
-    public class DAModulo
+    public class DAModAbier
     {
         #region Atributos
 
@@ -21,24 +21,23 @@ namespace CapaAccesoDatos
 
         #endregion
 
-        #region Constructores
-        
-        // Al que le llega la cadena de construcción al crear 
-        public DAModulo(string cadenaConexion)
+        #region COnstructores
+
+        public DAModAbier(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public DAModulo()
+        public DAModAbier()
         {
-            _cadenaConexion = String.Empty;            
+            _cadenaConexion = String.Empty;
         }
 
         #endregion
 
         #region Método para ingresar un nuevo registro
 
-        public int Insertar(EntidadModulo modulo, EntidadModulosPrograma ModProg)
+        public int Insertar(EntidadModAbier modAbierto)
         {
             int cod = 0; // El retorno
 
@@ -50,25 +49,19 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO MODULOS (NOMBRE_MODULO, HORAS_DURACION_MODULO,REQUESITOS_MODULO)" + "VALUES (@nombre_modulo,  @horas_duracion_modulo, @requesitos_modulo)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO MODULOS_ABIERTOS (COD_ENTRENADOR, COD_MODULO,COD_HORARIO_MODULOS,FECHA_INICIO_MODULO,OBSERVACIONES_MODULO_ABIERTO)" + " VALUES (@cod_entrenador,  @cod_mod, @cod_horar_mod, @fecha_inicio, @observaciones)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
             // Se le pasan los parámetros que recibirá por el objeto comando
-            comando.Parameters.AddWithValue("@nombre_modulo", modulo.Nombre_modulo);
-            comando.Parameters.AddWithValue("@horas_duracion_modulo", modulo.Horas_duracion);
-            comando.Parameters.AddWithValue("@requesitos_modulo", modulo.Requesitos_modulo);
-
-            //Esta sentencia y su inicialización de los parámetros es para poder actualizar la tabla de unión MODULOS_PROGRAMA***
-            //string sentencia2 = "INSERT INTO MODULOS_PROGRAMA (COD_PROGRAMA, COD_MODULO)" + "VALUES (@cod_programa,  @cod_modulo)" + "SELECT @@IDENTITY";
-            //comando.Parameters.AddWithValue("@cod_programa", ModProg.Cod_programa);
-            //comando.Parameters.AddWithValue("@cod_modulo", ModProg.Cod_modulo);
-
-            //ModProg.IdentityGenerado = Convert.ToInt32(sentencia2);
+            comando.Parameters.AddWithValue("@cod_entrenador", modAbierto.Cod_entrenador);
+            comando.Parameters.AddWithValue("@cod_mod", modAbierto.Cod_mod);
+            comando.Parameters.AddWithValue("@cod_horar_mod", modAbierto.Cod_hora_mod);
+            comando.Parameters.AddWithValue("@fecha_inicio", modAbierto.Fecha_inicio);
+            comando.Parameters.AddWithValue("@observaciones", modAbierto.Observaciones);
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
             comando.CommandText = sentencia;
-            //comando.CommandText = sentencia2;
 
             //Hasta este punto el objeto SqlCommnado (comando) ya está prepadado para ejecutar la instrucción SQL
 
@@ -94,30 +87,35 @@ namespace CapaAccesoDatos
             return cod;
         }
         #endregion
-
+        
         #region Método Modificar (actualizar)
 
-        public int Modificar(EntidadModulo modulo)
+        public int Modificar(EntidadModAbier modAbierto)
         {
             int filasAfectadas = -1;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
 
-            SqlCommand comando = new SqlCommand();
-
-            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo);
-            comando.Parameters.AddWithValue("@horas_duracion", modulo.Horas_duracion);
-            comando.Parameters.AddWithValue("@requesitos", modulo.Requesitos_modulo);
-            comando.Parameters.AddWithValue("@cod_modulo", modulo.Cod_modulo);
+            SqlCommand comando = new SqlCommand();         
 
             String sentencia =
-                "UPDATE MODULOS " +
-                "SET HORAS_DURACION_MODULO=@horas_duracion, " +
-                    "REQUESITOS_MODULO=@requesitos" +
-                    " WHERE COD_MODULO=@cod_modulo";
+                "UPDATE MODULOS_ABIERTOS " +
+                "SET COD_ENTRENADOR=@cod_entrenador, " +
+                "COD_MODULO = @cod_mod, " +
+                "COD_HORARIO_MODULOS = @cod_horar_mod, " +
+                "FECHA_INICIO_MODULO = @fecha_inicio, " +
+                    "OBSERVACIONES_MODULO_ABIERTO=@observaciones" +
+                    " WHERE COD_MODULO_ABIERTO=@cod_modAbier";
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
+
+            comando.Parameters.AddWithValue("@cod_entrenador", modAbierto.Cod_entrenador);
+            comando.Parameters.AddWithValue("@cod_mod", modAbierto.Cod_mod);
+            comando.Parameters.AddWithValue("@cod_horar_mod", modAbierto.Cod_hora_mod);
+            comando.Parameters.AddWithValue("@fecha_inicio", modAbierto.Fecha_inicio);
+            comando.Parameters.AddWithValue("@observaciones", modAbierto.Observaciones);
+            comando.Parameters.AddWithValue("@cod_modAbier", modAbierto.Cod_mod_abierto);
 
             try
             {
@@ -142,19 +140,15 @@ namespace CapaAccesoDatos
 
         #region Método DataSet para leer los registros
 
-        // Devuelve un DataSet con los registros, para mostrarlo en el DataGridView
+        // Devuelve un DataSet con los registros a buscar, para mostrarlo en el DataGridView
         public DataSet listarModulos(string condicion, string orden)
         {
             DataSet tablaDS = new DataSet(); //Está tabla guardará las consultas SQL
 
-            DataSet tablaDS2 = new DataSet();
-
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
-            string sentencia = "SELECT COD_MODULO, NOMBRE_MODULO, HORAS_DURACION_MODULO, REQUESITOS_MODULO FROM MODULOS";
-
-            string sentencia2 = "SELECT COD_MODULO FROM MODULOS_PROGRAMA"; //**
+            string sentencia = "SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS";
 
             // El uso de las condicion y el orden
             if (!string.IsNullOrEmpty(condicion))
@@ -169,10 +163,7 @@ namespace CapaAccesoDatos
             try
             {
                 adaptador = new SqlDataAdapter(sentencia, conexion);
-                adaptador.Fill(tablaDS, "Modulos"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
-
-                adaptador = new SqlDataAdapter(sentencia2, conexion);//***
-                adaptador.Fill(tablaDS2, "Modulos_Programa");
+                adaptador.Fill(tablaDS, "ModulosAbiertos"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
             }
             catch (Exception)
             {
@@ -184,15 +175,15 @@ namespace CapaAccesoDatos
 
         #region Método para leer las tablas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadModulo> listarModulos(String condicion)
+        public List<EntidadModAbier> listarModulos(String condicion)
         {
-            List<EntidadModulo> listaModulos; //Se inicializa lo que se creará
+            List<EntidadModAbier> listaModulos; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador;
 
-            string sentencia = "SELECT COD_MODULO, NOMBRE_MODULO, HORAS_DURACION_MODULO, REQUESITOS_MODULO FROM MODULOS";
+            string sentencia = "SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS";
 
             if (!string.IsNullOrEmpty(condicion))
             {
@@ -202,18 +193,22 @@ namespace CapaAccesoDatos
             try
             {
                 adaptador = new SqlDataAdapter(sentencia, conexion); // Aquí se usa el adaptador para unirse BD 
-                adaptador.Fill(TablaDS, "Modulos"); // Se llena el DataSer con la BD
+                adaptador.Fill(TablaDS, "ModulosAbiertos"); // Se llena el DataSer con la BD
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
-                listaModulos = (from DataRow fila in TablaDS.Tables["Modulos"].Rows
-                                  select new EntidadModulo()
-                                  {
-                                      Cod_modulo = (int)fila[0],
-                                      Nombre_modulo= fila[1].ToString(),
-                                      Horas_duracion= (int)fila[2],
-                                      Requesitos_modulo= fila[3].ToString(),
-                                      Existe = true
-                                  }).ToList();
+                listaModulos = (from DataRow fila in TablaDS.Tables["ModulosAbiertos"].Rows
+                                select new EntidadModAbier()
+                                {
+                                    Cod_mod_abierto= (int)fila[0],
+                                    Cod_entrenador = (int)fila[1],
+                                    Cod_mod = (int)fila[2],
+                                    Cod_hora_mod= (int)fila[3],
+                                    Fecha_inicio = Convert.ToDateTime(fila[4]),
+                                    Fecha_fin = Convert.ToDateTime(fila[5]),
+                                    Observaciones = fila[6].ToString(),
+                                    Existe = true
+                                }).ToList();
+
                 //Lo anterior convierte el DataSet en una lista, y cada elemento de la lista tiene Objeto Entidad que 
                 //representa cada fila de la tabla de la BD;
             }
@@ -229,11 +224,9 @@ namespace CapaAccesoDatos
         #region Método para obtener un registro
 
         // Devuelve una entidad porque permite tener solo un registro
-        public EntidadModulo ObtenerModulo(int cod_modulo)
+        public EntidadModAbier ObtenerModulo(int cod_moduloAbierto)
         {
-            EntidadModulo modulo= null; // Se inicaliza null porque lo puede devolver vacío
-
-            EntidadModulosPrograma modulo_programa = null;
+            EntidadModAbier moduloAbierto = null; // Se inicaliza null porque lo puede devolver vacío
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
@@ -241,7 +234,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_MODULO, NOMBRE_MODULO, HORAS_DURACION_MODULO, REQUESITOS_MODULO FROM MODULOS WHERE COD_MODULO = {0}", cod_modulo);
+            string sentencia = string.Format("SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS WHERE COD_MODULO_ABIERTO = {0}", cod_moduloAbierto);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -254,15 +247,22 @@ namespace CapaAccesoDatos
 
                 if (dataReader.HasRows)
                 {
-                    modulo = new EntidadModulo();
+                    moduloAbierto = new EntidadModAbier();
                     dataReader.Read();
 
                     //Obtiene el valor de cada columna
-                    modulo.Cod_modulo = dataReader.GetInt32(0); // Se convierte por ser un número
-                    modulo.Nombre_modulo = dataReader.GetString(1);
-                    modulo.Horas_duracion = dataReader.GetInt16(2);
-                    modulo.Requesitos_modulo = dataReader.GetString(3);
-                    modulo.Existe = true;
+                    moduloAbierto.Cod_mod_abierto = dataReader.GetInt32(0); // Se convierte por ser un número
+                    moduloAbierto.Cod_entrenador = dataReader.GetInt32(1);
+                    moduloAbierto.Cod_mod = dataReader.GetInt32(2);
+                    moduloAbierto.Cod_hora_mod = dataReader.GetInt32(3);
+                    moduloAbierto.Fecha_inicio = dataReader.GetDateTime(4);
+                    moduloAbierto.Fecha_fin= dataReader.GetDateTime(5);
+                    if (dataReader[6] != DBNull.Value)
+                    {
+                        moduloAbierto.Observaciones = dataReader.GetString(6); // Si esa posición de dataReader tiene algo que se ejecute el proceso
+                    }
+                    
+                    moduloAbierto.Existe = true;
                 }
                 conexion.Close();
             }
@@ -271,20 +271,20 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return modulo;
+            return moduloAbierto;
         }
         #endregion
 
         #region Método para eliminar un registro
 
-        public int EliminarRegistro(int cod_modulo)
+        public int EliminarRegistro(int cod_moduloAbierto)
         {
             int filasEliminadas = 0;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
-            String sentencia = string.Format("DELETE FROM MODULOS WHERE cod_modulo= {0} ", cod_modulo);
+            String sentencia = string.Format("DELETE FROM MODULOS_ABIERTOS WHERE COD_MODULO_ABIERTO= {0} ", cod_moduloAbierto);
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;

@@ -54,5 +54,10 @@ namespace InterfazEscritorio
         {
             AbrirFormInPanel(new FrmModulos());
         }
+
+        private void btnModAbiertos_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmModulosAbie());
+        }
     }
 }
