@@ -31,6 +31,8 @@ namespace InterfazEscritorio
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -54,6 +56,8 @@ namespace InterfazEscritorio
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.button2);
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.button8);
             this.MenuVertical.Controls.Add(this.button3);
             this.MenuVertical.Controls.Add(this.button7);
@@ -69,6 +73,38 @@ namespace InterfazEscritorio
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(227, 685);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.Info;
+            this.button2.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 612);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(227, 45);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.Info;
+            this.button1.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 561);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(227, 45);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -127,7 +163,7 @@ namespace InterfazEscritorio
             this.button6.ForeColor = System.Drawing.SystemColors.Info;
             this.button6.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(4, 357);
+            this.button6.Location = new System.Drawing.Point(0, 357);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(227, 45);
             this.button6.TabIndex = 7;
@@ -143,7 +179,7 @@ namespace InterfazEscritorio
             this.button5.ForeColor = System.Drawing.SystemColors.Info;
             this.button5.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 306);
+            this.button5.Location = new System.Drawing.Point(0, 306);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(227, 45);
             this.button5.TabIndex = 6;
@@ -157,14 +193,15 @@ namespace InterfazEscritorio
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.SystemColors.Info;
-            this.button4.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(4, 255);
+            this.button4.Location = new System.Drawing.Point(0, 255);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(227, 45);
             this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
+            this.button4.Text = "Horario de Módulos";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnModulos
             // 
@@ -314,6 +351,8 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button btnModulos;
         private System.Windows.Forms.Button btnModAbiertos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

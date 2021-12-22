@@ -122,7 +122,7 @@ namespace InterfazEscritorio
             this.txtHorasDuracion.Location = new System.Drawing.Point(611, 31);
             this.txtHorasDuracion.Name = "txtHorasDuracion";
             this.txtHorasDuracion.Size = new System.Drawing.Size(174, 28);
-            this.txtHorasDuracion.TabIndex = 13;
+            this.txtHorasDuracion.TabIndex = 3;
             // 
             // txtCodPrograma
             // 
@@ -130,7 +130,7 @@ namespace InterfazEscritorio
             this.txtCodPrograma.MaxLength = 100;
             this.txtCodPrograma.Name = "txtCodPrograma";
             this.txtCodPrograma.Size = new System.Drawing.Size(125, 27);
-            this.txtCodPrograma.TabIndex = 11;
+            this.txtCodPrograma.TabIndex = 5;
             // 
             // label2
             // 
@@ -290,20 +290,20 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtRequesitos;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCod;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvModulos;
-        private System.Windows.Forms.TextBox txtCodPrograma;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox txtHorasDuracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_modulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_modulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn horas_modulos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Requesitos_modulo;
+        private System.Windows.Forms.ComboBox txtHorasDuracion;
+        private System.Windows.Forms.TextBox txtCodPrograma;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRequesitos;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
     }
 }
