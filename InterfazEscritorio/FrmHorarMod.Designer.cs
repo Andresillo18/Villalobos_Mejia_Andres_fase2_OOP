@@ -424,8 +424,9 @@ namespace InterfazEscritorio
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmHorarMod";
-            this.Text = "FrmHorarMod";
+            this.Text = "Horaros de Módulos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarMod)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
