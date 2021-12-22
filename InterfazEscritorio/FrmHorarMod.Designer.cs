@@ -59,7 +59,7 @@ namespace InterfazEscritorio
             this.CBMartes = new System.Windows.Forms.CheckBox();
             this.CBLunes = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodHorMod = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
@@ -87,13 +87,14 @@ namespace InterfazEscritorio
             this.inicio_horario,
             this.fin_horario});
             this.dgvHorarMod.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHorarMod.Location = new System.Drawing.Point(0, 245);
+            this.dgvHorarMod.Location = new System.Drawing.Point(-12, 245);
             this.dgvHorarMod.Name = "dgvHorarMod";
             this.dgvHorarMod.RowHeadersWidth = 51;
             this.dgvHorarMod.RowTemplate.Height = 29;
             this.dgvHorarMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHorarMod.Size = new System.Drawing.Size(945, 226);
             this.dgvHorarMod.TabIndex = 28;
+            this.dgvHorarMod.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarMod_CellDoubleClick);
             // 
             // cod_horar_modulo
             // 
@@ -187,6 +188,7 @@ namespace InterfazEscritorio
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -199,6 +201,7 @@ namespace InterfazEscritorio
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
@@ -211,6 +214,7 @@ namespace InterfazEscritorio
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // panel1
             // 
@@ -241,7 +245,7 @@ namespace InterfazEscritorio
             this.panel2.Controls.Add(this.CBMartes);
             this.panel2.Controls.Add(this.CBLunes);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCodHorMod);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -376,14 +380,14 @@ namespace InterfazEscritorio
             this.label2.TabIndex = 0;
             this.label2.Text = "COD:";
             // 
-            // textBox1
+            // txtCodHorMod
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(116, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodHorMod.Enabled = false;
+            this.txtCodHorMod.Location = new System.Drawing.Point(116, 24);
+            this.txtCodHorMod.Name = "txtCodHorMod";
+            this.txtCodHorMod.Size = new System.Drawing.Size(125, 27);
+            this.txtCodHorMod.TabIndex = 1;
+            this.txtCodHorMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // checkBox1
             // 
@@ -427,6 +431,7 @@ namespace InterfazEscritorio
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmHorarMod";
             this.Text = "Horaros de Módulos";
+            this.Load += new System.EventHandler(this.FrmHorarMod_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarMod)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -459,7 +464,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.CheckBox CBMartes;
         private System.Windows.Forms.CheckBox CBLunes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodHorMod;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_horar_modulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunes;

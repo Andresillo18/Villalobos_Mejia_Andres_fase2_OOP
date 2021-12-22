@@ -18,8 +18,9 @@ namespace CapaEntidades
         private bool dia_viernes;
         private bool dia_sabado;
         private bool dia_domingo;
-        private DateTime hora_inicio;
-        private DateTime hora_fin;      
+        private TimeSpan hora_inicio;
+        private TimeSpan hora_fin;
+        private bool existe;
 
         #endregion
 
@@ -32,14 +33,15 @@ namespace CapaEntidades
         public bool Dia_viernes { get => dia_viernes; set => dia_viernes = value; }
         public bool Dia_sabado { get => dia_sabado; set => dia_sabado = value; }
         public bool Dia_domingo { get => dia_domingo; set => dia_domingo = value; }
-        public DateTime Hora_inicio { get => hora_inicio; set => hora_inicio = value; }
-        public DateTime Hora_fin { get => hora_fin; set => hora_fin = value; }
+        public TimeSpan Hora_inicio { get => hora_inicio; set => hora_inicio = value; }
+        public TimeSpan Hora_fin { get => hora_fin; set => hora_fin = value; }
+        public bool Existe { get => existe; set => existe = value; }
 
         #endregion
 
         #region constructores
 
-        public EntidadHorario(bool dia_lunes, bool dia_martes, bool dia_miercoles, bool dia_jueves, bool dia_viernes, bool dia_sabado, bool dia_domingo, DateTime hora_inicio, DateTime hora_fin)
+        public EntidadHorario(bool dia_lunes, bool dia_martes, bool dia_miercoles, bool dia_jueves, bool dia_viernes, bool dia_sabado, bool dia_domingo, TimeSpan hora_inicio, TimeSpan hora_fin, bool existe)
         {
             this.dia_lunes = dia_lunes;
             this.dia_martes = dia_martes;
@@ -50,6 +52,7 @@ namespace CapaEntidades
             this.dia_domingo = dia_domingo;
             this.hora_inicio = hora_inicio;
             this.hora_fin = hora_fin;
+            this.existe = existe;
         }
 
         public EntidadHorario()
@@ -61,8 +64,9 @@ namespace CapaEntidades
             this.dia_viernes = false;
             this.dia_sabado = false;
             this.dia_domingo = false;
-            this.hora_inicio = new DateTime();
-            this.hora_fin = new DateTime();
+            this.hora_inicio = new TimeSpan();
+            this.hora_fin = new TimeSpan();
+            this.existe = false;
         }
 
         #endregion

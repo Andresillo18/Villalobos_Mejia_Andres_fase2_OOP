@@ -96,7 +96,7 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region listarProgramas con un parámetro
+        #region listarModulos con un parámetro
 
         public List<EntidadModulo> listarModulos(string condicion)
         {
@@ -116,7 +116,7 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region ObtenerPrograma
+        #region ObtenerModulo
 
         public EntidadModulo ObtenerModulo(int cod)
         {

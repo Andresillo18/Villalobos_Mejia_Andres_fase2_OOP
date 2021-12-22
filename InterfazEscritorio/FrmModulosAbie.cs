@@ -20,6 +20,7 @@ namespace InterfazEscritorio
         {
             InitializeComponent();
         }
+
         #region Método para limpiar los campos
 
         private void limpiar()
@@ -83,7 +84,6 @@ namespace InterfazEscritorio
 
         #region Método para cargar los datos de un programa en los textBoxs
         
-
         private void cargarModuloAbier(int cod)
         {
             EntidadModAbier modAbierto;

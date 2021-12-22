@@ -141,7 +141,7 @@ namespace CapaAccesoDatos
         #region Método DataSet para leer los registros
 
         // Devuelve un DataSet con los registros a buscar, para mostrarlo en el DataGridView
-        public DataSet listarModulos(string condicion, string orden)
+        public DataSet listarModulo(string condicion, string orden)
         {
             DataSet tablaDS = new DataSet(); //Está tabla guardará las consultas SQL
 
@@ -175,7 +175,7 @@ namespace CapaAccesoDatos
 
         #region Método para leer las tablas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadModAbier> listarModulos(String condicion)
+        public List<EntidadModAbier> listarModulo(String condicion)
         {
             List<EntidadModAbier> listaModulos; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();

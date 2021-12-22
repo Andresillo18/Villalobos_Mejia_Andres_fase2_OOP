@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CapaLogicaNegocio
 {
-    public class BLModAbier
+    public class BLHorarMod
     {
         #region Atributos
 
@@ -21,13 +21,13 @@ namespace CapaLogicaNegocio
         #endregion
 
         #region Constructores
-        
-        public BLModAbier(string cadenaConexion)
+
+        public BLHorarMod(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public BLModAbier()
+        public BLHorarMod()
         {
             _cadenaConexion = string.Empty;
         }
@@ -36,15 +36,15 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadModAbier modulo)
+        public int Insertar(EntidadHorarMod horarMod)
         {
             int cod = 0;
 
-            DAModAbier accesoDatos = new DAModAbier (_cadenaConexion);
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                cod = accesoDatos.Insertar(modulo);
+                cod = accesoDatos.Insertar(horarMod);
             }
             catch (Exception)
             {
@@ -57,14 +57,14 @@ namespace CapaLogicaNegocio
 
         #region Método Modificar (Actualizar)
 
-        public int Modificar(EntidadModAbier modulo)
+        public int Modificar(EntidadHorarMod horarMod)
         {
             int filasAfectadas = 0;
-            DAModAbier accesoDatos = new DAModAbier(_cadenaConexion);
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                filasAfectadas = accesoDatos.Modificar(modulo);
+                filasAfectadas = accesoDatos.Modificar(horarMod);
             }
             catch (Exception)
             {
@@ -78,14 +78,14 @@ namespace CapaLogicaNegocio
 
         #region Para el método lista un registro
 
-        public DataSet listarModulos(string condicion, string orden)
+        public DataSet listarHorario(string condicion, string orden)
         {
             DataSet DS;
-            DAModAbier accesoDatos = new DAModAbier(_cadenaConexion);
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                DS = accesoDatos.listarModulo(condicion, orden);
+                DS = accesoDatos.listarHorarios(condicion, orden);
             }
             catch (Exception)
             {
@@ -98,14 +98,14 @@ namespace CapaLogicaNegocio
 
         #region listarModulos con un parámetro
 
-        public List<EntidadModAbier> listarModulos(string condicion)
+        public List<EntidadHorarMod> listarHorario(string condicion)
         {
-            List<EntidadModAbier> listaModulos;
-            DAModAbier accesoDatos = new DAModAbier(_cadenaConexion);
+            List<EntidadHorarMod> listaModulos;
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                listaModulos = accesoDatos.listarModulo(condicion);
+                listaModulos = accesoDatos.listarHorarios(condicion);
             }
             catch (Exception)
             {
@@ -116,16 +116,16 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region ObtenerModulo
+        #region ObtenerPrograma
 
-        public EntidadModAbier ObtenerModulo(int cod)
+        public EntidadHorarMod ObtenerHorario(int cod)
         {
-            EntidadModAbier modulo;
-            DAModAbier accesoDatos = new DAModAbier(_cadenaConexion);
+            EntidadHorarMod modulo;
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                modulo = accesoDatos.ObtenerModulo(cod);
+                modulo = accesoDatos.ObtenerHorario(cod);
 
             }
             catch (Exception)
@@ -137,12 +137,12 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region EliminarModuloAbier
+        #region EliminarHorarioMod
 
-        public int EliminarModuloAbier(int cod)
+        public int EliminarHorarioMod(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAModAbier accesoDatos = new DAModAbier(_cadenaConexion);
+            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {

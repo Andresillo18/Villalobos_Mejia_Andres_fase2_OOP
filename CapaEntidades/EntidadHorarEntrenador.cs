@@ -20,7 +20,7 @@ namespace CapaEntidades
 
         #region Constructores
 
-        public EntidadHorarEntrenador(bool dia_lunes, bool dia_martes, bool dia_miercoles, bool dia_jueves, bool dia_viernes, bool dia_sabado, bool dia_domingo, DateTime hora_inicio, DateTime hora_fin, int cod_Horario_entrenador) : base( dia_lunes, dia_martes, dia_miercoles, dia_jueves, dia_viernes, dia_sabado, dia_domingo, hora_inicio, hora_fin)
+        public EntidadHorarEntrenador(bool dia_lunes, bool dia_martes, bool dia_miercoles, bool dia_jueves, bool dia_viernes, bool dia_sabado, bool dia_domingo, TimeSpan hora_inicio, TimeSpan hora_fin, int cod_Horario_entrenador, bool existe) : base( dia_lunes, dia_martes, dia_miercoles, dia_jueves, dia_viernes, dia_sabado, dia_domingo, hora_inicio, hora_fin, existe)
         {
             this.cod_Horario_entrenador = cod_Horario_entrenador;
         }

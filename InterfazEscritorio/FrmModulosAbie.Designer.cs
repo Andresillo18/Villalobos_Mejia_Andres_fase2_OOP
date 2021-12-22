@@ -237,7 +237,7 @@ namespace InterfazEscritorio
             this.txtHorarioModulos.MaxLength = 40;
             this.txtHorarioModulos.Name = "txtHorarioModulos";
             this.txtHorarioModulos.Size = new System.Drawing.Size(125, 27);
-            this.txtHorarioModulos.TabIndex = 23;
+            this.txtHorarioModulos.TabIndex = 4;
             // 
             // linkLabel3
             // 
@@ -282,7 +282,7 @@ namespace InterfazEscritorio
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(231, 82);
-            this.txtObservaciones.TabIndex = 8;
+            this.txtObservaciones.TabIndex = 1;
             // 
             // label9
             // 
@@ -300,7 +300,7 @@ namespace InterfazEscritorio
             this.txtCod_Entrenador.MaxLength = 200;
             this.txtCod_Entrenador.Name = "txtCod_Entrenador";
             this.txtCod_Entrenador.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_Entrenador.TabIndex = 4;
+            this.txtCod_Entrenador.TabIndex = 2;
             // 
             // txtCod_Modulo
             // 
@@ -308,7 +308,7 @@ namespace InterfazEscritorio
             this.txtCod_Modulo.MaxLength = 40;
             this.txtCod_Modulo.Name = "txtCod_Modulo";
             this.txtCod_Modulo.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_Modulo.TabIndex = 2;
+            this.txtCod_Modulo.TabIndex = 3;
             // 
             // label1
             // 

@@ -49,7 +49,7 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO HORARIO_MODULOS (COD_HORARIO_MODULOS, DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@cod_horarMod,  @dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO HORARIO_MODULOS ( DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
@@ -104,15 +104,15 @@ namespace CapaAccesoDatos
             SqlCommand comando = new SqlCommand();
 
             String sentencia =
-                "UPDATE MODULOS_ABIERTOS " +
+                "UPDATE HORARIO_MODULOS " +
                 "SET DIA_LUNES=@dia_lunes, " +
                 "DIA_MARTES = @dia_martes, " +
                 "DIA_MIERCOLES = @dia_miercoles, " +
                 "DIA_JUEVES = @dia_jueves, " +
-                    "DIA_VIERNES=@dia_viernes" +
-                    "DIA_VIERNES=@dia_viernes" +
-                    "DIA_SABADO=@dia_sabado" +
-                    "HORA_INICIO_HORARIO=@hora_inicio" +
+                    "DIA_VIERNES=@dia_viernes," +
+                    "DIA_SABADO=@dia_sabado," +
+                    "DIA_DOMINGO=@dia_domingo," +
+                    "HORA_INICIO_HORARIO=@hora_inicio," +
                     "HORA_FIN_HORARIO=@hora_fin" +
                     " WHERE COD_HORARIO_MODULOS=@cod_horarMod";
 
@@ -188,7 +188,7 @@ namespace CapaAccesoDatos
 
         #region Método para leer las tablas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadHorarMod> listarModulos(String condicion)
+        public List<EntidadHorarMod> listarHorarios(String condicion)
         {
             List<EntidadHorarMod> listaModulos; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
@@ -220,8 +220,8 @@ namespace CapaAccesoDatos
                                     Dia_viernes = Convert.ToBoolean(fila[5]),
                                     Dia_sabado = Convert.ToBoolean(fila[6]),
                                     Dia_domingo = Convert.ToBoolean(fila[7]),
-                                    Hora_inicio = Convert.ToDateTime(fila[8]),
-                                    Hora_fin = Convert.ToDateTime(fila[9])
+                                    Hora_inicio = (TimeSpan)fila[8],
+                                    Hora_fin = (TimeSpan)fila[9]
                                 }).ToList();
 
                 //Lo anterior convierte el DataSet en una lista, y cada elemento de la lista tiene Objeto Entidad que 
@@ -239,7 +239,7 @@ namespace CapaAccesoDatos
         #region Método para obtener un registro
 
         // Devuelve una entidad porque permite tener solo un registro
-        public EntidadHorarMod ObtenerModulo(int cod_horarioMod)
+        public EntidadHorarMod ObtenerHorario(int cod_horarioMod)
         {
             EntidadHorarMod horarioMod = null; // Se inicaliza null porque lo puede devolver vacío
 
@@ -296,8 +296,8 @@ namespace CapaAccesoDatos
                         horarioMod.Dia_domingo = dataReader.GetBoolean(7);
                     }
 
-                    horarioMod.Hora_inicio = dataReader.GetDateTime(8);
-                    horarioMod.Hora_fin = dataReader.GetDateTime(9);
+                    horarioMod.Hora_inicio = dataReader.GetTimeSpan(8);
+                    horarioMod.Hora_fin = dataReader.GetTimeSpan(9);
                 }
                 conexion.Close();
             }
