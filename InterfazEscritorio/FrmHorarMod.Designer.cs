@@ -87,7 +87,7 @@ namespace InterfazEscritorio
             this.inicio_horario,
             this.fin_horario});
             this.dgvHorarMod.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHorarMod.Location = new System.Drawing.Point(-12, 245);
+            this.dgvHorarMod.Location = new System.Drawing.Point(0, 245);
             this.dgvHorarMod.Name = "dgvHorarMod";
             this.dgvHorarMod.RowHeadersWidth = 51;
             this.dgvHorarMod.RowTemplate.Height = 29;

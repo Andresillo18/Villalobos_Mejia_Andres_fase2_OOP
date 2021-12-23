@@ -177,14 +177,15 @@ namespace InterfazEscritorio
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.SystemColors.Info;
-            this.button5.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(0, 306);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(227, 45);
             this.button5.TabIndex = 6;
-            this.button5.Text = "button5";
+            this.button5.Text = "Entrenadores";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 

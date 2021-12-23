@@ -63,6 +63,11 @@ namespace InterfazEscritorio
         private void button4_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FrmHorarMod());
-        }   
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmEntrenadores());
+        }
     }
 }
