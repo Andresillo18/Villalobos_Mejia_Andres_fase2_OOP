@@ -94,7 +94,7 @@ namespace InterfazEscritorio
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.txtHorasDuracion);
             this.panel1.Controls.Add(this.txtCodPrograma);
             this.panel1.Controls.Add(this.label2);

@@ -50,9 +50,21 @@ namespace InterfazEscritorio
             programa.Nombre_programa = txtNombre.Text;
             programa.Descripcion_programa = txtDescripcion.Text;
             programa.Estado = checkedOrNot;
-            programa.Cupo_programa = Convert.ToInt32(txtCupo.Text);
+
+            int number;
+            // Si puede pasar lo ingresado a un tipo de dato número se ingresa
+            bool success = int.TryParse(txtCupo.Text, out number);
+            if (success)
+            {
+            programa.Cupo_programa = number;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número en el cupo!");
+            }
+
             programa.Telefono_programa = txtTelefono.Text;
-            programa.Email_programa = txtEmail.Text;
+            programa.Email_programa = txtEmail.Text;            
             programa.Provincia_programa = txtProvincia.Text;
             programa.Fecha_inicio_programa = DTFechaInicio.Value;
             programa.Observaciones_programa = txtObservaciones.Text;
@@ -73,7 +85,7 @@ namespace InterfazEscritorio
             txtCupo.Clear();
             txtTelefono.Clear();
             txtEmail.Clear();
-            txtProvincia.Clear();
+            txtProvincia.Text = "";
             DTFechaInicio.ResetText(); //**refresh
             txtObservaciones.Clear();
         }

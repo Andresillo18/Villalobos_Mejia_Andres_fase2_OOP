@@ -40,7 +40,7 @@ namespace CapaLogicaNegocio
         {
             int cod = 0;
 
-            BLEntrenador accesoDatos = new BLEntrenador(_cadenaConexion);
+            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
 
             try
             {
@@ -60,7 +60,7 @@ namespace CapaLogicaNegocio
         public int Modificar(EntidadEntrenador entrenador)
         {
             int filasAfectadas = 0;
-            BLEntrenador accesoDatos = new BLEntrenador(_cadenaConexion);
+            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
 
             try
             {

@@ -49,6 +49,7 @@ namespace InterfazEscritorio
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtProvincia = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.RBInactivo = new System.Windows.Forms.RadioButton();
@@ -61,7 +62,6 @@ namespace InterfazEscritorio
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtTelefono2 = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.txtCanton = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -109,6 +109,7 @@ namespace InterfazEscritorio
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
@@ -121,6 +122,7 @@ namespace InterfazEscritorio
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // grdListaEntrenadores
             // 
@@ -151,6 +153,7 @@ namespace InterfazEscritorio
             this.grdListaEntrenadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdListaEntrenadores.Size = new System.Drawing.Size(945, 226);
             this.grdListaEntrenadores.TabIndex = 24;
+            this.grdListaEntrenadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaEntrenadores_CellDoubleClick);
             // 
             // Cod_entrenador
             // 
@@ -294,6 +297,7 @@ namespace InterfazEscritorio
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.txtProvincia);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtID);
             this.panel2.Controls.Add(this.RBInactivo);
@@ -306,7 +310,6 @@ namespace InterfazEscritorio
             this.panel2.Controls.Add(this.txtApellido1);
             this.panel2.Controls.Add(this.txtTelefono2);
             this.panel2.Controls.Add(this.txtEmail);
-            this.panel2.Controls.Add(this.txtProvincia);
             this.panel2.Controls.Add(this.txtCanton);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
@@ -327,6 +330,22 @@ namespace InterfazEscritorio
             this.panel2.Size = new System.Drawing.Size(945, 232);
             this.panel2.TabIndex = 24;
             // 
+            // txtProvincia
+            // 
+            this.txtProvincia.FormattingEnabled = true;
+            this.txtProvincia.Items.AddRange(new object[] {
+            "Alajuela",
+            "San José",
+            "Guanacaste",
+            "Puntarenas",
+            "Heredia",
+            "Cartago",
+            "Limón"});
+            this.txtProvincia.Location = new System.Drawing.Point(327, 162);
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(141, 28);
+            this.txtProvincia.TabIndex = 9;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -343,7 +362,7 @@ namespace InterfazEscritorio
             this.txtID.MaxLength = 30;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(125, 27);
-            this.txtID.TabIndex = 28;
+            this.txtID.TabIndex = 1;
             // 
             // RBInactivo
             // 
@@ -373,14 +392,14 @@ namespace InterfazEscritorio
             this.DTFechaNacimie.Location = new System.Drawing.Point(105, 161);
             this.DTFechaNacimie.Name = "DTFechaNacimie";
             this.DTFechaNacimie.Size = new System.Drawing.Size(125, 27);
-            this.DTFechaNacimie.TabIndex = 25;
+            this.DTFechaNacimie.TabIndex = 8;
             // 
             // txtDistrito
             // 
             this.txtDistrito.Location = new System.Drawing.Point(567, 146);
             this.txtDistrito.Name = "txtDistrito";
             this.txtDistrito.Size = new System.Drawing.Size(125, 27);
-            this.txtDistrito.TabIndex = 23;
+            this.txtDistrito.TabIndex = 10;
             // 
             // txtApellido2
             // 
@@ -388,15 +407,15 @@ namespace InterfazEscritorio
             this.txtApellido2.MaxLength = 20;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(125, 27);
-            this.txtApellido2.TabIndex = 21;
+            this.txtApellido2.TabIndex = 4;
             // 
             // txtTelefono1
             // 
-            this.txtTelefono1.Location = new System.Drawing.Point(89, 80);
+            this.txtTelefono1.Location = new System.Drawing.Point(334, 87);
             this.txtTelefono1.MaxLength = 15;
             this.txtTelefono1.Name = "txtTelefono1";
             this.txtTelefono1.Size = new System.Drawing.Size(125, 27);
-            this.txtTelefono1.TabIndex = 20;
+            this.txtTelefono1.TabIndex = 6;
             // 
             // Nacimiento
             // 
@@ -414,15 +433,15 @@ namespace InterfazEscritorio
             this.txtApellido1.MaxLength = 20;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(125, 27);
-            this.txtApellido1.TabIndex = 19;
+            this.txtApellido1.TabIndex = 3;
             // 
             // txtTelefono2
             // 
-            this.txtTelefono2.Location = new System.Drawing.Point(334, 83);
+            this.txtTelefono2.Location = new System.Drawing.Point(113, 83);
             this.txtTelefono2.MaxLength = 15;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(125, 27);
-            this.txtTelefono2.TabIndex = 18;
+            this.txtTelefono2.TabIndex = 7;
             // 
             // txtEmail
             // 
@@ -430,21 +449,14 @@ namespace InterfazEscritorio
             this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 27);
-            this.txtEmail.TabIndex = 17;
-            // 
-            // txtProvincia
-            // 
-            this.txtProvincia.Location = new System.Drawing.Point(334, 163);
-            this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(125, 27);
-            this.txtProvincia.TabIndex = 16;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtCanton
             // 
             this.txtCanton.Location = new System.Drawing.Point(567, 190);
             this.txtCanton.Name = "txtCanton";
             this.txtCanton.Size = new System.Drawing.Size(125, 27);
-            this.txtCanton.TabIndex = 14;
+            this.txtCanton.TabIndex = 11;
             // 
             // label13
             // 
@@ -470,7 +482,7 @@ namespace InterfazEscritorio
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(12, 80);
+            this.label11.Location = new System.Drawing.Point(257, 87);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 23);
             this.label11.TabIndex = 11;
@@ -480,7 +492,7 @@ namespace InterfazEscritorio
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(227, 84);
+            this.label10.Location = new System.Drawing.Point(6, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 23);
             this.label10.TabIndex = 10;
@@ -651,7 +663,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.TextBox txtCanton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -687,5 +698,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn canton;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.ComboBox txtProvincia;
     }
 }

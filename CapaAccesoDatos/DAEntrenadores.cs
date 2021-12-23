@@ -49,7 +49,7 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO ENTRENADORES (ID_ENTRENADOR, NOMBRE_ENTRENADOR,APELLIDO1_ENTRENADOR,APELLIDO2_ENTRENADOR,TELEFONO1_ENTRENADOR, TELEFONO2_ENTRENADOR, CORREO_ENTRENADORCORREO_ENTRENADOR,FECHA_NACIMIENTO_ENTRENADOR, PROVINCIA_ENTRENADOR, DISTRITO_ENTRENADOR, CANTON_ENTRENADOR, ESTADO_ENTRENADOR)" + " VALUES (@id_entrenador,  @nombre_entrenador, @apellido1, @apellido2, @telefono1, @telefono2,@correo, @fechaNacimiento ,@provincia, @distrito,@canton,@estado)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO ENTRENADORES (ID_ENTRENADOR, NOMBRE_ENTRENADOR, APELLIDO1_ENTRENADOR, APELLIDO2_ENTRENADOR, TELEFONO1_ENTRENADOR, TELEFONO2_ENTRENADOR, CORREO_ENTRENADOR,FECHA_NACIMIENTO_ENTRENADOR, PROVINCIA_ENTRENADOR, DISTRITO_ENTRENADOR, CANTON_ENTRENADOR, ESTADO_ENTRENADOR)" + " VALUES (@id_entrenador,  @nombre_entrenador, @apellido1, @apellido2, @telefono1, @telefono2,@correo, @fechaNacimiento ,@provincia, @distrito,@canton,@estado)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
@@ -259,7 +259,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("COD_ENTRENADOR, ID_ENTRENADOR, NOMBRE_ENTRENADOR,APELLIDO1_ENTRENADOR,APELLIDO2_ENTRENADOR,TELEFONO1_ENTRENADOR, TELEFONO2_ENTRENADOR, CORREO_ENTRENADORCORREO_ENTRENADOR,FECHA_NACIMIENTO_ENTRENADOR, PROVINCIA_ENTRENADOR, DISTRITO_ENTRENADOR, CANTON_ENTRENADOR, ESTADO_ENTRENADOR  FROM ENTRENADORES WHERE COD_ENTRENADOR = {0}", cod_entrenador);
+            string sentencia = string.Format("SELECT COD_ENTRENADOR, ID_ENTRENADOR, NOMBRE_ENTRENADOR ,APELLIDO1_ENTRENADOR, APELLIDO2_ENTRENADOR,TELEFONO1_ENTRENADOR, TELEFONO2_ENTRENADOR, CORREO_ENTRENADOR,FECHA_NACIMIENTO_ENTRENADOR, PROVINCIA_ENTRENADOR, DISTRITO_ENTRENADOR, CANTON_ENTRENADOR, ESTADO_ENTRENADOR  FROM ENTRENADORES WHERE COD_ENTRENADOR = {0}", cod_entrenador);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -277,22 +277,23 @@ namespace CapaAccesoDatos
 
                     //Obtiene el valor de cada columna
                     entrenadorActivo.Cod_entrenador = dataReader.GetInt32(0); // Se convierte por ser un número
-                    entrenadorActivo.Nombre = dataReader.GetString(1);
-                    entrenadorActivo.Apellido1 = dataReader.GetString(2);
-                    entrenadorActivo.Apellido2 = dataReader.GetString(3);
-                    entrenadorActivo.Telefono1 = dataReader.GetString(4);
-                    if (dataReader[5] != DBNull.Value)
-                    {
-                        entrenadorActivo.Telefono2 = dataReader.GetString(5); // Si esa posición de dataReader tiene algo que se ejecute el proceso
-                    }
+                    entrenadorActivo.Identificacion = dataReader.GetString(1);
+                    entrenadorActivo.Nombre = dataReader.GetString(2);
+                    entrenadorActivo.Apellido1 = dataReader.GetString(3);
+                    entrenadorActivo.Apellido2 = dataReader.GetString(4);
+                    entrenadorActivo.Telefono1 = dataReader.GetString(5);
                     if (dataReader[6] != DBNull.Value)
                     {
-                        entrenadorActivo.Correo = dataReader.GetString(6);
+                        entrenadorActivo.Telefono2 = dataReader.GetString(6); // Si esa posición de dataReader tiene algo que se ejecute el proceso
                     }
-                    entrenadorActivo.Fecha_nacimiento = dataReader.GetDateTime(7);
-                    entrenadorActivo.Provincia = dataReader.GetString(8);
-                    entrenadorActivo.Distrito = dataReader.GetString(9);
-                    entrenadorActivo.Canton = dataReader.GetString(10);
+                    if (dataReader[7] != DBNull.Value)
+                    {
+                        entrenadorActivo.Correo = dataReader.GetString(7);
+                    }
+                    entrenadorActivo.Fecha_nacimiento = dataReader.GetDateTime(8);
+                    entrenadorActivo.Provincia = dataReader.GetString(9);
+                    entrenadorActivo.Distrito = dataReader.GetString(10);
+                    entrenadorActivo.Canton = dataReader.GetString(11);
                     entrenadorActivo.Estado = true;
                 }
                 conexion.Close();

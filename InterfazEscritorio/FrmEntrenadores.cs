@@ -34,7 +34,7 @@ namespace InterfazEscritorio
             txtTelefono2.Clear();
             txtEmail.Clear();
             DTFechaNacimie.ResetText();
-            txtProvincia.Clear();
+            txtProvincia.Text = "";
             txtDistrito.Clear();
             txtCanton.Clear();
             txtDistrito.Clear();
@@ -55,21 +55,22 @@ namespace InterfazEscritorio
             else
             {
                 entrenador = new EntidadEntrenador();
+                //MessageBox.Show("Test2");
             }
 
-            //En este caso no es necesario el txtCod
-            //modAbierto.Cod_mod_abierto = Convert.ToInt32(txtCod.Text);
-            entrenador.Cod_entrenador = Convert.ToInt32(txtCodEntrenador.Text);
+            //En este caso no es necesario el txtCodEntrenador            
+            //entrenador.Cod_entrenador = Convert.ToInt32(txtCodEntrenador.Text);
+            entrenador.Identificacion = txtID.Text;
             entrenador.Nombre = txtNombre.Text;
-            entrenador.Apellido1= txtApellido1.Text;
+            entrenador.Apellido1 = txtApellido1.Text;
             entrenador.Apellido2 = txtApellido2.Text;
             entrenador.Telefono1 = txtTelefono1.Text;
             entrenador.Telefono2 = txtTelefono2.Text;
-            entrenador.Correo= txtEmail.Text;
+            entrenador.Correo = txtEmail.Text;
             entrenador.Fecha_nacimiento = Convert.ToDateTime(DTFechaNacimie.Value);
-            entrenador.Provincia= txtProvincia.Text;
-            entrenador.Distrito= txtDistrito.Text;
-            entrenador.Canton= txtCanton.Text;
+            entrenador.Provincia = txtProvincia.Text;
+            entrenador.Distrito = txtDistrito.Text;
+            entrenador.Canton = txtCanton.Text;
 
             return entrenador;
         }
@@ -105,7 +106,7 @@ namespace InterfazEscritorio
 
             try
             {
-                entrenador = logica.ObtenerEntrenador(cod);
+                entrenador = logica.ObtenerEntrenador(cod);                
                 if (entrenador != null) // Si obtuvó algo
                 {
                     txtCodEntrenador.Text = entrenador.Cod_entrenador.ToString();
@@ -113,21 +114,24 @@ namespace InterfazEscritorio
                     txtNombre.Text = entrenador.Nombre;
                     txtApellido1.Text = entrenador.Apellido1;
                     txtApellido2.Text = entrenador.Apellido2;
+                    txtTelefono1.Text = entrenador.Telefono1;
+                    txtTelefono2.Text = entrenador.Telefono2;
                     txtEmail.Text = entrenador.Correo;
                     DTFechaNacimie.Value = entrenador.Fecha_nacimiento;
                     txtProvincia.Text = entrenador.Provincia;
                     txtDistrito.Text = entrenador.Distrito;
                     txtCanton.Text = entrenador.Canton;
-                    if (RBActivo.Checked)
+                    // Si en la entidad esta activo el entrenador se activo el RadioButton, sino se pone desactivado
+                    if (entrenador.Estado)
                     {
-                        entrenador.Estado = true;
+                        RBActivo.Checked = true;
                     }
                     else
                     {
-                        entrenador.Estado = false;
-                    }                   
+                        RBInactivo.Checked = true;
+                    }
 
-                    entrenadorRegistrado =entrenador;
+                    entrenadorRegistrado = entrenador;
                 }
                 else
                 {
@@ -143,6 +147,8 @@ namespace InterfazEscritorio
 
         #endregion
 
+        #region Eventos
+
         private void FrmEntrenadores_Load(object sender, EventArgs e)
         {
             try
@@ -157,24 +163,25 @@ namespace InterfazEscritorio
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            BLModAbier logica = new BLModAbier(Configuracion.getConnectionString);
-            EntidadModAbier modAbierto;
+            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
+            EntidadEntrenador entrenador;
             int elResultado = 0;
 
             try
             {
                 // Hace que todos los campos sean obligatorios
-                if (!string.IsNullOrEmpty(txtCod_Entrenador.Text) && !string.IsNullOrEmpty(txtCod_Modulo.Text) && !string.IsNullOrEmpty(txtHorarioModulos.Text))
+                if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido1.Text) && !string.IsNullOrEmpty(txtApellido2.Text) && !string.IsNullOrEmpty(txtTelefono1.Text) && !string.IsNullOrEmpty(txtProvincia.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtCanton.Text))
                 {
-                    modAbierto = GenerarEntidad();
-                    if (!modAbierto.Existe)
+                    entrenador = GenerarEntidad();
+                    //MessageBox.Show("Test");
+                    if (!entrenador.Estado)
                     {
                         //MessageBox.Show(modulosPrograma.Cod_modulo.ToString());
-                        elResultado = logica.Insertar(modAbierto);
+                        elResultado = logica.Insertar(entrenador);
                     }
                     else
                     {
-                        elResultado = logica.Modificar(modAbierto);
+                        elResultado = logica.Modificar(entrenador);
                     }
 
                     if (elResultado > 0) // Si retorna algo alguna función se completa la acción
@@ -199,5 +206,67 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EntidadEntrenador entrenador;
+            int resultado; // Lo que retornará los métodos al obtener un progreso
+            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
+
+            try
+            {
+                if (!String.IsNullOrEmpty(txtCodEntrenador.Text)) //Debe tener datos en los txtboxs para poder eliminar
+                {
+                    //busca primero el programa antes de borrarlo para ver si existe
+                    entrenador = logica.ObtenerEntrenador(Convert.ToInt32(txtCodEntrenador.Text));
+
+                    if (entrenador != null)
+                    {
+                        MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                        resultado = logica.EliminarHorarioMod(Convert.ToInt32(txtCodEntrenador.Text)); // Si pudo encontralo lo borra
+
+                        MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpiar();
+                        MostrarListDS();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El módulo no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    // No se sucede nada si no lo selecciona
+                    MessageBox.Show("Debe Seleccionar un módulo antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void grdListaEntrenadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int cod = 0;
+            try
+            {
+                cod = (int)grdListaEntrenadores.SelectedRows[0].Cells[0].Value;
+                cargarEntrenador(cod);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
     }
 }

@@ -40,13 +40,13 @@ namespace InterfazEscritorio
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtProvincia = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.RDInactivo = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtProvincia = new System.Windows.Forms.TextBox();
             this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.txtCupo = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -161,13 +161,13 @@ namespace InterfazEscritorio
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.txtProvincia);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtObservaciones);
             this.panel1.Controls.Add(this.RDInactivo);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.txtProvincia);
             this.panel1.Controls.Add(this.DTFechaInicio);
             this.panel1.Controls.Add(this.txtCupo);
             this.panel1.Controls.Add(this.txtTelefono);
@@ -188,13 +188,29 @@ namespace InterfazEscritorio
             this.panel1.Size = new System.Drawing.Size(945, 233);
             this.panel1.TabIndex = 12;
             // 
+            // txtProvincia
+            // 
+            this.txtProvincia.FormattingEnabled = true;
+            this.txtProvincia.Items.AddRange(new object[] {
+            "Alajuela",
+            "San José",
+            "Guanacaste",
+            "Puntarenas",
+            "Heredia",
+            "Cartago",
+            "Limón"});
+            this.txtProvincia.Location = new System.Drawing.Point(731, 104);
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(151, 28);
+            this.txtProvincia.TabIndex = 7;
+            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(508, 104);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 27);
-            this.txtEmail.TabIndex = 19;
+            this.txtEmail.TabIndex = 6;
             // 
             // label7
             // 
@@ -213,7 +229,7 @@ namespace InterfazEscritorio
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(202, 56);
-            this.txtObservaciones.TabIndex = 8;
+            this.txtObservaciones.TabIndex = 9;
             // 
             // RDInactivo
             // 
@@ -246,14 +262,6 @@ namespace InterfazEscritorio
             this.label10.TabIndex = 16;
             this.label10.Text = "Fecha Inicio:";
             // 
-            // txtProvincia
-            // 
-            this.txtProvincia.Location = new System.Drawing.Point(731, 108);
-            this.txtProvincia.MaxLength = 20;
-            this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(125, 27);
-            this.txtProvincia.TabIndex = 6;
-            // 
             // DTFechaInicio
             // 
             this.DTFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -261,7 +269,7 @@ namespace InterfazEscritorio
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
-            this.DTFechaInicio.TabIndex = 7;
+            this.DTFechaInicio.TabIndex = 8;
             // 
             // txtCupo
             // 
@@ -498,7 +506,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.RadioButton RDInactivo;
         private System.Windows.Forms.RadioButton RDActivo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtProvincia;
         private System.Windows.Forms.TextBox txtCupo;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label11;
@@ -521,5 +528,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_inicio_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_fin_prog;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones_prog;
+        private System.Windows.Forms.ComboBox txtProvincia;
     }
 }
