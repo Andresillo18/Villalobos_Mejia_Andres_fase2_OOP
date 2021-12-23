@@ -21,7 +21,7 @@ namespace CapaAccesoDatos
 
         #endregion
 
-        #region COnstructores
+        #region Constructores
 
         public DAModAbier(string cadenaConexion)
         {

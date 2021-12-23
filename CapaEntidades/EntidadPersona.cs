@@ -15,8 +15,8 @@ namespace CapaEntidades
         private string nombre;
         private string apellido1;
         private string apellido2;
-        private int telefono1;
-        private int telefono2;
+        private string telefono1;
+        private string telefono2;
         private string correo;
         private DateTime fecha_nacimiento;
         private string provincia;
@@ -32,8 +32,8 @@ namespace CapaEntidades
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }
         public string Apellido2 { get => apellido2; set => apellido2 = value; }
-        public int Telefono1 { get => telefono1; set => telefono1 = value; }
-        public int Telefono2 { get => telefono2; set => telefono2 = value; }
+        public string Telefono1 { get => telefono1; set => telefono1 = value; }
+        public string Telefono2 { get => telefono2; set => telefono2 = value; }
         public string Correo { get => correo; set => correo = value; }
         public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
         public string Provincia { get => provincia; set => provincia = value; }
@@ -45,7 +45,7 @@ namespace CapaEntidades
 
         #region Constructores
 
-        public EntidadPersona(string identificacion, string nombre, string apellido1, string apellido2, int telefono1, int telefono2, string correo, DateTime fecha_nacimiento, string provincia, string distrito, string canton, bool estado)
+        public EntidadPersona(string identificacion, string nombre, string apellido1, string apellido2, string telefono1, string telefono2, string correo, DateTime fecha_nacimiento, string provincia, string distrito, string canton, bool estado)
         {
             this.identificacion = identificacion;
             this.nombre = nombre;
@@ -67,8 +67,8 @@ namespace CapaEntidades
             this.nombre = string.Empty;
             this.apellido1 = string.Empty;
             this.apellido2 = string.Empty;
-            this.telefono1 = 0;
-            this.telefono2 = 0;
+            this.telefono1 = string.Empty;
+            this.telefono2 = string.Empty;
             this.correo = string.Empty;
             this.fecha_nacimiento = new DateTime();
             this.provincia = string.Empty;
