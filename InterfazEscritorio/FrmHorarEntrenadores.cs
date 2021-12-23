@@ -8,11 +8,18 @@ using System.Windows.Forms;
 
 namespace InterfazEscritorio
 {
-    public partial class FrmHorarEntrenadores : Form
-    {
+    public partial class FrmHorarEntrenadores : Form 
+    {        
         public FrmHorarEntrenadores()
         {
             InitializeComponent();
+        }
+
+        private void FrmHorarEntrenadores_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    FrmMenu menu = new FrmMenu();
+        //    MessageBox.Show(menu.TituloForms.ToString());
+        //    menu.TituloForms = "tituloForms";
         }
     }
 }

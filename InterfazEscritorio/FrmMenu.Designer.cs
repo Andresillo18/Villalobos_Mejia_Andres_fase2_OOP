@@ -44,7 +44,7 @@ namespace InterfazEscritorio
             this.btnPrograma = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tituloForms = new System.Windows.Forms.Label();
             this.btnSlide1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
@@ -161,14 +161,17 @@ namespace InterfazEscritorio
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.SystemColors.Info;
-            this.button6.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button6.Location = new System.Drawing.Point(0, 357);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(227, 45);
             this.button6.TabIndex = 7;
-            this.button6.Text = "button6";
+            this.button6.Text = "Horario Entrenadores";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -201,6 +204,7 @@ namespace InterfazEscritorio
             this.button4.Size = new System.Drawing.Size(227, 45);
             this.button4.TabIndex = 5;
             this.button4.Text = "Horario de Módulos";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -270,7 +274,7 @@ namespace InterfazEscritorio
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.tituloForms);
             this.panel2.Controls.Add(this.btnSlide1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(227, 0);
@@ -278,16 +282,16 @@ namespace InterfazEscritorio
             this.panel2.Size = new System.Drawing.Size(965, 50);
             this.panel2.TabIndex = 1;
             // 
-            // label1
+            // tituloForms
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(278, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 35);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Instituto de Triatlón ";
+            this.tituloForms.AutoSize = true;
+            this.tituloForms.Font = new System.Drawing.Font("Showcard Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tituloForms.ForeColor = System.Drawing.Color.Red;
+            this.tituloForms.Location = new System.Drawing.Point(278, 9);
+            this.tituloForms.Name = "tituloForms";
+            this.tituloForms.Size = new System.Drawing.Size(351, 35);
+            this.tituloForms.TabIndex = 1;
+            this.tituloForms.Text = "Instituto de Triatlón ";
             // 
             // btnSlide1
             // 
@@ -351,9 +355,9 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnModulos;
         private System.Windows.Forms.Button btnModAbiertos;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label tituloForms;
     }
 }
 

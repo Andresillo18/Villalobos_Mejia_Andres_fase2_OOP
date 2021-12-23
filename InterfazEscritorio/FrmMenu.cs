@@ -12,9 +12,10 @@ namespace InterfazEscritorio
 {
     public partial class FrmMenu : Form
     {
+        
         public FrmMenu()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void btnSlide1_Click(object sender, EventArgs e)
@@ -69,5 +70,24 @@ namespace InterfazEscritorio
         {
             AbrirFormInPanel(new FrmEntrenadores());
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmHorarEntrenadores());
+
+            //tituloForms.Text = "Horario de Entrenadores";
+        }
+
+        //public string TituloForms
+        //{
+        //    get
+        //    {
+        //        return this.tituloForms.Text;
+        //    }
+        //    set
+        //    {
+        //        this.tituloForms.Text = value;
+        //    }
+        //}
     }
 }

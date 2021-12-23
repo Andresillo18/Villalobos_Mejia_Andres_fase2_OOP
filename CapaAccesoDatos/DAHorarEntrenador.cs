@@ -7,7 +7,7 @@ using CapaEntidades;
 
 namespace CapaAccesoDatos
 {
-    public class DAHorarMod
+    public class DAHorarEntrenador
     {
         #region Atributos
 
@@ -23,12 +23,12 @@ namespace CapaAccesoDatos
 
         #region Constructores
 
-        public DAHorarMod(string cadenaConexion)
+        public DAHorarEntrenador(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public DAHorarMod()
+        public DAHorarEntrenador()
         {
             _cadenaConexion = String.Empty;
         }
@@ -37,7 +37,7 @@ namespace CapaAccesoDatos
 
         #region Método para ingresar un nuevo registro
 
-        public int Insertar(EntidadHorarMod modHorario)
+        public int Insertar(EntidadHorarEntrenador horarEntrenador)
         {
             int cod = 0; // El retorno
 
@@ -49,21 +49,21 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO HORARIO_MODULOS ( DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO HORARIO_ENTRENADORES ( DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
             // Se le pasan los parámetros que recibirá por el objeto comando
-            comando.Parameters.AddWithValue("@cod_horarMod", modHorario.Cod_Horario_Modulos);
-            comando.Parameters.AddWithValue("@dia_lunes", modHorario.Dia_lunes);
-            comando.Parameters.AddWithValue("@dia_martes", modHorario.Dia_martes);
-            comando.Parameters.AddWithValue("@dia_miercoles", modHorario.Dia_miercoles);
-            comando.Parameters.AddWithValue("@dia_jueves", modHorario.Dia_jueves);
-            comando.Parameters.AddWithValue("@dia_viernes", modHorario.Dia_viernes);
-            comando.Parameters.AddWithValue("@dia_sabado", modHorario.Dia_sabado);
-            comando.Parameters.AddWithValue("@dia_domingo", modHorario.Dia_domingo);
-            comando.Parameters.AddWithValue("@hora_inicio", modHorario.Hora_inicio);
-            comando.Parameters.AddWithValue("@hora_fin", modHorario.Hora_fin);
+            comando.Parameters.AddWithValue("@cod_horarEntrenador", horarEntrenador.Cod_Horario_entrenador);
+            comando.Parameters.AddWithValue("@dia_lunes", horarEntrenador.Dia_lunes);
+            comando.Parameters.AddWithValue("@dia_martes", horarEntrenador.Dia_martes);
+            comando.Parameters.AddWithValue("@dia_miercoles", horarEntrenador.Dia_miercoles);
+            comando.Parameters.AddWithValue("@dia_jueves", horarEntrenador.Dia_jueves);
+            comando.Parameters.AddWithValue("@dia_viernes", horarEntrenador.Dia_viernes);
+            comando.Parameters.AddWithValue("@dia_sabado", horarEntrenador.Dia_sabado);
+            comando.Parameters.AddWithValue("@dia_domingo", horarEntrenador.Dia_domingo);
+            comando.Parameters.AddWithValue("@hora_inicio", horarEntrenador.Hora_inicio);
+            comando.Parameters.AddWithValue("@hora_fin", horarEntrenador.Hora_fin);
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
             comando.CommandText = sentencia;
@@ -95,7 +95,7 @@ namespace CapaAccesoDatos
 
         #region Método Modificar (actualizar)
 
-        public int Modificar(EntidadHorarMod modHorario)
+        public int Modificar(EntidadHorarEntrenador horarEntrenador)
         {
             int filasAfectadas = -1;
 
@@ -104,7 +104,7 @@ namespace CapaAccesoDatos
             SqlCommand comando = new SqlCommand();
 
             String sentencia =
-                "UPDATE HORARIO_MODULOS " +
+                "UPDATE HORARIO_ENTRENADORES " +
                 "SET DIA_LUNES=@dia_lunes, " +
                 "DIA_MARTES = @dia_martes, " +
                 "DIA_MIERCOLES = @dia_miercoles, " +
@@ -114,21 +114,21 @@ namespace CapaAccesoDatos
                     "DIA_DOMINGO=@dia_domingo," +
                     "HORA_INICIO_HORARIO=@hora_inicio," +
                     "HORA_FIN_HORARIO=@hora_fin" +
-                    " WHERE COD_HORARIO_MODULOS=@cod_horarMod";
+                    " WHERE COD_HORARIO_ENTRENADOR=@cod_horarEntrenador";
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
 
-            comando.Parameters.AddWithValue("@dia_lunes", modHorario.Dia_lunes);
-            comando.Parameters.AddWithValue("@dia_martes", modHorario.Dia_martes);
-            comando.Parameters.AddWithValue("@dia_miercoles", modHorario.Dia_miercoles);
-            comando.Parameters.AddWithValue("@dia_jueves", modHorario.Dia_jueves);
-            comando.Parameters.AddWithValue("@dia_viernes", modHorario.Dia_viernes);
-            comando.Parameters.AddWithValue("@dia_sabado", modHorario.Dia_sabado);
-            comando.Parameters.AddWithValue("@dia_domingo", modHorario.Dia_domingo);
-            comando.Parameters.AddWithValue("@hora_inicio", modHorario.Hora_inicio);
-            comando.Parameters.AddWithValue("@hora_fin", modHorario.Hora_fin);
-            comando.Parameters.AddWithValue("@cod_horarMod", modHorario.Cod_Horario_Modulos);
+            comando.Parameters.AddWithValue("@cod_horarEntrenador", horarEntrenador.Cod_Horario_entrenador);
+            comando.Parameters.AddWithValue("@dia_lunes", horarEntrenador.Dia_lunes);
+            comando.Parameters.AddWithValue("@dia_martes", horarEntrenador.Dia_martes);
+            comando.Parameters.AddWithValue("@dia_miercoles", horarEntrenador.Dia_miercoles);
+            comando.Parameters.AddWithValue("@dia_jueves", horarEntrenador.Dia_jueves);
+            comando.Parameters.AddWithValue("@dia_viernes", horarEntrenador.Dia_viernes);
+            comando.Parameters.AddWithValue("@dia_sabado", horarEntrenador.Dia_sabado);
+            comando.Parameters.AddWithValue("@dia_domingo", horarEntrenador.Dia_domingo);
+            comando.Parameters.AddWithValue("@hora_inicio", horarEntrenador.Hora_inicio);
+            comando.Parameters.AddWithValue("@hora_fin", horarEntrenador.Hora_fin);
 
             try
             {
@@ -161,7 +161,7 @@ namespace CapaAccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
-            string sentencia = "SELECT COD_HORARIO_MODULOS, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_MODULOS";
+            string sentencia = "SELECT COD_HORARIO_ENTRENADOR, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_ENTRENADORES";
 
             // El uso de las condicion y el orden
             if (!string.IsNullOrEmpty(condicion))
@@ -176,7 +176,7 @@ namespace CapaAccesoDatos
             try
             {
                 adaptador = new SqlDataAdapter(sentencia, conexion);
-                adaptador.Fill(tablaDS, "HorarioMod"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
+                adaptador.Fill(tablaDS, "HorarEntrenador"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
             }
             catch (Exception)
             {
@@ -190,7 +190,7 @@ namespace CapaAccesoDatos
 
         public List<EntidadHorarMod> listarHorarios(String condicion)
         {
-            List<EntidadHorarMod> listaModulos; //Se inicializa lo que se creará
+            List<EntidadHorarEntrenador> listaModulos; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
@@ -210,9 +210,9 @@ namespace CapaAccesoDatos
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
                 listaModulos = (from DataRow fila in TablaDS.Tables["HorarioMod"].Rows
-                                select new EntidadHorarMod()
+                                select new EntidadHorarEntrenador()
                                 {
-                                    Cod_Horario_Modulos = (int)fila[0],
+                                    Cod_Horario_entrenador = (int)fila[0],
                                     Dia_lunes = Convert.ToBoolean(fila[1]),
                                     Dia_martes = Convert.ToBoolean(fila[2]),
                                     Dia_miercoles = Convert.ToBoolean(fila[3]),
@@ -239,9 +239,9 @@ namespace CapaAccesoDatos
         #region Método para obtener un registro
 
         // Devuelve una entidad porque permite tener solo un registro
-        public EntidadHorarMod ObtenerHorario(int cod_horarioMod)
+        public EntidadHorarEntrenador ObtenerHorario(int cod_horarEntrenador)
         {
-            EntidadHorarMod horarioMod = null; // Se inicaliza null porque lo puede devolver vacío
+            EntidadHorarEntrenador horarEntrenador= null; // Se inicaliza null porque lo puede devolver vacío
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
@@ -249,7 +249,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_HORARIO_MODULOS, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_MODULOS WHERE COD_HORARIO_MODULOS = {0}", cod_horarioMod);
+            string sentencia = string.Format("SELECT COD_HORARIO_MODULOS, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_MODULOS WHERE COD_HORARIO_MODULOS = {0}", horarEntrenador);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -262,42 +262,42 @@ namespace CapaAccesoDatos
 
                 if (dataReader.HasRows)
                 {
-                    horarioMod = new EntidadHorarMod();
+                    horarEntrenador = new EntidadHorarEntrenador();
                     dataReader.Read();
 
                     //Obtiene el valor de cada columna
-                    horarioMod.Cod_Horario_Modulos = dataReader.GetInt32(0); // Se convierte por ser un número
+                    horarEntrenador.Cod_Horario_entrenador = dataReader.GetInt32(0); // Se convierte por ser un número
                     if (dataReader[1] != DBNull.Value)
                     {
-                        horarioMod.Dia_lunes = dataReader.GetBoolean(1);
+                        horarEntrenador.Dia_lunes = dataReader.GetBoolean(1);
                     }
                     if (dataReader[2] != DBNull.Value)
                     {
-                        horarioMod.Dia_martes = dataReader.GetBoolean(2);
+                        horarEntrenador.Dia_martes = dataReader.GetBoolean(2);
                     }
                     if (dataReader[3] != DBNull.Value)
                     {
-                        horarioMod.Dia_miercoles = dataReader.GetBoolean(3);
+                        horarEntrenador.Dia_miercoles = dataReader.GetBoolean(3);
                     }
                     if (dataReader[4] != DBNull.Value)
                     {
-                        horarioMod.Dia_jueves = dataReader.GetBoolean(4);
+                        horarEntrenador.Dia_jueves = dataReader.GetBoolean(4);
                     }
                     if (dataReader[5] != DBNull.Value)
                     {
-                        horarioMod.Dia_viernes = dataReader.GetBoolean(5);
+                        horarEntrenador.Dia_viernes = dataReader.GetBoolean(5);
                     }
                     if (dataReader[6] != DBNull.Value)
                     {
-                        horarioMod.Dia_sabado = dataReader.GetBoolean(6);
+                        horarEntrenador.Dia_sabado = dataReader.GetBoolean(6);
                     }
                     if (dataReader[7] != DBNull.Value)
                     {
-                        horarioMod.Dia_domingo = dataReader.GetBoolean(7);
+                        horarEntrenador.Dia_domingo = dataReader.GetBoolean(7);
                     }
 
-                    horarioMod.Hora_inicio = dataReader.GetTimeSpan(8);
-                    horarioMod.Hora_fin = dataReader.GetTimeSpan(9);
+                    horarEntrenador.Hora_inicio = dataReader.GetTimeSpan(8);
+                    horarEntrenador.Hora_fin = dataReader.GetTimeSpan(9);
                 }
                 conexion.Close();
             }
@@ -306,20 +306,21 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return horarioMod;
+            return horarEntrenador;
         }
         #endregion
 
+
         #region Método para eliminar un registro
 
-        public int EliminarRegistro(int cod_horarioMod)
+        public int EliminarRegistro(int cod_horarEntrenador)
         {
             int filasEliminadas = 0;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
-            String sentencia = string.Format("DELETE FROM HORARIO_MODULOS WHERE COD_HORARIO_MODULOS= {0} ", cod_horarioMod);
+            String sentencia = string.Format("DELETE FROM HORARIO_ENTRENADORES WHERE COD_HORARIO_ENTRENADOR= {0} ", cod_horarEntrenador);
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
