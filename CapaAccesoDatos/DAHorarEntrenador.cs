@@ -49,12 +49,12 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO HORARIO_ENTRENADORES ( DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO HORARIO_ENTRENADORES ( COD_ENTRENADOR, DIA_LUNES,DIA_MARTES,DIA_MIERCOLES,DIA_JUEVES, DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO)" + " VALUES (@cod_entrenador, @dia_lunes, @dia_martes, @dia_miercoles, @dia_jueves, @dia_viernes, @dia_sabado, @dia_domingo, @hora_inicio,@hora_fin)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
             // Se le pasan los parámetros que recibirá por el objeto comando
-            comando.Parameters.AddWithValue("@cod_horarEntrenador", horarEntrenador.Cod_Horario_entrenador);
+            comando.Parameters.AddWithValue("@cod_entrenador", horarEntrenador.Cod_entrenador);
             comando.Parameters.AddWithValue("@dia_lunes", horarEntrenador.Dia_lunes);
             comando.Parameters.AddWithValue("@dia_martes", horarEntrenador.Dia_martes);
             comando.Parameters.AddWithValue("@dia_miercoles", horarEntrenador.Dia_miercoles);
@@ -161,7 +161,7 @@ namespace CapaAccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
-            string sentencia = "SELECT COD_HORARIO_ENTRENADOR, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_ENTRENADORES";
+            string sentencia = "SELECT COD_HORARIO_ENTRENADOR, COD_ENTRENADOR , DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_ENTRENADORES";
 
             // El uso de las condicion y el orden
             if (!string.IsNullOrEmpty(condicion))
@@ -188,15 +188,15 @@ namespace CapaAccesoDatos
 
         #region Método para leer las tablas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadHorarMod> listarHorarios(String condicion)
+        public List<EntidadHorarEntrenador> listarHorarios(String condicion)
         {
-            List<EntidadHorarEntrenador> listaModulos; //Se inicializa lo que se creará
+            List<EntidadHorarEntrenador> listaHorarios; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador;
 
-            string sentencia = "SELECT COD_HORARIO_MODULOS, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_MODULOS";
+            string sentencia = "SELECT COD_HORARIO_ENTRENADOR, COD_ENTRENADOR, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_ENTRENADORES";
 
             if (!string.IsNullOrEmpty(condicion))
             {
@@ -209,19 +209,20 @@ namespace CapaAccesoDatos
                 adaptador.Fill(TablaDS, "HorarioMod"); // Se llena el DataSer con la BD
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
-                listaModulos = (from DataRow fila in TablaDS.Tables["HorarioMod"].Rows
+                listaHorarios = (from DataRow fila in TablaDS.Tables["HorarioMod"].Rows
                                 select new EntidadHorarEntrenador()
                                 {
                                     Cod_Horario_entrenador = (int)fila[0],
-                                    Dia_lunes = Convert.ToBoolean(fila[1]),
-                                    Dia_martes = Convert.ToBoolean(fila[2]),
-                                    Dia_miercoles = Convert.ToBoolean(fila[3]),
-                                    Dia_jueves = Convert.ToBoolean(fila[4]),
-                                    Dia_viernes = Convert.ToBoolean(fila[5]),
-                                    Dia_sabado = Convert.ToBoolean(fila[6]),
-                                    Dia_domingo = Convert.ToBoolean(fila[7]),
-                                    Hora_inicio = (TimeSpan)fila[8],
-                                    Hora_fin = (TimeSpan)fila[9]
+                                    Cod_entrenador = (int)fila[1],
+                                    Dia_lunes = Convert.ToBoolean(fila[2]),
+                                    Dia_martes = Convert.ToBoolean(fila[3]),
+                                    Dia_miercoles = Convert.ToBoolean(fila[4]),
+                                    Dia_jueves = Convert.ToBoolean(fila[5]),
+                                    Dia_viernes = Convert.ToBoolean(fila[6]),
+                                    Dia_sabado = Convert.ToBoolean(fila[7]),
+                                    Dia_domingo = Convert.ToBoolean(fila[8]),
+                                    Hora_inicio = (TimeSpan)fila[9],
+                                    Hora_fin = (TimeSpan)fila[10]
                                 }).ToList();
 
                 //Lo anterior convierte el DataSet en una lista, y cada elemento de la lista tiene Objeto Entidad que 
@@ -232,7 +233,7 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return listaModulos;
+            return listaHorarios;
         }
         #endregion
 
@@ -249,7 +250,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_HORARIO_MODULOS, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_MODULOS WHERE COD_HORARIO_MODULOS = {0}", horarEntrenador);
+            string sentencia = string.Format("SELECT COD_HORARIO_ENTRENADOR,COD_ENTRENADOR, DIA_LUNES, DIA_MARTES, DIA_MIERCOLES, DIA_JUEVES,DIA_VIERNES, DIA_SABADO, DIA_DOMINGO, HORA_INICIO_HORARIO, HORA_FIN_HORARIO FROM HORARIO_ENTRENADORES WHERE COD_HORARIO_ENTRENADOR = {0}", cod_horarEntrenador);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -267,37 +268,38 @@ namespace CapaAccesoDatos
 
                     //Obtiene el valor de cada columna
                     horarEntrenador.Cod_Horario_entrenador = dataReader.GetInt32(0); // Se convierte por ser un número
-                    if (dataReader[1] != DBNull.Value)
-                    {
-                        horarEntrenador.Dia_lunes = dataReader.GetBoolean(1);
-                    }
+                    horarEntrenador.Cod_entrenador = dataReader.GetInt32(1); // Se convierte por ser un número
                     if (dataReader[2] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_martes = dataReader.GetBoolean(2);
+                        horarEntrenador.Dia_lunes =  dataReader.GetBoolean(2);
                     }
                     if (dataReader[3] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_miercoles = dataReader.GetBoolean(3);
+                        horarEntrenador.Dia_martes = dataReader.GetBoolean(3);
                     }
                     if (dataReader[4] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_jueves = dataReader.GetBoolean(4);
+                        horarEntrenador.Dia_miercoles = dataReader.GetBoolean(4);
                     }
                     if (dataReader[5] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_viernes = dataReader.GetBoolean(5);
+                        horarEntrenador.Dia_jueves = dataReader.GetBoolean(5);
                     }
                     if (dataReader[6] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_sabado = dataReader.GetBoolean(6);
+                        horarEntrenador.Dia_viernes = dataReader.GetBoolean(6);
                     }
                     if (dataReader[7] != DBNull.Value)
                     {
-                        horarEntrenador.Dia_domingo = dataReader.GetBoolean(7);
+                        horarEntrenador.Dia_sabado = dataReader.GetBoolean(7);
+                    }
+                    if (dataReader[8] != DBNull.Value)
+                    {
+                        horarEntrenador.Dia_domingo = dataReader.GetBoolean(8);
                     }
 
-                    horarEntrenador.Hora_inicio = dataReader.GetTimeSpan(8);
-                    horarEntrenador.Hora_fin = dataReader.GetTimeSpan(9);
+                    horarEntrenador.Hora_inicio = dataReader.GetTimeSpan(9);
+                    horarEntrenador.Hora_fin = dataReader.GetTimeSpan(10);
                 }
                 conexion.Close();
             }
@@ -309,7 +311,6 @@ namespace CapaAccesoDatos
             return horarEntrenador;
         }
         #endregion
-
 
         #region Método para eliminar un registro
 

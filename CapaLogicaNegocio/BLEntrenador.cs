@@ -137,9 +137,9 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region EliminarHorarioMod
+        #region EliminarEntrenador
 
-        public int EliminarHorarioMod(int cod)
+        public int EliminarEntrenador(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
             DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);

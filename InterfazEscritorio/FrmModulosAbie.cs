@@ -236,5 +236,23 @@ namespace InterfazEscritorio
             }
         }
         #endregion
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            FrmEntrenadores FrmEntrenadores = new FrmEntrenadores();
+            FrmEntrenadores.Show();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmModulos FrmModulos = new FrmModulos();
+            FrmModulos.Show();
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmHorarMod FrmHorarMod = new FrmHorarMod();
+            FrmHorarMod.Show();
+        }
     }
 }

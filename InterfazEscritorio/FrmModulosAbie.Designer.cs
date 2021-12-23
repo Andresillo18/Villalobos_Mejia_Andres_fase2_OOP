@@ -250,6 +250,7 @@ namespace InterfazEscritorio
             this.linkLabel3.TabIndex = 22;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "COD Horario:";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -262,6 +263,7 @@ namespace InterfazEscritorio
             this.linkLabel2.TabIndex = 21;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "COD Módulo:";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -274,6 +276,7 @@ namespace InterfazEscritorio
             this.linkLabel1.TabIndex = 20;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "COD Entrenador:";
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // txtObservaciones
             // 
@@ -341,6 +344,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmModulosAbie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulos Abiertos";
             this.Load += new System.EventHandler(this.FrmModulosAbie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdListaModAbier)).EndInit();

@@ -36,7 +36,6 @@ namespace InterfazEscritorio
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtHorasDuracion = new System.Windows.Forms.ComboBox();
             this.txtCodPrograma = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtRequesitos = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace InterfazEscritorio
             this.nombre_modulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas_modulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Requesitos_modulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).BeginInit();
             this.SuspendLayout();
@@ -95,9 +95,9 @@ namespace InterfazEscritorio
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.txtHorasDuracion);
             this.panel1.Controls.Add(this.txtCodPrograma);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtRequesitos);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label1);
@@ -131,16 +131,6 @@ namespace InterfazEscritorio
             this.txtCodPrograma.Name = "txtCodPrograma";
             this.txtCodPrograma.Size = new System.Drawing.Size(125, 27);
             this.txtCodPrograma.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 23);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "COD Programa:";
             // 
             // txtRequesitos
             // 
@@ -263,6 +253,19 @@ namespace InterfazEscritorio
             this.Requesitos_modulo.MinimumWidth = 6;
             this.Requesitos_modulo.Name = "Requesitos_modulo";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 110);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(130, 23);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "COD Programa:";
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
+            // 
             // FrmModulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -299,11 +302,11 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn Requesitos_modulo;
         private System.Windows.Forms.ComboBox txtHorasDuracion;
         private System.Windows.Forms.TextBox txtCodPrograma;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtRequesitos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

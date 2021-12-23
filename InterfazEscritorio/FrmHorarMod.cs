@@ -48,7 +48,7 @@ namespace InterfazEscritorio
             if (!string.IsNullOrEmpty(txtCodHorMod.Text))
             {
                 horarioMod = horarioRegistrado; // no se genera una entidad nueva, sino 
-                MessageBox.Show("Test2");
+                //MessageBox.Show("Test2");
                 horarioMod.Existe = true; // Si ya ha seleccionado un registro este pasa a que ya existe para ser modificado
             }
             else
@@ -133,14 +133,14 @@ namespace InterfazEscritorio
         private void MostrarListDS(string condicion = "", string orden = "")
         {
             BLHorarMod logica = new BLHorarMod(Configuracion.getConnectionString);
-            DataSet DSModulosAbier;
+            DataSet DSHorarMod;
 
             try
             {
-                DSModulosAbier = logica.listarHorario(condicion, orden); // Retorna un DataSet
-                dgvHorarMod.DataSource = DSModulosAbier; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
+                DSHorarMod = logica.listarHorario(condicion, orden); // Retorna un DataSet
+                dgvHorarMod.DataSource = DSHorarMod; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
 
-                dgvHorarMod.DataMember = DSModulosAbier.Tables["HorarioMod"].TableName;// Especifica el nombre de la tabla del DataSet
+                dgvHorarMod.DataMember = DSHorarMod.Tables["HorarioMod"].TableName;// Especifica el nombre de la tabla del DataSet
             }
             catch (Exception ex)
             {
@@ -307,7 +307,7 @@ namespace InterfazEscritorio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EntidadHorarMod modAbierto;
+            EntidadHorarMod horarMod;
             int resultado; // Lo que retornará los métodos al obtener un progreso
             BLHorarMod logica = new BLHorarMod(Configuracion.getConnectionString);
 
@@ -316,9 +316,9 @@ namespace InterfazEscritorio
                 if (!String.IsNullOrEmpty(txtCodHorMod.Text)) //Debe tener datos en los txtboxs para poder eliminar
                 {
                     //busca primero el programa antes de borrarlo para ver si existe
-                    modAbierto = logica.ObtenerHorario(Convert.ToInt32(txtCodHorMod.Text));
+                    horarMod = logica.ObtenerHorario(Convert.ToInt32(txtCodHorMod.Text));
 
-                    if (modAbierto != null)
+                    if (horarMod != null)
                     {
                         MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 

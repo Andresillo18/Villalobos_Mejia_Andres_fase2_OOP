@@ -190,7 +190,7 @@ namespace CapaAccesoDatos
 
         public List<EntidadHorarMod> listarHorarios(String condicion)
         {
-            List<EntidadHorarMod> listaModulos; //Se inicializa lo que se creará
+            List<EntidadHorarMod> listaHorarios; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
@@ -209,7 +209,7 @@ namespace CapaAccesoDatos
                 adaptador.Fill(TablaDS, "HorarioMod"); // Se llena el DataSer con la BD
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
-                listaModulos = (from DataRow fila in TablaDS.Tables["HorarioMod"].Rows
+                listaHorarios = (from DataRow fila in TablaDS.Tables["HorarioMod"].Rows
                                 select new EntidadHorarMod()
                                 {
                                     Cod_Horario_Modulos = (int)fila[0],
@@ -232,7 +232,7 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return listaModulos;
+            return listaHorarios;
         }
         #endregion
 

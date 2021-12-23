@@ -3,10 +3,9 @@ using CapaAccesoDatos;
 using CapaEntidades;
 using System.Data;
 using System.Collections.Generic;
-
 namespace CapaLogicaNegocio
 {
-    public class BLHorarMod
+    public class BLHorarEntrenador
     {
         #region Atributos
 
@@ -22,12 +21,12 @@ namespace CapaLogicaNegocio
 
         #region Constructores
 
-        public BLHorarMod(string cadenaConexion)
+        public BLHorarEntrenador(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public BLHorarMod()
+        public BLHorarEntrenador()
         {
             _cadenaConexion = string.Empty;
         }
@@ -36,15 +35,15 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadHorarMod horarMod)
+        public int Insertar(EntidadHorarEntrenador horarEntrenador)
         {
             int cod = 0;
 
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
-                cod = accesoDatos.Insertar(horarMod);
+                cod = accesoDatos.Insertar(horarEntrenador);
             }
             catch (Exception)
             {
@@ -57,14 +56,14 @@ namespace CapaLogicaNegocio
 
         #region Método Modificar (Actualizar)
 
-        public int Modificar(EntidadHorarMod horarMod)
+        public int Modificar(EntidadHorarEntrenador horarEntrenador)
         {
             int filasAfectadas = 0;
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
-                filasAfectadas = accesoDatos.Modificar(horarMod);
+                filasAfectadas = accesoDatos.Modificar(horarEntrenador);
             }
             catch (Exception)
             {
@@ -81,7 +80,7 @@ namespace CapaLogicaNegocio
         public DataSet listarHorario(string condicion, string orden)
         {
             DataSet DS;
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
@@ -98,10 +97,10 @@ namespace CapaLogicaNegocio
 
         #region listarModulos con un parámetro
 
-        public List<EntidadHorarMod> listarHorario(string condicion)
+        public List<EntidadHorarEntrenador> listarHorario(string condicion)
         {
-            List<EntidadHorarMod> listaModulos;
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            List<EntidadHorarEntrenador> listaModulos;
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
@@ -118,10 +117,10 @@ namespace CapaLogicaNegocio
 
         #region ObtenerHorario
 
-        public EntidadHorarMod ObtenerHorario(int cod)
+        public EntidadHorarEntrenador ObtenerHorario(int cod)
         {
-            EntidadHorarMod modulo;
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            EntidadHorarEntrenador modulo;
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
@@ -137,12 +136,12 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region EliminarHorarioMod
+        #region EliminarHorarEntrenador
 
-        public int EliminarHorarioMod(int cod)
+        public int EliminarHorarEntrenador(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
+            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
@@ -155,6 +154,5 @@ namespace CapaLogicaNegocio
             return filasEliminadas;
         }
         #endregion
-
     }
 }

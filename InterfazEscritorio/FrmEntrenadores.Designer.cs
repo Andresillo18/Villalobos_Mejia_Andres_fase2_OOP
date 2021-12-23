@@ -636,6 +636,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmEntrenadores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrenadores";
             this.Load += new System.EventHandler(this.FrmEntrenadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdListaEntrenadores)).EndInit();

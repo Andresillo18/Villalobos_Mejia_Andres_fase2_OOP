@@ -266,7 +266,7 @@ namespace InterfazEscritorio
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(386, 38);
+            this.label4.Location = new System.Drawing.Point(472, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 23);
             this.label4.TabIndex = 13;
@@ -303,7 +303,7 @@ namespace InterfazEscritorio
             // CBSabado
             // 
             this.CBSabado.AutoSize = true;
-            this.CBSabado.Location = new System.Drawing.Point(598, 83);
+            this.CBSabado.Location = new System.Drawing.Point(684, 84);
             this.CBSabado.Name = "CBSabado";
             this.CBSabado.Size = new System.Drawing.Size(82, 24);
             this.CBSabado.TabIndex = 8;
@@ -313,7 +313,7 @@ namespace InterfazEscritorio
             // CBMiercoles
             // 
             this.CBMiercoles.AutoSize = true;
-            this.CBMiercoles.Location = new System.Drawing.Point(464, 127);
+            this.CBMiercoles.Location = new System.Drawing.Point(550, 128);
             this.CBMiercoles.Name = "CBMiercoles";
             this.CBMiercoles.Size = new System.Drawing.Size(95, 24);
             this.CBMiercoles.TabIndex = 7;
@@ -323,7 +323,7 @@ namespace InterfazEscritorio
             // CBDomingo
             // 
             this.CBDomingo.AutoSize = true;
-            this.CBDomingo.Location = new System.Drawing.Point(598, 127);
+            this.CBDomingo.Location = new System.Drawing.Point(684, 128);
             this.CBDomingo.Name = "CBDomingo";
             this.CBDomingo.Size = new System.Drawing.Size(94, 24);
             this.CBDomingo.TabIndex = 6;
@@ -333,7 +333,7 @@ namespace InterfazEscritorio
             // CBJueves
             // 
             this.CBJueves.AutoSize = true;
-            this.CBJueves.Location = new System.Drawing.Point(464, 177);
+            this.CBJueves.Location = new System.Drawing.Point(550, 178);
             this.CBJueves.Name = "CBJueves";
             this.CBJueves.Size = new System.Drawing.Size(73, 24);
             this.CBJueves.TabIndex = 5;
@@ -343,7 +343,7 @@ namespace InterfazEscritorio
             // CBViernes
             // 
             this.CBViernes.AutoSize = true;
-            this.CBViernes.Location = new System.Drawing.Point(598, 37);
+            this.CBViernes.Location = new System.Drawing.Point(684, 38);
             this.CBViernes.Name = "CBViernes";
             this.CBViernes.Size = new System.Drawing.Size(79, 24);
             this.CBViernes.TabIndex = 4;
@@ -353,7 +353,7 @@ namespace InterfazEscritorio
             // CBMartes
             // 
             this.CBMartes.AutoSize = true;
-            this.CBMartes.Location = new System.Drawing.Point(464, 83);
+            this.CBMartes.Location = new System.Drawing.Point(550, 84);
             this.CBMartes.Name = "CBMartes";
             this.CBMartes.Size = new System.Drawing.Size(76, 24);
             this.CBMartes.TabIndex = 3;
@@ -363,7 +363,7 @@ namespace InterfazEscritorio
             // CBLunes
             // 
             this.CBLunes.AutoSize = true;
-            this.CBLunes.Location = new System.Drawing.Point(464, 37);
+            this.CBLunes.Location = new System.Drawing.Point(550, 38);
             this.CBLunes.Name = "CBLunes";
             this.CBLunes.Size = new System.Drawing.Size(68, 24);
             this.CBLunes.TabIndex = 2;
@@ -374,16 +374,16 @@ namespace InterfazEscritorio
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(41, 24);
+            this.label2.Location = new System.Drawing.Point(12, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 23);
+            this.label2.Size = new System.Drawing.Size(207, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "COD:";
+            this.label2.Text = "COD Horario de Módulos:";
             // 
             // txtCodHorMod
             // 
             this.txtCodHorMod.Enabled = false;
-            this.txtCodHorMod.Location = new System.Drawing.Point(116, 24);
+            this.txtCodHorMod.Location = new System.Drawing.Point(225, 38);
             this.txtCodHorMod.Name = "txtCodHorMod";
             this.txtCodHorMod.Size = new System.Drawing.Size(125, 27);
             this.txtCodHorMod.TabIndex = 1;
@@ -430,6 +430,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmHorarMod";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Horaros de Módulos";
             this.Load += new System.EventHandler(this.FrmHorarMod_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarMod)).EndInit();
