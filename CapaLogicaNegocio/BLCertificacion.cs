@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CapaLogicaNegocio
 {
-    public class BLHorarEntrenador
+    public class BLCertificacion
     {
         #region Atributos
 
@@ -22,12 +22,12 @@ namespace CapaLogicaNegocio
 
         #region Constructores
 
-        public BLHorarEntrenador(string cadenaConexion)
+        public BLCertificacion(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public BLHorarEntrenador()
+        public BLCertificacion()
         {
             _cadenaConexion = string.Empty;
         }
@@ -36,15 +36,15 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadHorarEntrenador horarEntrenador)
+        public int Insertar(EntidadCertificacion certificacion)
         {
             int cod = 0;
 
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {
-                cod = accesoDatos.Insertar(horarEntrenador);
+                cod = accesoDatos.Insertar(certificacion);
             }
             catch (Exception)
             {
@@ -57,14 +57,14 @@ namespace CapaLogicaNegocio
 
         #region Método Modificar (Actualizar)
 
-        public int Modificar(EntidadHorarEntrenador horarEntrenador)
+        public int Modificar(EntidadCertificacion certificacion)
         {
             int filasAfectadas = 0;
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {
-                filasAfectadas = accesoDatos.Modificar(horarEntrenador);
+                filasAfectadas = accesoDatos.Modificar(certificacion);
             }
             catch (Exception)
             {
@@ -78,14 +78,14 @@ namespace CapaLogicaNegocio
 
         #region Para el método lista un registro
 
-        public DataSet listarHorario(string condicion, string orden)
+        public DataSet listarCertificacion(string condicion, string orden)
         {
             DataSet DS;
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {
-                DS = accesoDatos.listarHorarios(condicion, orden);
+                DS = accesoDatos.listarCertificaciones(condicion, orden);
             }
             catch (Exception)
             {
@@ -98,41 +98,41 @@ namespace CapaLogicaNegocio
 
         #region listarModulos con un parámetro
 
-        public List<EntidadHorarEntrenador> listarHorario(string condicion)
+        public List<EntidadCertificacion> listarCertificacion(string condicion)
         {
-            List<EntidadHorarEntrenador> listaModulos;
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            List<EntidadCertificacion> listarCertificaciones;
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {
-                listaModulos = accesoDatos.listarHorarios(condicion);
+                listarCertificaciones = accesoDatos.listarCertificaciones(condicion);
             }
             catch (Exception)
             {
                 throw;
             }
-            return listaModulos;
+            return listarCertificaciones;
         }
 
         #endregion
 
         #region ObtenerHorario
 
-        public EntidadHorarEntrenador ObtenerHorario(int cod)
+        public EntidadCertificacion ObtenerCertificacion(int cod)
         {
-            EntidadHorarEntrenador horario;
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            EntidadCertificacion certificacion;
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {
-                horario = accesoDatos.ObtenerHorario(cod);
+                certificacion = accesoDatos.ObtenerCertificacion(cod);
 
             }
             catch (Exception)
             {
                 throw;
             }
-            return horario;
+            return certificacion;
         }
 
         #endregion
@@ -142,7 +142,7 @@ namespace CapaLogicaNegocio
         public int EliminarHorarEntrenador(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {

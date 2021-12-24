@@ -258,7 +258,6 @@ namespace InterfazEscritorio
 
         #endregion
 
-
         #region Eventos
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -379,12 +378,13 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-        #endregion
 
         private void linkLabel1_Click(object sender, EventArgs e)
         {
             FrmEntrenadores FrmEntrenadores = new FrmEntrenadores();
             FrmEntrenadores.Show();
         }
+
+        #endregion
     }
 }

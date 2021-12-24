@@ -77,7 +77,6 @@ namespace InterfazEscritorio
 
             //tituloForms.Text = "Horario de Entrenadores";
         }
-
         //public string TituloForms
         //{
         //    get
@@ -89,5 +88,11 @@ namespace InterfazEscritorio
         //        this.tituloForms.Text = value;
         //    }
         //}
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmCertificacion());
+        }
+
     }
 }
