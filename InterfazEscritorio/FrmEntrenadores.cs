@@ -151,6 +151,7 @@ namespace InterfazEscritorio
 
         private void FrmEntrenadores_Load(object sender, EventArgs e)
         {
+            txtID.Select();
             try
             {
                 MostrarListDS();
