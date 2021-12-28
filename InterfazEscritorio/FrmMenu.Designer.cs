@@ -113,14 +113,15 @@ namespace InterfazEscritorio
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.SystemColors.Info;
-            this.button8.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.Location = new System.Drawing.Point(0, 510);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(227, 45);
             this.button8.TabIndex = 5;
-            this.button8.Text = "button8";
+            this.button8.Text = "Registro de Horas";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button3
             // 
@@ -129,14 +130,15 @@ namespace InterfazEscritorio
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.Info;
-            this.button3.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 459);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(227, 45);
             this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
+            this.button3.Text = "Eventos";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button7
             // 

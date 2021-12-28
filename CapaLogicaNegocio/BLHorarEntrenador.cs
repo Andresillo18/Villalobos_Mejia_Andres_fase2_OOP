@@ -100,18 +100,18 @@ namespace CapaLogicaNegocio
 
         public List<EntidadHorarEntrenador> listarHorario(string condicion)
         {
-            List<EntidadHorarEntrenador> listaModulos;
+            List<EntidadHorarEntrenador> listaHorarios;
             DAHorarEntrenador accesoDatos = new DAHorarEntrenador(_cadenaConexion);
 
             try
             {
-                listaModulos = accesoDatos.listarHorarios(condicion);
+                listaHorarios = accesoDatos.listarHorarios(condicion);
             }
             catch (Exception)
             {
                 throw;
             }
-            return listaModulos;
+            return listaHorarios;
         }
 
         #endregion

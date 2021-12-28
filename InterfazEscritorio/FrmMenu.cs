@@ -94,5 +94,14 @@ namespace InterfazEscritorio
             AbrirFormInPanel(new FrmCertificacion());
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmIncapEventos());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmReg_Horas_labo());
+        }
     }
 }

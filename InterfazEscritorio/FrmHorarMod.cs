@@ -234,7 +234,7 @@ namespace InterfazEscritorio
                 }
                 else
                 {
-                    MessageBox.Show("El Módulo seleccionado no se encuentra en la Base de Datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El Horario seleccionado no se encuentra en la Base de Datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarListDS();
                 }
             }
@@ -330,13 +330,13 @@ namespace InterfazEscritorio
                     }
                     else
                     {
-                        MessageBox.Show("El módulo no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El horario no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     // No se sucede nada si no lo selecciona
-                    MessageBox.Show("Debe Seleccionar un módulo antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe Seleccionar un horario antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

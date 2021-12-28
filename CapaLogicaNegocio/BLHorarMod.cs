@@ -100,18 +100,18 @@ namespace CapaLogicaNegocio
 
         public List<EntidadHorarMod> listarHorario(string condicion)
         {
-            List<EntidadHorarMod> listaModulos;
+            List<EntidadHorarMod> listaHorario;
             DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                listaModulos = accesoDatos.listarHorarios(condicion);
+                listaHorario = accesoDatos.listarHorarios(condicion);
             }
             catch (Exception)
             {
                 throw;
             }
-            return listaModulos;
+            return listaHorario;
         }
 
         #endregion
@@ -120,19 +120,19 @@ namespace CapaLogicaNegocio
 
         public EntidadHorarMod ObtenerHorario(int cod)
         {
-            EntidadHorarMod modulo;
+            EntidadHorarMod horario;
             DAHorarMod accesoDatos = new DAHorarMod(_cadenaConexion);
 
             try
             {
-                modulo = accesoDatos.ObtenerHorario(cod);
+                horario = accesoDatos.ObtenerHorario(cod);
 
             }
             catch (Exception)
             {
                 throw;
             }
-            return modulo;
+            return horario;
         }
 
         #endregion

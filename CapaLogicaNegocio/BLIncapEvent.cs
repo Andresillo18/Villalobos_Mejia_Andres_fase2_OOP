@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CapaLogicaNegocio
 {
-    public class BLEntrenador
+    public class BLIncapEvent
     {
         #region Atributos
 
@@ -22,12 +22,12 @@ namespace CapaLogicaNegocio
 
         #region Constructores
 
-        public BLEntrenador(string cadenaConexion)
+        public BLIncapEvent(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public BLEntrenador()
+        public BLIncapEvent()
         {
             _cadenaConexion = string.Empty;
         }
@@ -36,15 +36,15 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadEntrenador entrenador)
+        public int Insertar(EntidadIncapEvent incapEvent)
         {
             int cod = 0;
 
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {
-                cod = accesoDatos.Insertar(entrenador);
+                cod = accesoDatos.Insertar(incapEvent);
             }
             catch (Exception)
             {
@@ -57,14 +57,14 @@ namespace CapaLogicaNegocio
 
         #region Método Modificar (Actualizar)
 
-        public int Modificar(EntidadEntrenador entrenador)
+        public int Modificar(EntidadIncapEvent incapEvent)
         {
             int filasAfectadas = 0;
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {
-                filasAfectadas = accesoDatos.Modificar(entrenador);
+                filasAfectadas = accesoDatos.Modificar(incapEvent);
             }
             catch (Exception)
             {
@@ -78,14 +78,14 @@ namespace CapaLogicaNegocio
 
         #region Para el método lista un registro
 
-        public DataSet listarEntrenadores(string condicion, string orden)
+        public DataSet listarIncapEvent(string condicion, string orden)
         {
             DataSet DS;
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {
-                DS = accesoDatos.listarEntrenador(condicion, orden);
+                DS = accesoDatos.listarIncapEvents(condicion, orden);
             }
             catch (Exception)
             {
@@ -98,51 +98,51 @@ namespace CapaLogicaNegocio
 
         #region listarModulos con un parámetro
 
-        public List<EntidadEntrenador> listarEntrenadores(string condicion)
+        public List<EntidadIncapEvent> listarIncapEvent(string condicion)
         {
-            List<EntidadEntrenador> listaEntrenador;
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            List<EntidadIncapEvent> listaIncapEvent;
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {
-                listaEntrenador = accesoDatos.listarEntrenador(condicion);
+                listaIncapEvent = accesoDatos.listarIncapEvents(condicion);
             }
             catch (Exception)
             {
                 throw;
             }
-            return listaEntrenador;
+            return listaIncapEvent;
         }
 
         #endregion
 
-        #region ObtenerEntrenador
+        #region ObtenerHorario
 
-        public EntidadEntrenador ObtenerEntrenador(int cod)
+        public EntidadIncapEvent ObtenerIncapEvent(int cod)
         {
-            EntidadEntrenador entrenador;
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            EntidadIncapEvent incapEvent;
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {
-                entrenador = accesoDatos.ObtenerEntrenador(cod);
+                incapEvent = accesoDatos.ObtenerIncapEvent(cod);
 
             }
             catch (Exception)
             {
                 throw;
             }
-            return entrenador;
+            return incapEvent;
         }
 
         #endregion
 
-        #region EliminarEntrenador
+        #region EliminarHorarEntrenador
 
-        public int EliminarEntrenador(int cod)
+        public int EliminarIncapEvent(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAEntrenadores accesoDatos = new DAEntrenadores(_cadenaConexion);
+            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
 
             try
             {

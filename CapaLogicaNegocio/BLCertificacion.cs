@@ -116,7 +116,7 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region ObtenerHorario
+        #region ObtenerCertificacion
 
         public EntidadCertificacion ObtenerCertificacion(int cod)
         {

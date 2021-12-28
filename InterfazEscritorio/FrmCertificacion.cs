@@ -31,7 +31,7 @@ namespace InterfazEscritorio
             CBGimnasio.Checked = false;
             CBNatacion.Checked = false;
             CBMaraton.Checked = false;
-            CBCiclismo.Checked = false;                        
+            CBCiclismo.Checked = false;
         }
 
         #endregion
@@ -43,7 +43,7 @@ namespace InterfazEscritorio
             EntidadCertificacion certificacion;
             if (!string.IsNullOrEmpty(txtCodCertif.Text))
             {
-                certificacion = certificacionRegistrada; // no se genera una entidad nueva, sino 
+                certificacion = certificacionRegistrada; // no se genera una entidad nueva, sino se usa la misma y se modifica
                 certificacion.Existe = true; // Si ya ha seleccionado un registro este pasa a que ya existe para ser modificado
             }
             else
@@ -57,7 +57,7 @@ namespace InterfazEscritorio
             certificacion.Cod_entrenador = Convert.ToInt32(txtCodEntrenador.Text);
             if (CBGimnasio.Checked)
             {
-                certificacion.Gimnasio_especifi= true;
+                certificacion.Gimnasio_especifi = true;
             }
             else
             {
@@ -75,7 +75,7 @@ namespace InterfazEscritorio
 
             if (CBMaraton.Checked)
             {
-                certificacion.Maraton_especifi= true;
+                certificacion.Maraton_especifi = true;
             }
             else
             {
@@ -84,12 +84,12 @@ namespace InterfazEscritorio
 
             if (CBCiclismo.Checked)
             {
-               certificacion.Ciclismo_especifi = true;
+                certificacion.Ciclismo_especifi = true;
             }
             else
             {
                 certificacion.Ciclismo_especifi = false;
-            }           
+            }
 
             return certificacion;
         }
@@ -132,7 +132,7 @@ namespace InterfazEscritorio
                     txtCodEntrenador.Text = certificacion.Cod_entrenador.ToString();
 
                     // Aquí pregunta que si en la entidad esta TRUE que marque la casilla, sino la desmarca según el evento doubleClick**
-                    if (certificacion.Gimnasio_especifi== true)
+                    if (certificacion.Gimnasio_especifi == true)
                     {
                         CBGimnasio.Checked = true;
                     }
@@ -150,7 +150,7 @@ namespace InterfazEscritorio
                         CBNatacion.Checked = false;
                     }
 
-                    if (certificacion.Maraton_especifi== true)
+                    if (certificacion.Maraton_especifi == true)
                     {
                         CBMaraton.Checked = true;
                     }
@@ -159,7 +159,7 @@ namespace InterfazEscritorio
                         CBMaraton.Checked = false;
                     }
 
-                    if (certificacion.Ciclismo_especifi== true)
+                    if (certificacion.Ciclismo_especifi == true)
                     {
                         CBCiclismo.Checked = true;
                     }
@@ -167,7 +167,7 @@ namespace InterfazEscritorio
                     {
                         CBCiclismo.Checked = false;
                     }
-                  
+
                     certificacionRegistrada = certificacion;
                 }
                 else
@@ -212,7 +212,7 @@ namespace InterfazEscritorio
 
             try
             {
-                if (!string.IsNullOrEmpty(txtCodEntrenador.Text))
+                if (!string.IsNullOrEmpty(txtCodEntrenador.Text) && CBGimnasio.Checked == true && CBNatacion.Checked == true && CBMaraton.Checked == true && CBCiclismo.Checked == true)
                 {
                     // en este caso un usuario puede guardar los datos sin ser obligatorios
                     certificacion = GenerarEntidad();
@@ -223,7 +223,6 @@ namespace InterfazEscritorio
                     }
                     else
                     {
-                        MessageBox.Show("Test");
                         elResultado = logica.Modificar(certificacion);
                     }
 
@@ -241,7 +240,7 @@ namespace InterfazEscritorio
                 }
                 else
                 {
-                    MessageBox.Show("El campo de refencia del entrenador es obligatorio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El campo de refencia del entrenador es obligatorio o el entrenador debe tener algún certificado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -276,13 +275,13 @@ namespace InterfazEscritorio
                     }
                     else
                     {
-                        MessageBox.Show("El módulo no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("La certificación no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     // No se sucede nada si no lo selecciona
-                    MessageBox.Show("Debe Seleccionar un módulo antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe Seleccionar una certificación antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -311,6 +310,6 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-#endregion
+        #endregion
     }
 }
