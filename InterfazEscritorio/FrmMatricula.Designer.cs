@@ -40,27 +40,29 @@ namespace InterfazEscritorio
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txtCodMatricula = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CBTipoPago = new System.Windows.Forms.ComboBox();
+            this.CBTipoCobro = new System.Windows.Forms.ComboBox();
+            this.NPMontoCancelado = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.NPNotaFinal = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.DTFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.DTFechaMatricula = new System.Windows.Forms.DateTimePicker();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtCod_Entrenador = new System.Windows.Forms.TextBox();
             this.txtCod_Modulo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPMontoCancelado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPNotaFinal)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvModulos
@@ -165,19 +167,21 @@ namespace InterfazEscritorio
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.numericUpDown2);
+            this.panel1.Controls.Add(this.txtCodMatricula);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.CBTipoPago);
+            this.panel1.Controls.Add(this.CBTipoCobro);
+            this.panel1.Controls.Add(this.NPMontoCancelado);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.NPNotaFinal);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CBEstado);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.DTFechaInicio);
+            this.panel1.Controls.Add(this.DTFechaMatricula);
             this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.txtCod_Entrenador);
@@ -188,41 +192,60 @@ namespace InterfazEscritorio
             this.panel1.Size = new System.Drawing.Size(945, 243);
             this.panel1.TabIndex = 29;
             // 
-            // comboBox2
+            // txtCodMatricula
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.txtCodMatricula.Location = new System.Drawing.Point(187, 31);
+            this.txtCodMatricula.MaxLength = 200;
+            this.txtCodMatricula.Name = "txtCodMatricula";
+            this.txtCodMatricula.ReadOnly = true;
+            this.txtCodMatricula.Size = new System.Drawing.Size(125, 27);
+            this.txtCodMatricula.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(24, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 23);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Cod Matrícula:";
+            // 
+            // CBTipoPago
+            // 
+            this.CBTipoPago.FormattingEnabled = true;
+            this.CBTipoPago.Items.AddRange(new object[] {
             "Transferencia",
             "Sinpe",
             "Tarjeta",
             "Efectivo"});
-            this.comboBox2.Location = new System.Drawing.Point(788, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 35;
+            this.CBTipoPago.Location = new System.Drawing.Point(788, 133);
+            this.CBTipoPago.Name = "CBTipoPago";
+            this.CBTipoPago.Size = new System.Drawing.Size(151, 28);
+            this.CBTipoPago.TabIndex = 35;
             // 
-            // comboBox1
+            // CBTipoCobro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CBTipoCobro.FormattingEnabled = true;
+            this.CBTipoCobro.Items.AddRange(new object[] {
             "Curso",
             "Curso y Matricula"});
-            this.comboBox1.Location = new System.Drawing.Point(788, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 34;
+            this.CBTipoCobro.Location = new System.Drawing.Point(788, 79);
+            this.CBTipoCobro.Name = "CBTipoCobro";
+            this.CBTipoCobro.Size = new System.Drawing.Size(151, 28);
+            this.CBTipoCobro.TabIndex = 34;
             // 
-            // numericUpDown2
+            // NPMontoCancelado
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(472, 190);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.NPMontoCancelado.Location = new System.Drawing.Point(472, 190);
+            this.NPMontoCancelado.Maximum = new decimal(new int[] {
             200000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown2.TabIndex = 33;
+            this.NPMontoCancelado.Name = "NPMontoCancelado";
+            this.NPMontoCancelado.Size = new System.Drawing.Size(150, 27);
+            this.NPMontoCancelado.TabIndex = 33;
             // 
             // label6
             // 
@@ -264,12 +287,12 @@ namespace InterfazEscritorio
             this.label3.TabIndex = 29;
             this.label3.Text = "Nota Final:";
             // 
-            // numericUpDown1
+            // NPNotaFinal
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(472, 129);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown1.TabIndex = 27;
+            this.NPNotaFinal.Location = new System.Drawing.Point(472, 129);
+            this.NPNotaFinal.Name = "NPNotaFinal";
+            this.NPNotaFinal.Size = new System.Drawing.Size(150, 27);
+            this.NPNotaFinal.TabIndex = 27;
             // 
             // label1
             // 
@@ -298,7 +321,7 @@ namespace InterfazEscritorio
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(34, 23);
+            this.label2.Location = new System.Drawing.Point(32, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 23);
             this.label2.TabIndex = 26;
@@ -314,21 +337,21 @@ namespace InterfazEscritorio
             this.label10.TabIndex = 25;
             this.label10.Text = "Fecha de Matrícula:";
             // 
-            // DTFechaInicio
+            // DTFechaMatricula
             // 
-            this.DTFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DTFechaInicio.Location = new System.Drawing.Point(544, 23);
-            this.DTFechaInicio.Name = "DTFechaInicio";
-            this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
-            this.DTFechaInicio.TabIndex = 24;
+            this.DTFechaMatricula.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DTFechaMatricula.Location = new System.Drawing.Point(544, 23);
+            this.DTFechaMatricula.Name = "DTFechaMatricula";
+            this.DTFechaMatricula.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DTFechaMatricula.Size = new System.Drawing.Size(296, 27);
+            this.DTFechaMatricula.TabIndex = 24;
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(8, 110);
+            this.linkLabel2.Location = new System.Drawing.Point(6, 182);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(175, 23);
             this.linkLabel2.TabIndex = 21;
@@ -341,7 +364,7 @@ namespace InterfazEscritorio
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(34, 66);
+            this.linkLabel1.Location = new System.Drawing.Point(32, 138);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(100, 23);
             this.linkLabel1.TabIndex = 20;
@@ -351,7 +374,7 @@ namespace InterfazEscritorio
             // 
             // txtCod_Entrenador
             // 
-            this.txtCod_Entrenador.Location = new System.Drawing.Point(189, 62);
+            this.txtCod_Entrenador.Location = new System.Drawing.Point(187, 134);
             this.txtCod_Entrenador.MaxLength = 200;
             this.txtCod_Entrenador.Name = "txtCod_Entrenador";
             this.txtCod_Entrenador.Size = new System.Drawing.Size(125, 27);
@@ -359,7 +382,7 @@ namespace InterfazEscritorio
             // 
             // txtCod_Modulo
             // 
-            this.txtCod_Modulo.Location = new System.Drawing.Point(189, 110);
+            this.txtCod_Modulo.Location = new System.Drawing.Point(187, 182);
             this.txtCod_Modulo.MaxLength = 40;
             this.txtCod_Modulo.Name = "txtCod_Modulo";
             this.txtCod_Modulo.Size = new System.Drawing.Size(125, 27);
@@ -382,8 +405,8 @@ namespace InterfazEscritorio
             ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPMontoCancelado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NPNotaFinal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,17 +420,17 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker DTFechaInicio;
+        private System.Windows.Forms.DateTimePicker DTFechaMatricula;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txtCod_Entrenador;
         private System.Windows.Forms.TextBox txtCod_Modulo;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown NPMontoCancelado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown NPNotaFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_atleta;
@@ -415,7 +438,9 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_cancelado;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBTipoPago;
+        private System.Windows.Forms.ComboBox CBTipoCobro;
+        private System.Windows.Forms.TextBox txtCodMatricula;
+        private System.Windows.Forms.Label label7;
     }
 }

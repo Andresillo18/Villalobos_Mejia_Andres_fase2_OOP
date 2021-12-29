@@ -35,5 +35,7 @@ namespace CapaEntidades
             this.genero = string.Empty;
         }
         #endregion
+
+        //No se utilizará métodos en la capas entidades ya que no es necesario por su propósito de movibilidad
     }
 }

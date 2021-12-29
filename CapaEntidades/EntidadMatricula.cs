@@ -8,6 +8,7 @@ namespace CapaEntidades
     {
         #region Atributos
 
+        private int cod_matricula;
         private int cod_atleta;
         private int cod_mod_abierto;
         private DateTime fecha_matri;
@@ -31,12 +32,13 @@ namespace CapaEntidades
         public string Tipo_cobro { get => tipo_cobro; set => tipo_cobro = value; }
         public string Tipo_pago { get => tipo_pago; set => tipo_pago = value; }
         public bool Actividad { get => actividad; set => actividad = value; }
+        public int Cod_matricula { get => cod_matricula; set => cod_matricula = value; }
 
         #endregion
 
         #region Contructores
 
-        public EntidadMatricula(int cod_atleta, int cod_mod_abierto, DateTime fecha_matri, string estado, decimal nota_final, int monto_cancelado, string tipo_cobro, string tipo_pago, bool actividad)
+        public EntidadMatricula(int cod_atleta, int cod_mod_abierto, DateTime fecha_matri, string estado, decimal nota_final, int monto_cancelado, string tipo_cobro, string tipo_pago, bool actividad, int cod_matricula)
         {
             this.cod_atleta = cod_atleta;
             this.cod_mod_abierto = cod_mod_abierto;
@@ -47,6 +49,7 @@ namespace CapaEntidades
             this.tipo_cobro = tipo_cobro;
             this.tipo_pago = tipo_pago;
             this.actividad = actividad;
+            this.cod_matricula = cod_matricula;
         }
 
         public EntidadMatricula()
@@ -60,6 +63,7 @@ namespace CapaEntidades
             this.tipo_cobro = string.Empty;
             this.tipo_pago = string.Empty;
             this.actividad = false;
+            this.cod_matricula = 0;
         }
         #endregion
     }

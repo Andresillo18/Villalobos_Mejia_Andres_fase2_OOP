@@ -7,7 +7,7 @@ using CapaEntidades;
 
 namespace CapaAccesoDatos
 {
-    class DAMatricula
+    public class DAMatricula
     {
         #region Atributos
 
@@ -37,7 +37,7 @@ namespace CapaAccesoDatos
 
         #region Método para ingresar un nuevo registro
 
-        public int Insertar(EntidadModAbier modAbierto)
+        public int Insertar(EntidadMatricula matricula)
         {
             int cod = 0; // El retorno
 
@@ -49,16 +49,19 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO MODULOS_ABIERTOS (COD_ENTRENADOR, COD_MODULO,COD_HORARIO_MODULOS,FECHA_INICIO_MODULO,OBSERVACIONES_MODULO_ABIERTO)" + " VALUES (@cod_entrenador,  @cod_mod, @cod_horar_mod, @fecha_inicio, @observaciones)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO MATRICULAS (COD_ATLETA, COD_MODULO_ABIERTO, FECHA_MATRICULA, ESTADO, NOTA_FINAL, MONTO_CANCELADO, TIPO_COBRO, TIPO_PAGO)" + " VALUES (@cod_atleta, @cod_mod_abierto, @fecha_matricula, @estado, @nota_final, @monto_cancelado, @tipo_cobro, @tipo_pago)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
             // Se le pasan los parámetros que recibirá por el objeto comando
-            comando.Parameters.AddWithValue("@cod_entrenador", modAbierto.Cod_entrenador);
-            comando.Parameters.AddWithValue("@cod_mod", modAbierto.Cod_mod);
-            comando.Parameters.AddWithValue("@cod_horar_mod", modAbierto.Cod_hora_mod);
-            comando.Parameters.AddWithValue("@fecha_inicio", modAbierto.Fecha_inicio);
-            comando.Parameters.AddWithValue("@observaciones", modAbierto.Observaciones);
+            comando.Parameters.AddWithValue("@cod_atleta", matricula.Cod_atleta);
+            comando.Parameters.AddWithValue("@cod_mod_abierto", matricula.Cod_mod_abierto);
+            comando.Parameters.AddWithValue("@fecha_matricula", matricula.Fecha_matri);
+            comando.Parameters.AddWithValue("@estado", matricula.Estado);
+            comando.Parameters.AddWithValue("@nota_final", matricula.Nota_final);
+            comando.Parameters.AddWithValue("@monto_cancelado", matricula.Monto_cancelado);
+            comando.Parameters.AddWithValue("@tipo_cobro", matricula.Tipo_cobro);
+            comando.Parameters.AddWithValue("@tipo_pago", matricula.Tipo_pago);
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
             comando.CommandText = sentencia;
@@ -90,7 +93,7 @@ namespace CapaAccesoDatos
 
         #region Método Modificar (actualizar)
 
-        public int Modificar(EntidadModAbier modAbierto)
+        public int Modificar(EntidadMatricula matricula)
         {
             int filasAfectadas = -1;
 
@@ -99,23 +102,29 @@ namespace CapaAccesoDatos
             SqlCommand comando = new SqlCommand();
 
             String sentencia =
-                "UPDATE MODULOS_ABIERTOS " +
-                "SET COD_ENTRENADOR=@cod_entrenador, " +
-                "COD_MODULO = @cod_mod, " +
-                "COD_HORARIO_MODULOS = @cod_horar_mod, " +
-                "FECHA_INICIO_MODULO = @fecha_inicio, " +
-                    "OBSERVACIONES_MODULO_ABIERTO=@observaciones" +
-                    " WHERE COD_MODULO_ABIERTO=@cod_modAbier";
+                "UPDATE MATRICULAS " +
+                "SET COD_ATLETA=@cod_atleta, " +
+                "COD_MODULO_ABIERTO = @cod_mod_abierto, " +
+                "FECHA_MATRICULA = @fecha_matricula, " +
+                "ESTADO = @estado, " +
+                "NOTA_FINAL=@nota_final" +
+                "MONTO_CANCELADO = @monto_cancelado, " +
+                "TIPO_COBRO = @tipo_cobro, " +
+                "TIPO_PAGO = @tipo_pago, " +
+                    " WHERE COD_MATRICULA=@cod_matricula";
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
 
-            comando.Parameters.AddWithValue("@cod_entrenador", modAbierto.Cod_entrenador);
-            comando.Parameters.AddWithValue("@cod_mod", modAbierto.Cod_mod);
-            comando.Parameters.AddWithValue("@cod_horar_mod", modAbierto.Cod_hora_mod);
-            comando.Parameters.AddWithValue("@fecha_inicio", modAbierto.Fecha_inicio);
-            comando.Parameters.AddWithValue("@observaciones", modAbierto.Observaciones);
-            comando.Parameters.AddWithValue("@cod_modAbier", modAbierto.Cod_mod_abierto);
+            comando.Parameters.AddWithValue("@cod_matricula", matricula.Cod_matricula);
+            comando.Parameters.AddWithValue("@cod_atleta", matricula.Cod_atleta);
+            comando.Parameters.AddWithValue("@cod_mod_abierto", matricula.Cod_mod_abierto);
+            comando.Parameters.AddWithValue("@fecha_matricula", matricula.Fecha_matri);
+            comando.Parameters.AddWithValue("@estado", matricula.Estado);
+            comando.Parameters.AddWithValue("@nota_final", matricula.Nota_final);
+            comando.Parameters.AddWithValue("@monto_cancelado", matricula.Monto_cancelado);
+            comando.Parameters.AddWithValue("@tipo_cobro", matricula.Tipo_cobro);
+            comando.Parameters.AddWithValue("@tipo_pago", matricula.Tipo_pago);
 
             try
             {
@@ -141,14 +150,14 @@ namespace CapaAccesoDatos
         #region Método DataSet para leer los registros
 
         // Devuelve un DataSet con los registros a buscar, para mostrarlo en el DataGridView
-        public DataSet listarModulo(string condicion, string orden)
+        public DataSet listarMatricula(string condicion, string orden)
         {
             DataSet tablaDS = new DataSet(); //Está tabla guardará las consultas SQL
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
-            string sentencia = "SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS";
+            string sentencia = "SELECT COD_MATRICULA, COD_ATLETA, COD_MODULO_ABIERTO, FECHA_MATRICULA, ESTADO, NOTA_FINAL, MONTO_CANCELADO, TIPO_COBRO, TIPO_PAGO FROM MATRICULAS";
 
             // El uso de las condicion y el orden
             if (!string.IsNullOrEmpty(condicion))
@@ -163,7 +172,7 @@ namespace CapaAccesoDatos
             try
             {
                 adaptador = new SqlDataAdapter(sentencia, conexion);
-                adaptador.Fill(tablaDS, "ModulosAbiertos"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
+                adaptador.Fill(tablaDS, "matriculas"); // La tabla DataSet creada anteriormente se rellena con lo devuelto de la consulta (sentencia)
             }
             catch (Exception)
             {
@@ -175,15 +184,15 @@ namespace CapaAccesoDatos
 
         #region Método para leer las tablas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadModAbier> listarModulo(String condicion)
+        public List<EntidadMatricula> listarMatricula(String condicion)
         {
-            List<EntidadModAbier> listaModulos; //Se inicializa lo que se creará
+            List<EntidadMatricula> listaMatriculas; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador;
 
-            string sentencia = "SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS";
+            string sentencia = "SELECT COD_MATRICULA, COD_ATLETA, COD_MODULO_ABIERTO, FECHA_MATRICULA, ESTADO, NOTA_FINAL, MONTO_CANCELADO, TIPO_COBRO, TIPO_PAGO FROM MATRICULAS";
 
             if (!string.IsNullOrEmpty(condicion))
             {
@@ -196,17 +205,19 @@ namespace CapaAccesoDatos
                 adaptador.Fill(TablaDS, "ModulosAbiertos"); // Se llena el DataSer con la BD
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
-                listaModulos = (from DataRow fila in TablaDS.Tables["ModulosAbiertos"].Rows
-                                select new EntidadModAbier()
+                listaMatriculas = (from DataRow fila in TablaDS.Tables["ModulosAbiertos"].Rows
+                                select new EntidadMatricula()
                                 {
-                                    Cod_mod_abierto = (int)fila[0],
-                                    Cod_entrenador = (int)fila[1],
-                                    Cod_mod = (int)fila[2],
-                                    Cod_hora_mod = (int)fila[3],
-                                    Fecha_inicio = Convert.ToDateTime(fila[4]),
-                                    Fecha_fin = Convert.ToDateTime(fila[5]),
-                                    Observaciones = fila[6].ToString(),
-                                    Existe = true
+                                    Cod_matricula = (int)fila[0],
+                                    Cod_atleta= (int)fila[1],
+                                    Cod_mod_abierto= (int)fila[2],
+                                    Fecha_matri = Convert.ToDateTime(fila[3]),
+                                    Estado= fila[4].ToString(),
+                                    Nota_final = (decimal)fila[5],
+                                    Monto_cancelado = (int)fila[6],
+                                    Tipo_cobro= fila[7].ToString(),
+                                    Tipo_pago= fila[8].ToString(),
+                                    Actividad = true
                                 }).ToList();
 
                 //Lo anterior convierte el DataSet en una lista, y cada elemento de la lista tiene Objeto Entidad que 
@@ -217,16 +228,16 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return listaModulos;
+            return listaMatriculas;
         }
         #endregion
 
         #region Método para obtener un registro
 
         // Devuelve una entidad porque permite tener solo un registro
-        public EntidadModAbier ObtenerModulo(int cod_moduloAbierto)
+        public EntidadMatricula ObtenerMatricula(int cod_matricula)
         {
-            EntidadModAbier moduloAbierto = null; // Se inicaliza null porque lo puede devolver vacío
+            EntidadMatricula matricula= null; // Se inicaliza null porque lo puede devolver vacío
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
@@ -234,7 +245,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_MODULO_ABIERTO, COD_ENTRENADOR, COD_MODULO, COD_HORARIO_MODULOS, FECHA_INICIO_MODULO,FECHA_FINAL_MODULO, OBSERVACIONES_MODULO_ABIERTO  FROM MODULOS_ABIERTOS WHERE COD_MODULO_ABIERTO = {0}", cod_moduloAbierto);
+            string sentencia = string.Format("SELECT COD_MATRICULA, COD_ATLETA, COD_MODULO_ABIERTO, FECHA_MATRICULA, ESTADO, NOTA_FINAL, MONTO_CANCELADO, TIPO_COBRO, TIPO_PAGO FROM MATRICULAS WHERE COD_MATRICULA = {0}", cod_matricula);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -247,22 +258,21 @@ namespace CapaAccesoDatos
 
                 if (dataReader.HasRows)
                 {
-                    moduloAbierto = new EntidadModAbier();
+                    matricula = new EntidadMatricula();
                     dataReader.Read();
 
                     //Obtiene el valor de cada columna
-                    moduloAbierto.Cod_mod_abierto = dataReader.GetInt32(0); // Se convierte por ser un número
-                    moduloAbierto.Cod_entrenador = dataReader.GetInt32(1);
-                    moduloAbierto.Cod_mod = dataReader.GetInt32(2);
-                    moduloAbierto.Cod_hora_mod = dataReader.GetInt32(3);
-                    moduloAbierto.Fecha_inicio = dataReader.GetDateTime(4);
-                    moduloAbierto.Fecha_fin = dataReader.GetDateTime(5);
-                    if (dataReader[6] != DBNull.Value)
-                    {
-                        moduloAbierto.Observaciones = dataReader.GetString(6); // Si esa posición de dataReader tiene algo que se ejecute el proceso
-                    }
+                    matricula.Cod_matricula= dataReader.GetInt32(0); // Se convierte por ser un número
+                    matricula.Cod_atleta= dataReader.GetInt32(1);
+                    matricula.Cod_mod_abierto = dataReader.GetInt32(2);
+                    matricula.Fecha_matri = dataReader.GetDateTime(3);
+                    matricula.Estado= dataReader.GetString(4);
+                    matricula.Nota_final= dataReader.GetDecimal(5);
+                    matricula.Monto_cancelado= dataReader.GetInt32(6);
+                    matricula.Tipo_cobro= dataReader.GetString(7);
+                    matricula.Tipo_pago= dataReader.GetString(8);                    
 
-                    moduloAbierto.Existe = true;
+                    matricula.Actividad= true;
                 }
                 conexion.Close();
             }
@@ -271,20 +281,20 @@ namespace CapaAccesoDatos
                 throw;
             }
 
-            return moduloAbierto;
+            return matricula;
         }
         #endregion
 
         #region Método para eliminar un registro
 
-        public int EliminarRegistro(int cod_moduloAbierto)
+        public int EliminarRegistro(int cod_matricula)
         {
             int filasEliminadas = 0;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
-            String sentencia = string.Format("DELETE FROM MODULOS_ABIERTOS WHERE COD_MODULO_ABIERTO= {0} ", cod_moduloAbierto);
+            String sentencia = string.Format("DELETE FROM MATRICULAS WHERE COD_MATRICULA= {0} ", cod_matricula);
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
