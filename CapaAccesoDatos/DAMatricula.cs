@@ -107,10 +107,10 @@ namespace CapaAccesoDatos
                 "COD_MODULO_ABIERTO = @cod_mod_abierto, " +
                 "FECHA_MATRICULA = @fecha_matricula, " +
                 "ESTADO = @estado, " +
-                "NOTA_FINAL=@nota_final" +
+                "NOTA_FINAL=@nota_final, " +
                 "MONTO_CANCELADO = @monto_cancelado, " +
                 "TIPO_COBRO = @tipo_cobro, " +
-                "TIPO_PAGO = @tipo_pago, " +
+                "TIPO_PAGO = @tipo_pago " +
                     " WHERE COD_MATRICULA=@cod_matricula";
 
             comando.CommandText = sentencia;
@@ -202,10 +202,10 @@ namespace CapaAccesoDatos
             try
             {
                 adaptador = new SqlDataAdapter(sentencia, conexion); // Aquí se usa el adaptador para unirse BD 
-                adaptador.Fill(TablaDS, "ModulosAbiertos"); // Se llena el DataSer con la BD
+                adaptador.Fill(TablaDS, "matriculas"); // Se llena el DataSer con la BD
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
-                listaMatriculas = (from DataRow fila in TablaDS.Tables["ModulosAbiertos"].Rows
+                listaMatriculas = (from DataRow fila in TablaDS.Tables["matriculas"].Rows
                                 select new EntidadMatricula()
                                 {
                                     Cod_matricula = (int)fila[0],
@@ -267,7 +267,10 @@ namespace CapaAccesoDatos
                     matricula.Cod_mod_abierto = dataReader.GetInt32(2);
                     matricula.Fecha_matri = dataReader.GetDateTime(3);
                     matricula.Estado= dataReader.GetString(4);
-                    matricula.Nota_final= dataReader.GetDecimal(5);
+                    if (dataReader[5] != DBNull.Value)
+                    {
+                        matricula.Nota_final = dataReader.GetDecimal(5);
+                    }
                     matricula.Monto_cancelado= dataReader.GetInt32(6);
                     matricula.Tipo_cobro= dataReader.GetString(7);
                     matricula.Tipo_pago= dataReader.GetString(8);                    

@@ -105,16 +105,17 @@ namespace CapaAccesoDatos
 
             SqlCommand comando = new SqlCommand();
 
-            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo);
-            comando.Parameters.AddWithValue("@horas_duracion", modulo.Horas_duracion);
-            comando.Parameters.AddWithValue("@requesitos", modulo.Requesitos_modulo);
-            comando.Parameters.AddWithValue("@cod_modulo", modulo.Cod_modulo);
 
             String sentencia =
                 "UPDATE MODULOS " +
                 "SET HORAS_DURACION_MODULO=@horas_duracion, " +
                     "REQUESITOS_MODULO=@requesitos" +
                     " WHERE COD_MODULO=@cod_modulo";
+
+            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo);
+            comando.Parameters.AddWithValue("@horas_duracion", modulo.Horas_duracion);
+            comando.Parameters.AddWithValue("@requesitos", modulo.Requesitos_modulo);
+            comando.Parameters.AddWithValue("@cod_modulo", modulo.Cod_modulo);
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;

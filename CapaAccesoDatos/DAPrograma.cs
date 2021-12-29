@@ -146,8 +146,8 @@ namespace CapaAccesoDatos
             {
                 estado_Actual = 0;
             }
-
             comando.Parameters.AddWithValue("@estado", estado_Actual);
+
             comando.Parameters.AddWithValue("@cupo_programa", programa.Cupo_programa);
             comando.Parameters.AddWithValue("@telefono_programa", programa.Telefono_programa);
             comando.Parameters.AddWithValue("@email_programa", programa.Email_programa);

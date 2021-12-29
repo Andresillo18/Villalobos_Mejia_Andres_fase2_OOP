@@ -142,7 +142,7 @@ namespace CapaLogicaNegocio
         public int EliminarMatricula(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DAMatricula accesoDatos = new DAModAbier(_cadenaConexion);
+            DAMatricula accesoDatos = new DAMatricula(_cadenaConexion);
 
             try
             {

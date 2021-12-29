@@ -30,12 +30,16 @@ namespace InterfazEscritorio
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMatricula));
-            this.dgvModulos = new System.Windows.Forms.DataGridView();
+            this.dgvMatriculas = new System.Windows.Forms.DataGridView();
+            this.Cod_matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_atleta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_modulo_abierto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto_cancelado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_cobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -57,35 +61,49 @@ namespace InterfazEscritorio
             this.DTFechaMatricula = new System.Windows.Forms.DateTimePicker();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.txtCod_Entrenador = new System.Windows.Forms.TextBox();
-            this.txtCod_Modulo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).BeginInit();
+            this.txtCod_Atleta = new System.Windows.Forms.TextBox();
+            this.txtCod_ModuloAb = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculas)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPMontoCancelado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NPNotaFinal)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvModulos
+            // dgvMatriculas
             // 
-            this.dgvModulos.AllowUserToAddRows = false;
-            this.dgvModulos.AllowUserToDeleteRows = false;
-            this.dgvModulos.AllowUserToResizeColumns = false;
-            this.dgvModulos.AllowUserToResizeRows = false;
-            this.dgvModulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvModulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvMatriculas.AllowUserToAddRows = false;
+            this.dgvMatriculas.AllowUserToDeleteRows = false;
+            this.dgvMatriculas.AllowUserToResizeColumns = false;
+            this.dgvMatriculas.AllowUserToResizeRows = false;
+            this.dgvMatriculas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatriculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cod_matricula,
             this.cod_atleta,
             this.cod_modulo_abierto,
             this.fecha_matricula,
             this.estado_matricula,
-            this.monto_cancelado});
-            this.dgvModulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvModulos.Location = new System.Drawing.Point(0, 249);
-            this.dgvModulos.Name = "dgvModulos";
-            this.dgvModulos.RowHeadersWidth = 51;
-            this.dgvModulos.RowTemplate.Height = 29;
-            this.dgvModulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModulos.Size = new System.Drawing.Size(945, 242);
-            this.dgvModulos.TabIndex = 28;
+            this.nota_final,
+            this.monto_cancelado,
+            this.tipo_cobro,
+            this.tipo_pago});
+            this.dgvMatriculas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvMatriculas.Location = new System.Drawing.Point(0, 249);
+            this.dgvMatriculas.Name = "dgvMatriculas";
+            this.dgvMatriculas.RowHeadersWidth = 51;
+            this.dgvMatriculas.RowTemplate.Height = 29;
+            this.dgvMatriculas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMatriculas.Size = new System.Drawing.Size(945, 242);
+            this.dgvMatriculas.TabIndex = 28;
+            this.dgvMatriculas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculas_CellDoubleClick);
+            // 
+            // Cod_matricula
+            // 
+            this.Cod_matricula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Cod_matricula.DataPropertyName = "COD_MATRICULA";
+            this.Cod_matricula.HeaderText = "Cod Matrícula";
+            this.Cod_matricula.MinimumWidth = 6;
+            this.Cod_matricula.Name = "Cod_matricula";
+            this.Cod_matricula.Width = 120;
             // 
             // cod_atleta
             // 
@@ -120,6 +138,15 @@ namespace InterfazEscritorio
             this.estado_matricula.MinimumWidth = 6;
             this.estado_matricula.Name = "estado_matricula";
             // 
+            // nota_final
+            // 
+            this.nota_final.DataPropertyName = "NOTA_FINAL";
+            this.nota_final.HeaderText = "Nota Final";
+            this.nota_final.MinimumWidth = 6;
+            this.nota_final.Name = "nota_final";
+            this.nota_final.Visible = false;
+            this.nota_final.Width = 125;
+            // 
             // monto_cancelado
             // 
             this.monto_cancelado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -127,6 +154,24 @@ namespace InterfazEscritorio
             this.monto_cancelado.HeaderText = "Monto Cancelado";
             this.monto_cancelado.MinimumWidth = 6;
             this.monto_cancelado.Name = "monto_cancelado";
+            // 
+            // tipo_cobro
+            // 
+            this.tipo_cobro.DataPropertyName = "TIPO_COBRO";
+            this.tipo_cobro.HeaderText = "Tipo Cobro";
+            this.tipo_cobro.MinimumWidth = 6;
+            this.tipo_cobro.Name = "tipo_cobro";
+            this.tipo_cobro.Visible = false;
+            this.tipo_cobro.Width = 125;
+            // 
+            // tipo_pago
+            // 
+            this.tipo_pago.DataPropertyName = "TIPO_PAGO";
+            this.tipo_pago.HeaderText = "Tipo Pago";
+            this.tipo_pago.MinimumWidth = 6;
+            this.tipo_pago.Name = "tipo_pago";
+            this.tipo_pago.Visible = false;
+            this.tipo_pago.Width = 125;
             // 
             // btnGuardar
             // 
@@ -139,6 +184,7 @@ namespace InterfazEscritorio
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -151,6 +197,7 @@ namespace InterfazEscritorio
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
@@ -163,6 +210,7 @@ namespace InterfazEscritorio
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // panel1
             // 
@@ -184,8 +232,8 @@ namespace InterfazEscritorio
             this.panel1.Controls.Add(this.DTFechaMatricula);
             this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.txtCod_Entrenador);
-            this.panel1.Controls.Add(this.txtCod_Modulo);
+            this.panel1.Controls.Add(this.txtCod_Atleta);
+            this.panel1.Controls.Add(this.txtCod_ModuloAb);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -194,12 +242,14 @@ namespace InterfazEscritorio
             // 
             // txtCodMatricula
             // 
+            this.txtCodMatricula.Enabled = false;
             this.txtCodMatricula.Location = new System.Drawing.Point(187, 31);
             this.txtCodMatricula.MaxLength = 200;
             this.txtCodMatricula.Name = "txtCodMatricula";
             this.txtCodMatricula.ReadOnly = true;
             this.txtCodMatricula.Size = new System.Drawing.Size(125, 27);
             this.txtCodMatricula.TabIndex = 37;
+            this.txtCodMatricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -246,6 +296,7 @@ namespace InterfazEscritorio
             this.NPMontoCancelado.Name = "NPMontoCancelado";
             this.NPMontoCancelado.Size = new System.Drawing.Size(150, 27);
             this.NPMontoCancelado.TabIndex = 33;
+            this.NPMontoCancelado.ThousandsSeparator = true;
             // 
             // label6
             // 
@@ -293,6 +344,7 @@ namespace InterfazEscritorio
             this.NPNotaFinal.Name = "NPNotaFinal";
             this.NPNotaFinal.Size = new System.Drawing.Size(150, 27);
             this.NPNotaFinal.TabIndex = 27;
+            this.NPNotaFinal.ThousandsSeparator = true;
             // 
             // label1
             // 
@@ -372,21 +424,21 @@ namespace InterfazEscritorio
             this.linkLabel1.Text = "COD Atleta:";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // txtCod_Entrenador
+            // txtCod_Atleta
             // 
-            this.txtCod_Entrenador.Location = new System.Drawing.Point(187, 134);
-            this.txtCod_Entrenador.MaxLength = 200;
-            this.txtCod_Entrenador.Name = "txtCod_Entrenador";
-            this.txtCod_Entrenador.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_Entrenador.TabIndex = 2;
+            this.txtCod_Atleta.Location = new System.Drawing.Point(187, 134);
+            this.txtCod_Atleta.MaxLength = 200;
+            this.txtCod_Atleta.Name = "txtCod_Atleta";
+            this.txtCod_Atleta.Size = new System.Drawing.Size(125, 27);
+            this.txtCod_Atleta.TabIndex = 2;
             // 
-            // txtCod_Modulo
+            // txtCod_ModuloAb
             // 
-            this.txtCod_Modulo.Location = new System.Drawing.Point(187, 182);
-            this.txtCod_Modulo.MaxLength = 40;
-            this.txtCod_Modulo.Name = "txtCod_Modulo";
-            this.txtCod_Modulo.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_Modulo.TabIndex = 3;
+            this.txtCod_ModuloAb.Location = new System.Drawing.Point(187, 182);
+            this.txtCod_ModuloAb.MaxLength = 40;
+            this.txtCod_ModuloAb.Name = "txtCod_ModuloAb";
+            this.txtCod_ModuloAb.Size = new System.Drawing.Size(125, 27);
+            this.txtCod_ModuloAb.TabIndex = 3;
             // 
             // FrmMatricula
             // 
@@ -394,7 +446,7 @@ namespace InterfazEscritorio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgvModulos);
+            this.Controls.Add(this.dgvMatriculas);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
@@ -402,7 +454,8 @@ namespace InterfazEscritorio
             this.Name = "FrmMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Matriculas";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).EndInit();
+            this.Load += new System.EventHandler(this.FrmMatricula_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMatriculas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NPMontoCancelado)).EndInit();
@@ -413,7 +466,7 @@ namespace InterfazEscritorio
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvModulos;
+        private System.Windows.Forms.DataGridView dgvMatriculas;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCrear;
@@ -423,8 +476,8 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DateTimePicker DTFechaMatricula;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox txtCod_Entrenador;
-        private System.Windows.Forms.TextBox txtCod_Modulo;
+        private System.Windows.Forms.TextBox txtCod_Atleta;
+        private System.Windows.Forms.TextBox txtCod_ModuloAb;
         private System.Windows.Forms.NumericUpDown NPMontoCancelado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -433,14 +486,18 @@ namespace InterfazEscritorio
         private System.Windows.Forms.NumericUpDown NPNotaFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_atleta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_modulo_abierto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_matricula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto_cancelado;
         private System.Windows.Forms.ComboBox CBTipoPago;
         private System.Windows.Forms.ComboBox CBTipoCobro;
         private System.Windows.Forms.TextBox txtCodMatricula;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_atleta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_modulo_abierto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_matricula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota_final;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_cancelado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_cobro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_pago;
     }
 }

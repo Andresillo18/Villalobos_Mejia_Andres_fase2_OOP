@@ -25,58 +25,19 @@ namespace InterfazEscritorio
             InitializeComponent();
         }
 
-        public List<EntidadAtleta> listarAtletas(String condicion)
-        {
-            List<EntidadAtleta> listaAtletas; //Se inicializa lo que se creará
-            DataSet TablaDS = new DataSet();
-
-            SqlConnection conexion = new SqlConnection(Configuracion.getConnectionString);
-            SqlDataAdapter adaptador;
-
-            String sentencia = "SELECT COD_ATLETA,ID_ATLETA, NOMBRE_ATLETA, APELLIDO1_ATLETA, FECHA_NACIMIENTO_ATLETA FROM ATLETAS";
-
-            if (!string.IsNullOrEmpty(condicion))
-            {
-                sentencia = string.Format("{0} WHERE {1}", sentencia, condicion); //Format funciona para concatenar variables
-            }
-
-            try
-            {
-                adaptador = new SqlDataAdapter(sentencia, conexion); // Aquí se usa el adaptador para unirse BD 
-                adaptador.Fill(TablaDS, "atletas"); // Se llena el DataSer con la BD
-
-                //***Sentencia linQ para convertir el DataSet en una lista 
-                listaAtletas = (from DataRow fila in TablaDS.Tables["atletas"].Rows
-                                select new EntidadAtleta()
-                                {
-                                    Cod_atleta = (int)fila[0],
-                                    Identificacion = fila[1].ToString(),
-                                    Nombre = fila[2].ToString(),
-                                    Apellido1 = fila[3].ToString(),                                                                    
-                                    Fecha_nacimiento = Convert.ToDateTime(fila[4]),
-                               
-                                }).ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return listaAtletas;
-        }
-
         #region Método CargarListaArray
 
         private void CargarListaArray(string condicion = "")
-        { 
+        {
+            BLAtleta logica = new BLAtleta(Configuracion.getConnectionString);
             List<EntidadAtleta> atletas;
 
             try
             {
-                atletas= listarAtletas(condicion);
+                atletas= logica.listarAtletas(condicion);
                 if (atletas.Count > 0) //si la lista tiene algo entonces...
                 {
-                    grdListaAtletas.DataSource = atletas;//cargue en el datagridview lo que tiene la lista
+                    grdAtletas.DataSource = atletas;//cargue en el datagridview lo que tiene la lista
                 }
             }
             catch (Exception ex)
@@ -91,9 +52,9 @@ namespace InterfazEscritorio
 
         private void Seleccionar()
         {
-            if (grdListaAtletas.SelectedRows.Count > 0) //si ha seleccionado una fila
+            if (grdAtletas.SelectedRows.Count > 0) //si ha seleccionado una fila
             {
-                cod_atleta = (int)grdListaAtletas.SelectedRows[0].Cells[0].Value;
+                cod_atleta = (int)grdAtletas.SelectedRows[0].Cells[0].Value;
                 Aceptar(cod_atleta, null);
                 //le manda el id al evento aceptar que esta en el otro form
                 Close();

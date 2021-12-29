@@ -238,12 +238,14 @@ namespace InterfazEscritorio
         {
             limpiar();
         }
-        #endregion
 
         private void linkLabel1_Click(object sender, EventArgs e)
         {
             FrmProgramas FrmProgramas = new FrmProgramas();
             FrmProgramas.Show();
         }
+
+        #endregion
+
     }
 }
