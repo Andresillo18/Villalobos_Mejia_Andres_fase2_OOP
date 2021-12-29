@@ -81,14 +81,14 @@ namespace InterfazEscritorio
         private void MostrarListDS(string condicion = "", string orden = "")
         {
             BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
-            DataSet DSModulosAbier;
+            DataSet DSEntrenadores;
 
             try
             {
-                DSModulosAbier = logica.listarEntrenadores(condicion, orden); // Retorna un DataSet
-                grdListaEntrenadores.DataSource = DSModulosAbier; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
+                DSEntrenadores = logica.listarEntrenadores(condicion, orden); // Retorna un DataSet
+                grdListaEntrenadores.DataSource = DSEntrenadores; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
 
-                grdListaEntrenadores.DataMember = DSModulosAbier.Tables["entrenadores"].TableName;// Especifica el nombre de la tabla del DataSet
+                grdListaEntrenadores.DataMember = DSEntrenadores.Tables["entrenadores"].TableName;// Especifica el nombre de la tabla del DataSet
             }
             catch (Exception ex)
             {
@@ -267,7 +267,7 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-        #endregion
 
+        #endregion
     }
 }
