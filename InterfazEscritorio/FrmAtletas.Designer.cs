@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazEscritorio
 {
-    partial class FrmEntrenadores
+    partial class FrmAtletas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,24 +29,12 @@ namespace InterfazEscritorio
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntrenadores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAtletas));
+            this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.grdListaEntrenadores = new System.Windows.Forms.DataGridView();
-            this.Cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.canton = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grdListaAtletas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtProvincia = new System.Windows.Forms.ComboBox();
@@ -79,59 +67,80 @@ namespace InterfazEscritorio
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdListaEntrenadores)).BeginInit();
+            this.Cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.canton = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.grdListaAtletas)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PowderBlue;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(662, 482);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 69);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Buscar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(368, 480);
+            this.btnGuardar.Location = new System.Drawing.Point(368, 482);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
-            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.TabIndex = 33;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(519, 480);
+            this.btnEliminar.Location = new System.Drawing.Point(519, 482);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
-            this.btnEliminar.TabIndex = 26;
+            this.btnEliminar.TabIndex = 32;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(217, 480);
+            this.btnCrear.Location = new System.Drawing.Point(217, 482);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
-            this.btnCrear.TabIndex = 25;
+            this.btnCrear.TabIndex = 31;
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrear.UseVisualStyleBackColor = false;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // grdListaEntrenadores
+            // grdListaAtletas
             // 
-            this.grdListaEntrenadores.AllowUserToAddRows = false;
-            this.grdListaEntrenadores.AllowUserToDeleteRows = false;
-            this.grdListaEntrenadores.AllowUserToResizeColumns = false;
-            this.grdListaEntrenadores.AllowUserToResizeRows = false;
-            this.grdListaEntrenadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdListaEntrenadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdListaAtletas.AllowUserToAddRows = false;
+            this.grdListaAtletas.AllowUserToDeleteRows = false;
+            this.grdListaAtletas.AllowUserToResizeColumns = false;
+            this.grdListaAtletas.AllowUserToResizeRows = false;
+            this.grdListaAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdListaAtletas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cod_entrenador,
             this.id,
             this.nombre_entrenador,
@@ -139,147 +148,20 @@ namespace InterfazEscritorio
             this.apellido2,
             this.telefono1,
             this.telefono2,
-            this.correo,
-            this.fechaNacimiento,
+            this.genero,
             this.provincia,
             this.distrito,
             this.canton,
+            this.fechaNacimiento,
             this.estado});
-            this.grdListaEntrenadores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.grdListaEntrenadores.Location = new System.Drawing.Point(3, 238);
-            this.grdListaEntrenadores.Name = "grdListaEntrenadores";
-            this.grdListaEntrenadores.RowHeadersWidth = 51;
-            this.grdListaEntrenadores.RowTemplate.Height = 29;
-            this.grdListaEntrenadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdListaEntrenadores.Size = new System.Drawing.Size(945, 226);
-            this.grdListaEntrenadores.TabIndex = 24;
-            this.grdListaEntrenadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaEntrenadores_CellDoubleClick);
-            // 
-            // Cod_entrenador
-            // 
-            this.Cod_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cod_entrenador.DataPropertyName = "COD_ENTRENADOR";
-            this.Cod_entrenador.Frozen = true;
-            this.Cod_entrenador.HeaderText = "Cod";
-            this.Cod_entrenador.MinimumWidth = 6;
-            this.Cod_entrenador.Name = "Cod_entrenador";
-            this.Cod_entrenador.Width = 65;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "ID_ENTRENADOR";
-            this.id.Frozen = true;
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 53;
-            // 
-            // nombre_entrenador
-            // 
-            this.nombre_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.nombre_entrenador.DataPropertyName = "NOMBRE_ENTRENADOR";
-            this.nombre_entrenador.Frozen = true;
-            this.nombre_entrenador.HeaderText = "Nombre";
-            this.nombre_entrenador.MinimumWidth = 6;
-            this.nombre_entrenador.Name = "nombre_entrenador";
-            this.nombre_entrenador.Width = 93;
-            // 
-            // apellido1
-            // 
-            this.apellido1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.apellido1.DataPropertyName = "APELLIDO1_ENTRENADOR";
-            this.apellido1.Frozen = true;
-            this.apellido1.HeaderText = "Apellido 1";
-            this.apellido1.MinimumWidth = 6;
-            this.apellido1.Name = "apellido1";
-            this.apellido1.Width = 99;
-            // 
-            // apellido2
-            // 
-            this.apellido2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.apellido2.DataPropertyName = "APELLIDO2_ENTRENADOR";
-            this.apellido2.HeaderText = "Apellido 2";
-            this.apellido2.MinimumWidth = 6;
-            this.apellido2.Name = "apellido2";
-            this.apellido2.Visible = false;
-            this.apellido2.Width = 125;
-            // 
-            // telefono1
-            // 
-            this.telefono1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono1.DataPropertyName = "TELEFONO1_ENTRENADOR";
-            this.telefono1.Frozen = true;
-            this.telefono1.HeaderText = "Teléfono";
-            this.telefono1.MinimumWidth = 6;
-            this.telefono1.Name = "telefono1";
-            this.telefono1.Width = 96;
-            // 
-            // telefono2
-            // 
-            this.telefono2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.telefono2.DataPropertyName = "TELEFONO2_ENTRENADOR";
-            this.telefono2.HeaderText = "Teléfono 2";
-            this.telefono2.MinimumWidth = 6;
-            this.telefono2.Name = "telefono2";
-            this.telefono2.Visible = false;
-            this.telefono2.Width = 125;
-            // 
-            // correo
-            // 
-            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.correo.DataPropertyName = "CORREO_ENTRENADOR";
-            this.correo.Frozen = true;
-            this.correo.HeaderText = "Email";
-            this.correo.MinimumWidth = 6;
-            this.correo.Name = "correo";
-            this.correo.Visible = false;
-            this.correo.Width = 125;
-            // 
-            // fechaNacimiento
-            // 
-            this.fechaNacimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaNacimiento.DataPropertyName = "FECHA_NACIMIENTO_ENTRENADOR";
-            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fechaNacimiento.MinimumWidth = 6;
-            this.fechaNacimiento.Name = "fechaNacimiento";
-            // 
-            // provincia
-            // 
-            this.provincia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.provincia.DataPropertyName = "PROVINCIA_ENTRENADOR";
-            this.provincia.HeaderText = "Provincia";
-            this.provincia.MinimumWidth = 6;
-            this.provincia.Name = "provincia";
-            this.provincia.Width = 98;
-            // 
-            // distrito
-            // 
-            this.distrito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.distrito.DataPropertyName = "DISTRITO_ENTRENADOR";
-            this.distrito.HeaderText = "Distrito";
-            this.distrito.MinimumWidth = 6;
-            this.distrito.Name = "distrito";
-            this.distrito.Width = 87;
-            // 
-            // canton
-            // 
-            this.canton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.canton.DataPropertyName = "CANTON_ENTRENADOR";
-            this.canton.HeaderText = "Cantón";
-            this.canton.MinimumWidth = 6;
-            this.canton.Name = "canton";
-            this.canton.Visible = false;
-            this.canton.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.estado.DataPropertyName = "ESTADO_ENTRENADOR";
-            this.estado.HeaderText = "Estado";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.Width = 83;
+            this.grdListaAtletas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.grdListaAtletas.Location = new System.Drawing.Point(3, 240);
+            this.grdListaAtletas.Name = "grdListaAtletas";
+            this.grdListaAtletas.RowHeadersWidth = 51;
+            this.grdListaAtletas.RowTemplate.Height = 29;
+            this.grdListaAtletas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdListaAtletas.Size = new System.Drawing.Size(945, 226);
+            this.grdListaAtletas.TabIndex = 30;
             // 
             // panel1
             // 
@@ -292,11 +174,11 @@ namespace InterfazEscritorio
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 233);
-            this.panel1.TabIndex = 23;
+            this.panel1.TabIndex = 29;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel2.Controls.Add(this.txtProvincia);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtID);
@@ -341,7 +223,7 @@ namespace InterfazEscritorio
             "Heredia",
             "Cartago",
             "Limón"});
-            this.txtProvincia.Location = new System.Drawing.Point(343, 162);
+            this.txtProvincia.Location = new System.Drawing.Point(343, 161);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(141, 28);
             this.txtProvincia.TabIndex = 9;
@@ -350,7 +232,7 @@ namespace InterfazEscritorio
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(237, 27);
+            this.label7.Location = new System.Drawing.Point(231, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 23);
             this.label7.TabIndex = 29;
@@ -358,7 +240,7 @@ namespace InterfazEscritorio
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(359, 26);
+            this.txtID.Location = new System.Drawing.Point(353, 27);
             this.txtID.MaxLength = 30;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(125, 27);
@@ -389,7 +271,7 @@ namespace InterfazEscritorio
             // DTFechaNacimie
             // 
             this.DTFechaNacimie.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTFechaNacimie.Location = new System.Drawing.Point(113, 160);
+            this.DTFechaNacimie.Location = new System.Drawing.Point(105, 161);
             this.DTFechaNacimie.Name = "DTFechaNacimie";
             this.DTFechaNacimie.Size = new System.Drawing.Size(125, 27);
             this.DTFechaNacimie.TabIndex = 8;
@@ -403,7 +285,7 @@ namespace InterfazEscritorio
             // 
             // txtApellido2
             // 
-            this.txtApellido2.Location = new System.Drawing.Point(816, 88);
+            this.txtApellido2.Location = new System.Drawing.Point(808, 88);
             this.txtApellido2.MaxLength = 20;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(125, 27);
@@ -411,7 +293,7 @@ namespace InterfazEscritorio
             // 
             // txtTelefono1
             // 
-            this.txtTelefono1.Location = new System.Drawing.Point(359, 87);
+            this.txtTelefono1.Location = new System.Drawing.Point(353, 88);
             this.txtTelefono1.MaxLength = 15;
             this.txtTelefono1.Name = "txtTelefono1";
             this.txtTelefono1.Size = new System.Drawing.Size(125, 27);
@@ -429,7 +311,7 @@ namespace InterfazEscritorio
             // 
             // txtApellido1
             // 
-            this.txtApellido1.Location = new System.Drawing.Point(816, 27);
+            this.txtApellido1.Location = new System.Drawing.Point(808, 27);
             this.txtApellido1.MaxLength = 20;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(125, 27);
@@ -437,7 +319,7 @@ namespace InterfazEscritorio
             // 
             // txtTelefono2
             // 
-            this.txtTelefono2.Location = new System.Drawing.Point(113, 83);
+            this.txtTelefono2.Location = new System.Drawing.Point(105, 83);
             this.txtTelefono2.MaxLength = 15;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Size = new System.Drawing.Size(125, 27);
@@ -445,7 +327,7 @@ namespace InterfazEscritorio
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(581, 86);
+            this.txtEmail.Location = new System.Drawing.Point(581, 87);
             this.txtEmail.MaxLength = 150;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 27);
@@ -453,7 +335,7 @@ namespace InterfazEscritorio
             // 
             // txtCanton
             // 
-            this.txtCanton.Location = new System.Drawing.Point(581, 186);
+            this.txtCanton.Location = new System.Drawing.Point(581, 192);
             this.txtCanton.Name = "txtCanton";
             this.txtCanton.Size = new System.Drawing.Size(125, 27);
             this.txtCanton.TabIndex = 11;
@@ -462,7 +344,7 @@ namespace InterfazEscritorio
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(490, 34);
+            this.label13.Location = new System.Drawing.Point(490, 31);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 23);
             this.label13.TabIndex = 13;
@@ -482,7 +364,7 @@ namespace InterfazEscritorio
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(269, 87);
+            this.label11.Location = new System.Drawing.Point(259, 89);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 23);
             this.label11.TabIndex = 11;
@@ -512,7 +394,7 @@ namespace InterfazEscritorio
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label.Location = new System.Drawing.Point(254, 165);
+            this.label.Location = new System.Drawing.Point(254, 166);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(83, 23);
             this.label.TabIndex = 8;
@@ -522,7 +404,7 @@ namespace InterfazEscritorio
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(489, 190);
+            this.label6.Location = new System.Drawing.Point(489, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 23);
             this.label6.TabIndex = 6;
@@ -560,7 +442,7 @@ namespace InterfazEscritorio
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(581, 30);
+            this.txtNombre.Location = new System.Drawing.Point(581, 27);
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 27);
@@ -570,18 +452,18 @@ namespace InterfazEscritorio
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 23);
+            this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 0;
-            this.label2.Text = "COD Entrenador:";
+            this.label2.Text = "COD Atleta:";
             // 
             // txtCodEntrenador
             // 
             this.txtCodEntrenador.Enabled = false;
-            this.txtCodEntrenador.Location = new System.Drawing.Point(150, 26);
+            this.txtCodEntrenador.Location = new System.Drawing.Point(133, 25);
             this.txtCodEntrenador.Name = "txtCodEntrenador";
-            this.txtCodEntrenador.Size = new System.Drawing.Size(81, 27);
+            this.txtCodEntrenador.Size = new System.Drawing.Size(92, 27);
             this.txtCodEntrenador.TabIndex = 1;
             this.txtCodEntrenador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -611,35 +493,147 @@ namespace InterfazEscritorio
             this.txtCod.TabIndex = 1;
             this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // Cod_entrenador
             // 
-            this.button1.BackColor = System.Drawing.Color.PowderBlue;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(662, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 69);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Buscar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.Cod_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Cod_entrenador.DataPropertyName = "COD_ATLETA";
+            this.Cod_entrenador.Frozen = true;
+            this.Cod_entrenador.HeaderText = "Cod";
+            this.Cod_entrenador.MinimumWidth = 6;
+            this.Cod_entrenador.Name = "Cod_entrenador";
+            this.Cod_entrenador.Width = 65;
             // 
-            // FrmEntrenadores
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "ID_ATLETA";
+            this.id.Frozen = true;
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 53;
+            // 
+            // nombre_entrenador
+            // 
+            this.nombre_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nombre_entrenador.DataPropertyName = "NOMBRE_ATLETA";
+            this.nombre_entrenador.Frozen = true;
+            this.nombre_entrenador.HeaderText = "Nombre";
+            this.nombre_entrenador.MinimumWidth = 6;
+            this.nombre_entrenador.Name = "nombre_entrenador";
+            this.nombre_entrenador.Width = 93;
+            // 
+            // apellido1
+            // 
+            this.apellido1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.apellido1.DataPropertyName = "APELLIDO1_ATLETA";
+            this.apellido1.Frozen = true;
+            this.apellido1.HeaderText = "Apellido 1";
+            this.apellido1.MinimumWidth = 6;
+            this.apellido1.Name = "apellido1";
+            this.apellido1.Width = 107;
+            // 
+            // apellido2
+            // 
+            this.apellido2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.apellido2.DataPropertyName = "APELLIDO2_ATLETA";
+            this.apellido2.HeaderText = "Apellido 2";
+            this.apellido2.MinimumWidth = 6;
+            this.apellido2.Name = "apellido2";
+            this.apellido2.Visible = false;
+            this.apellido2.Width = 107;
+            // 
+            // telefono1
+            // 
+            this.telefono1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono1.DataPropertyName = "TELEFONO1_ATLETA";
+            this.telefono1.Frozen = true;
+            this.telefono1.HeaderText = "Teléfono";
+            this.telefono1.MinimumWidth = 6;
+            this.telefono1.Name = "telefono1";
+            this.telefono1.Width = 96;
+            // 
+            // telefono2
+            // 
+            this.telefono2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefono2.DataPropertyName = "TELEFONO2_ATLETA";
+            this.telefono2.HeaderText = "Teléfono 2";
+            this.telefono2.MinimumWidth = 6;
+            this.telefono2.Name = "telefono2";
+            this.telefono2.Visible = false;
+            this.telefono2.Width = 108;
+            // 
+            // genero
+            // 
+            this.genero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.genero.DataPropertyName = "GENERO";
+            this.genero.Frozen = true;
+            this.genero.HeaderText = "Genero";
+            this.genero.MinimumWidth = 6;
+            this.genero.Name = "genero";
+            this.genero.Visible = false;
+            this.genero.Width = 86;
+            // 
+            // provincia
+            // 
+            this.provincia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.provincia.DataPropertyName = "PROVINCIA_ATLETA";
+            this.provincia.HeaderText = "Provincia";
+            this.provincia.MinimumWidth = 6;
+            this.provincia.Name = "provincia";
+            this.provincia.Width = 98;
+            // 
+            // distrito
+            // 
+            this.distrito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.distrito.DataPropertyName = "DISTRITO_ATLETA";
+            this.distrito.HeaderText = "Distrito";
+            this.distrito.MinimumWidth = 6;
+            this.distrito.Name = "distrito";
+            this.distrito.Width = 87;
+            // 
+            // canton
+            // 
+            this.canton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.canton.DataPropertyName = "CANTON_ATLETA";
+            this.canton.HeaderText = "Cantón";
+            this.canton.MinimumWidth = 6;
+            this.canton.Name = "canton";
+            this.canton.Visible = false;
+            this.canton.Width = 85;
+            // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaNacimiento.DataPropertyName = "FECHA_NACIMIENTO_ATLETA";
+            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fechaNacimiento.MinimumWidth = 6;
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            // 
+            // estado
+            // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.estado.DataPropertyName = "ESTADO_ATLETA";
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.Width = 83;
+            // 
+            // FrmAtletas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 552);
+            this.ClientSize = new System.Drawing.Size(953, 559);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.grdListaEntrenadores);
+            this.Controls.Add(this.grdListaAtletas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmEntrenadores";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Entrenadores";
-            this.Load += new System.EventHandler(this.FrmEntrenadores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdListaEntrenadores)).EndInit();
+            this.Name = "FrmAtletas";
+            this.Text = "Atletas";
+            ((System.ComponentModel.ISupportInitialize)(this.grdListaAtletas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -650,17 +644,23 @@ namespace InterfazEscritorio
 
         #endregion
 
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.DataGridView grdListaEntrenadores;
+        private System.Windows.Forms.DataGridView grdListaAtletas;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox txtProvincia;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.RadioButton RBInactivo;
+        private System.Windows.Forms.RadioButton RBActivo;
+        private System.Windows.Forms.DateTimePicker DTFechaNacimie;
         private System.Windows.Forms.TextBox txtDistrito;
         private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtTelefono1;
+        private System.Windows.Forms.Label Nacimiento;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtTelefono2;
         private System.Windows.Forms.TextBox txtEmail;
@@ -671,7 +671,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label Nacimiento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -680,12 +679,8 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodEntrenador;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker DTFechaNacimie;
-        private System.Windows.Forms.RadioButton RBInactivo;
-        private System.Windows.Forms.RadioButton RBActivo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_entrenador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_entrenador;
@@ -693,12 +688,11 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido2;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono1;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genero;
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn canton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.ComboBox txtProvincia;
     }
 }

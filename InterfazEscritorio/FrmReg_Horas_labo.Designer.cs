@@ -30,7 +30,7 @@ namespace InterfazEscritorio
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReg_Horas_labo));
-            this.dgvIncapEvent = new System.Windows.Forms.DataGridView();
+            this.dgvRegHoraLabo = new System.Windows.Forms.DataGridView();
             this.cod_registro_horalabo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dia_registro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,32 +54,33 @@ namespace InterfazEscritorio
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIncapEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegHoraLabo)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvIncapEvent
+            // dgvRegHoraLabo
             // 
-            this.dgvIncapEvent.AllowUserToAddRows = false;
-            this.dgvIncapEvent.AllowUserToDeleteRows = false;
-            this.dgvIncapEvent.AllowUserToResizeColumns = false;
-            this.dgvIncapEvent.AllowUserToResizeRows = false;
-            this.dgvIncapEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIncapEvent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvRegHoraLabo.AllowUserToAddRows = false;
+            this.dgvRegHoraLabo.AllowUserToDeleteRows = false;
+            this.dgvRegHoraLabo.AllowUserToResizeColumns = false;
+            this.dgvRegHoraLabo.AllowUserToResizeRows = false;
+            this.dgvRegHoraLabo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegHoraLabo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cod_registro_horalabo,
             this.cod_entrenador,
             this.dia_registro,
             this.hora_inicio,
             this.hora_final});
-            this.dgvIncapEvent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvIncapEvent.Location = new System.Drawing.Point(0, 248);
-            this.dgvIncapEvent.Name = "dgvIncapEvent";
-            this.dgvIncapEvent.RowHeadersWidth = 51;
-            this.dgvIncapEvent.RowTemplate.Height = 29;
-            this.dgvIncapEvent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncapEvent.Size = new System.Drawing.Size(945, 226);
-            this.dgvIncapEvent.TabIndex = 48;
+            this.dgvRegHoraLabo.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvRegHoraLabo.Location = new System.Drawing.Point(0, 248);
+            this.dgvRegHoraLabo.Name = "dgvRegHoraLabo";
+            this.dgvRegHoraLabo.RowHeadersWidth = 51;
+            this.dgvRegHoraLabo.RowTemplate.Height = 29;
+            this.dgvRegHoraLabo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRegHoraLabo.Size = new System.Drawing.Size(945, 226);
+            this.dgvRegHoraLabo.TabIndex = 48;
+            this.dgvRegHoraLabo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegHoraLabo_CellDoubleClick);
             // 
             // cod_registro_horalabo
             // 
@@ -133,6 +134,7 @@ namespace InterfazEscritorio
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -145,6 +147,7 @@ namespace InterfazEscritorio
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
@@ -157,6 +160,7 @@ namespace InterfazEscritorio
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // panel1
             // 
@@ -205,6 +209,7 @@ namespace InterfazEscritorio
             this.DTHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.DTHoraFin.Location = new System.Drawing.Point(544, 157);
             this.DTHoraFin.Name = "DTHoraFin";
+            this.DTHoraFin.ShowUpDown = true;
             this.DTHoraFin.Size = new System.Drawing.Size(155, 27);
             this.DTHoraFin.TabIndex = 23;
             // 
@@ -213,6 +218,7 @@ namespace InterfazEscritorio
             this.DTHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.DTHoraInicio.Location = new System.Drawing.Point(544, 100);
             this.DTHoraInicio.Name = "DTHoraInicio";
+            this.DTHoraInicio.ShowUpDown = true;
             this.DTHoraInicio.Size = new System.Drawing.Size(155, 27);
             this.DTHoraInicio.TabIndex = 21;
             // 
@@ -245,6 +251,7 @@ namespace InterfazEscritorio
             this.linkLabel1.TabIndex = 18;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "COD Entrenador:";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label7
             // 
@@ -317,7 +324,7 @@ namespace InterfazEscritorio
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 552);
-            this.Controls.Add(this.dgvIncapEvent);
+            this.Controls.Add(this.dgvRegHoraLabo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
@@ -325,7 +332,8 @@ namespace InterfazEscritorio
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmReg_Horas_labo";
             this.Text = "FrmReg_Horas_labo";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIncapEvent)).EndInit();
+            this.Load += new System.EventHandler(this.FrmReg_Horas_labo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegHoraLabo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -336,7 +344,7 @@ namespace InterfazEscritorio
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvIncapEvent;
+        private System.Windows.Forms.DataGridView dgvRegHoraLabo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_registro_horalabo;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_entrenador;
         private System.Windows.Forms.DataGridViewTextBoxColumn dia_registro;

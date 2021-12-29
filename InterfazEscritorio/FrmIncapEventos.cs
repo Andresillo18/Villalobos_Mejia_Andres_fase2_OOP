@@ -181,7 +181,7 @@ namespace InterfazEscritorio
                 }
                 else
                 {
-                    MessageBox.Show("El campo de refencia del entrenador es obligatorio o el entrenador debe tener algún certificado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El campo de refencia del entrenador es obligatorio!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -234,26 +234,18 @@ namespace InterfazEscritorio
 
         private void dgvIncapEvent_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int cod = 0;
-
-            //MessageBox.Show("Campo 0: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[0].Value));
-            //MessageBox.Show("Campo 1: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[1].Value));
-            //MessageBox.Show("Campo 2: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[2].Value));
-            //MessageBox.Show("Campo 3: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[3].Value));
-            //MessageBox.Show("Campo 4: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[4].Value));
-            //MessageBox.Show("Campo 5: " + Convert.ToString(dgvIncapEvent.SelectedRows[0].Cells[5].Value));
+            int cod = 0;        
             try
             {
-                cod = (int)dgvIncapEvent.SelectedRows[0].Cells[1].Value;
+                cod = (int)dgvIncapEvent.SelectedRows[0].Cells[0].Value;
                 cargarIncapEvent(cod);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            #endregion
-
         }
+
+        #endregion
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CapaLogicaNegocio
 {
-    public class BLIncapEvent
+    public class BLRegisHoraLabo
     {
         #region Atributos
 
@@ -22,12 +22,12 @@ namespace CapaLogicaNegocio
 
         #region Constructores
 
-        public BLIncapEvent(string cadenaConexion)
+        public BLRegisHoraLabo(string cadenaConexion)
         {
             _cadenaConexion = cadenaConexion;
         }
 
-        public BLIncapEvent()
+        public BLRegisHoraLabo()
         {
             _cadenaConexion = string.Empty;
         }
@@ -36,15 +36,15 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadIncapEvent incapEvent)
+        public int Insertar(EntidadRegisHoraLabo horaLabo)
         {
             int cod = 0;
 
-            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
+            DARegisHoraLabo accesoDatos = new DARegisHoraLabo(_cadenaConexion);
 
             try
             {
-                cod = accesoDatos.Insertar(incapEvent);
+                cod = accesoDatos.Insertar(horaLabo);
             }
             catch (Exception)
             {
@@ -57,14 +57,14 @@ namespace CapaLogicaNegocio
 
         #region Método Modificar (Actualizar)
 
-        public int Modificar(EntidadIncapEvent incapEvent)
+        public int Modificar(EntidadRegisHoraLabo horaLabo)
         {
             int filasAfectadas = 0;
-            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
+            DARegisHoraLabo accesoDatos = new DARegisHoraLabo(_cadenaConexion);
 
             try
             {
-                filasAfectadas = accesoDatos.Modificar(incapEvent);
+                filasAfectadas = accesoDatos.Modificar(horaLabo);
             }
             catch (Exception)
             {
@@ -78,14 +78,14 @@ namespace CapaLogicaNegocio
 
         #region Para el método lista un registro
 
-        public DataSet listarIncapEvent(string condicion, string orden)
+        public DataSet listarRegisHorasLabo(string condicion, string orden)
         {
             DataSet DS;
-            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
+            DARegisHoraLabo accesoDatos = new DARegisHoraLabo(_cadenaConexion);
 
             try
             {
-                DS = accesoDatos.listarIncapEvents(condicion, orden);
+                DS = accesoDatos.listarHorasLabo(condicion, orden);
             }
             catch (Exception)
             {
@@ -98,48 +98,48 @@ namespace CapaLogicaNegocio
 
         #region listarModulos con un parámetro
 
-        public List<EntidadIncapEvent> listarIncapEvent(string condicion)
+        public List<EntidadRegisHoraLabo> listarRegisHorasLabo(string condicion)
         {
-            List<EntidadIncapEvent> listaIncapEvent;
-            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
+            List<EntidadRegisHoraLabo> listaHorasLabo;
+            DARegisHoraLabo accesoDatos = new DARegisHoraLabo(_cadenaConexion);
 
             try
             {
-                listaIncapEvent = accesoDatos.listarIncapEvents(condicion);
+                listaHorasLabo = accesoDatos.listarHorasLabo(condicion);
             }
             catch (Exception)
             {
                 throw;
             }
-            return listaIncapEvent;
+            return listaHorasLabo;
         }
 
         #endregion
 
-        #region ObtenerHorario
+        #region ObtenerHorasLabo
 
-        public EntidadIncapEvent ObtenerIncapEvent(int cod)
+        public EntidadRegisHoraLabo ObtenerRegisHorasLabo(int cod)
         {
-            EntidadIncapEvent incapEvent;
-            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
+            EntidadRegisHoraLabo horasLabo;
+            DARegisHoraLabo accesoDatos = new DARegisHoraLabo(_cadenaConexion);
 
             try
             {
-                incapEvent = accesoDatos.ObtenerIncapEvent(cod);
+                horasLabo = accesoDatos.ObtenerIncapEvent(cod);
 
             }
             catch (Exception)
             {
                 throw;
             }
-            return incapEvent;
+            return horasLabo;
         }
 
         #endregion
 
-        #region EliminarIncapEvent
+        #region EliminarHorasLabo
 
-        public int EliminarIncapEvent(int cod)
+        public int EliminarHorasLabo(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
             DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
