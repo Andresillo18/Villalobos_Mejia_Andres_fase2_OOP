@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazEscritorio
 {
-    partial class FrmHorarEntrenadores
+    partial class FrmHorarEntrenador
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace InterfazEscritorio
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHorarEntrenadores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHorarEntrenador));
             this.dgvHorarEntrenador = new System.Windows.Forms.DataGridView();
             this.cod_horar_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +97,7 @@ namespace InterfazEscritorio
             this.dgvHorarEntrenador.RowHeadersWidth = 51;
             this.dgvHorarEntrenador.RowTemplate.Height = 29;
             this.dgvHorarEntrenador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHorarEntrenador.Size = new System.Drawing.Size(945, 235);
+            this.dgvHorarEntrenador.Size = new System.Drawing.Size(945, 261);
             this.dgvHorarEntrenador.TabIndex = 33;
             this.dgvHorarEntrenador.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarEntrenador_CellDoubleClick);
             // 
@@ -194,7 +194,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(402, 480);
+            this.btnGuardar.Location = new System.Drawing.Point(408, 506);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 32;
@@ -207,7 +207,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(550, 480);
+            this.btnEliminar.Location = new System.Drawing.Point(556, 506);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 31;
@@ -220,7 +220,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(241, 480);
+            this.btnCrear.Location = new System.Drawing.Point(247, 506);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 30;
@@ -464,18 +464,18 @@ namespace InterfazEscritorio
             this.label2.TabIndex = 0;
             this.label2.Text = "COD Horario de Entrenadores:";
             // 
-            // FrmHorarEntrenadores
+            // FrmHorarEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.dgvHorarEntrenador);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmHorarEntrenadores";
+            this.Name = "FrmHorarEntrenador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Horario de Entrenadores";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));

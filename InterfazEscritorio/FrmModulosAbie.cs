@@ -235,17 +235,16 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-        #endregion
 
         private void linkLabel1_Click(object sender, EventArgs e)
         {
-            FrmEntrenadores FrmEntrenadores = new FrmEntrenadores();
+            FrmEntrenador FrmEntrenadores = new FrmEntrenador();
             FrmEntrenadores.Show();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmModulos FrmModulos = new FrmModulos();
+            FrmModulo FrmModulos = new FrmModulo();
             FrmModulos.Show();
         }
 
@@ -254,5 +253,8 @@ namespace InterfazEscritorio
             FrmHorarMod FrmHorarMod = new FrmHorarMod();
             FrmHorarMod.Show();
         }
+
+        #endregion
+
     }
 }

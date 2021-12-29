@@ -87,12 +87,12 @@ namespace InterfazEscritorio
             this.inicio_horario,
             this.fin_horario});
             this.dgvHorarMod.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHorarMod.Location = new System.Drawing.Point(0, 245);
+            this.dgvHorarMod.Location = new System.Drawing.Point(0, 239);
             this.dgvHorarMod.Name = "dgvHorarMod";
             this.dgvHorarMod.RowHeadersWidth = 51;
             this.dgvHorarMod.RowTemplate.Height = 29;
             this.dgvHorarMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHorarMod.Size = new System.Drawing.Size(945, 226);
+            this.dgvHorarMod.Size = new System.Drawing.Size(945, 252);
             this.dgvHorarMod.TabIndex = 28;
             this.dgvHorarMod.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarMod_CellDoubleClick);
             // 
@@ -181,7 +181,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(402, 477);
+            this.btnGuardar.Location = new System.Drawing.Point(402, 497);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 27;
@@ -194,7 +194,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(550, 477);
+            this.btnEliminar.Location = new System.Drawing.Point(550, 497);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 26;
@@ -207,7 +207,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(241, 477);
+            this.btnCrear.Location = new System.Drawing.Point(241, 497);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 25;
@@ -246,10 +246,9 @@ namespace InterfazEscritorio
             this.panel2.Controls.Add(this.CBLunes);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtCodHorMod);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 233);
+            this.panel2.Size = new System.Drawing.Size(945, 240);
             this.panel2.TabIndex = 25;
             // 
             // label5
@@ -422,7 +421,7 @@ namespace InterfazEscritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.dgvHorarMod);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);

@@ -63,9 +63,10 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(408, 477);
+            this.btnGuardar.Location = new System.Drawing.Point(355, 382);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(130, 69);
+            this.btnGuardar.Size = new System.Drawing.Size(114, 52);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -76,9 +77,10 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(555, 477);
+            this.btnEliminar.Location = new System.Drawing.Point(484, 382);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(130, 69);
+            this.btnEliminar.Size = new System.Drawing.Size(114, 52);
             this.btnEliminar.TabIndex = 21;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -89,9 +91,10 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(242, 477);
+            this.btnCrear.Location = new System.Drawing.Point(210, 382);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(130, 69);
+            this.btnCrear.Size = new System.Drawing.Size(114, 52);
             this.btnCrear.TabIndex = 20;
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -114,12 +117,13 @@ namespace InterfazEscritorio
             this.fecha_fin,
             this.observa_mod});
             this.grdListaModAbier.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.grdListaModAbier.Location = new System.Drawing.Point(0, 245);
+            this.grdListaModAbier.Location = new System.Drawing.Point(0, 199);
+            this.grdListaModAbier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdListaModAbier.Name = "grdListaModAbier";
             this.grdListaModAbier.RowHeadersWidth = 51;
             this.grdListaModAbier.RowTemplate.Height = 29;
             this.grdListaModAbier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdListaModAbier.Size = new System.Drawing.Size(945, 226);
+            this.grdListaModAbier.Size = new System.Drawing.Size(827, 170);
             this.grdListaModAbier.TabIndex = 19;
             this.grdListaModAbier.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaModAbier_CellDoubleClick);
             // 
@@ -130,7 +134,7 @@ namespace InterfazEscritorio
             this.cod_programa.HeaderText = "Cod";
             this.cod_programa.MinimumWidth = 6;
             this.cod_programa.Name = "cod_programa";
-            this.cod_programa.Width = 65;
+            this.cod_programa.Width = 54;
             // 
             // nombre_entrenador
             // 
@@ -198,17 +202,18 @@ namespace InterfazEscritorio
             this.panel1.Controls.Add(this.txtCod);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 233);
+            this.panel1.Size = new System.Drawing.Size(827, 195);
             this.panel1.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(635, 38);
+            this.label2.Location = new System.Drawing.Point(556, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 23);
+            this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 26;
             this.label2.Text = "Referencias:";
             // 
@@ -216,27 +221,29 @@ namespace InterfazEscritorio
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(23, 82);
+            this.label10.Location = new System.Drawing.Point(20, 62);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 23);
+            this.label10.Size = new System.Drawing.Size(83, 19);
             this.label10.TabIndex = 25;
             this.label10.Text = "Fecha Inicio:";
             // 
             // DTFechaInicio
             // 
             this.DTFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DTFechaInicio.Location = new System.Drawing.Point(162, 82);
+            this.DTFechaInicio.Location = new System.Drawing.Point(142, 62);
+            this.DTFechaInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
+            this.DTFechaInicio.Size = new System.Drawing.Size(260, 23);
             this.DTFechaInicio.TabIndex = 24;
             // 
             // txtHorarioModulos
             // 
-            this.txtHorarioModulos.Location = new System.Drawing.Point(766, 183);
+            this.txtHorarioModulos.Location = new System.Drawing.Point(670, 137);
+            this.txtHorarioModulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHorarioModulos.MaxLength = 40;
             this.txtHorarioModulos.Name = "txtHorarioModulos";
-            this.txtHorarioModulos.Size = new System.Drawing.Size(125, 27);
+            this.txtHorarioModulos.Size = new System.Drawing.Size(110, 23);
             this.txtHorarioModulos.TabIndex = 4;
             // 
             // linkLabel3
@@ -244,9 +251,9 @@ namespace InterfazEscritorio
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel3.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel3.Location = new System.Drawing.Point(622, 177);
+            this.linkLabel3.Location = new System.Drawing.Point(544, 133);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(112, 23);
+            this.linkLabel3.Size = new System.Drawing.Size(92, 19);
             this.linkLabel3.TabIndex = 22;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "COD Horario:";
@@ -257,9 +264,9 @@ namespace InterfazEscritorio
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(622, 130);
+            this.linkLabel2.Location = new System.Drawing.Point(544, 98);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(114, 23);
+            this.linkLabel2.Size = new System.Drawing.Size(94, 19);
             this.linkLabel2.TabIndex = 21;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "COD Módulo:";
@@ -270,9 +277,9 @@ namespace InterfazEscritorio
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(620, 86);
+            this.linkLabel1.Location = new System.Drawing.Point(542, 64);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(140, 23);
+            this.linkLabel1.Size = new System.Drawing.Size(114, 19);
             this.linkLabel1.TabIndex = 20;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "COD Entrenador:";
@@ -280,69 +287,74 @@ namespace InterfazEscritorio
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(162, 138);
+            this.txtObservaciones.Location = new System.Drawing.Point(142, 104);
+            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtObservaciones.MaxLength = 500;
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(231, 82);
+            this.txtObservaciones.Size = new System.Drawing.Size(203, 62);
             this.txtObservaciones.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(23, 139);
+            this.label9.Location = new System.Drawing.Point(20, 104);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 23);
+            this.label9.Size = new System.Drawing.Size(101, 19);
             this.label9.TabIndex = 15;
             this.label9.Text = "Observaciones:";
             // 
             // txtCod_Entrenador
             // 
-            this.txtCod_Entrenador.Location = new System.Drawing.Point(766, 86);
+            this.txtCod_Entrenador.Location = new System.Drawing.Point(670, 64);
+            this.txtCod_Entrenador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCod_Entrenador.MaxLength = 200;
             this.txtCod_Entrenador.Name = "txtCod_Entrenador";
-            this.txtCod_Entrenador.Size = new System.Drawing.Size(125, 27);
+            this.txtCod_Entrenador.Size = new System.Drawing.Size(110, 23);
             this.txtCod_Entrenador.TabIndex = 2;
             // 
             // txtCod_Modulo
             // 
-            this.txtCod_Modulo.Location = new System.Drawing.Point(766, 130);
+            this.txtCod_Modulo.Location = new System.Drawing.Point(670, 98);
+            this.txtCod_Modulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCod_Modulo.MaxLength = 40;
             this.txtCod_Modulo.Name = "txtCod_Modulo";
-            this.txtCod_Modulo.Size = new System.Drawing.Size(125, 27);
+            this.txtCod_Modulo.Size = new System.Drawing.Size(110, 23);
             this.txtCod_Modulo.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(77, 26);
+            this.label1.Location = new System.Drawing.Point(67, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 23);
+            this.label1.Size = new System.Drawing.Size(42, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "COD:";
             // 
             // txtCod
             // 
             this.txtCod.Enabled = false;
-            this.txtCod.Location = new System.Drawing.Point(162, 22);
+            this.txtCod.Location = new System.Drawing.Point(142, 16);
+            this.txtCod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(125, 27);
+            this.txtCod.Size = new System.Drawing.Size(110, 23);
             this.txtCod.TabIndex = 1;
             this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FrmModulosAbie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(827, 445);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.grdListaModAbier);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmModulosAbie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulos Abiertos";

@@ -13,12 +13,12 @@ using CapaLogicaNegocio;
 
 namespace InterfazEscritorio
 {
-    public partial class FrmModulos : Form
+    public partial class FrmModulo : Form
     {
         EntidadModulo modRegistrado; // Variable de forma global
         EntidadModulosPrograma modulosPrograma;
 
-        public FrmModulos()
+        public FrmModulo()
         {
             InitializeComponent();
         }

@@ -15,7 +15,7 @@ namespace InterfazEscritorio
 {
     public partial class FrmProgramas : Form
     {
-        EntidadadPrograma programaRegistrado; // Cargará los datos de un programa en los campos
+        EntidadPrograma programaRegistrado; // Cargará los datos de un programa en los campos
 
         public FrmProgramas()
         {
@@ -24,16 +24,16 @@ namespace InterfazEscritorio
 
         #region Método para generar una entidad
 
-        private EntidadadPrograma GenerarEntidad()
+        private EntidadPrograma GenerarEntidad()
         {
-            EntidadadPrograma programa;
+            EntidadPrograma programa;
             if (!string.IsNullOrEmpty(txtCod.Text))
             {
                 programa = programaRegistrado; // Como ya fue seleccionado un programa, ese será modificado 
             }
             else
             {
-                programa = new EntidadadPrograma();
+                programa = new EntidadPrograma();
             }
 
             //La casilla selecciona la transforma para que la entidad la entienda
@@ -119,7 +119,7 @@ namespace InterfazEscritorio
 
         private void cargarElPrograma(int cod)
         {
-            EntidadadPrograma programa;
+            EntidadPrograma programa;
             BLPrograma logica = new BLPrograma(Configuracion.getConnectionString);
 
             try
@@ -182,7 +182,7 @@ namespace InterfazEscritorio
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             BLPrograma logica = new BLPrograma(Configuracion.getConnectionString);// Se le crea un objeto de la clase lógica y se le pasa la conexión
-            EntidadadPrograma programa;
+            EntidadPrograma programa;
             int elResultado;
 
             try
@@ -253,7 +253,7 @@ namespace InterfazEscritorio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EntidadadPrograma programa;
+            EntidadPrograma programa;
             int resultado; // Lo que retornará los métodos al obtener un progreso
             BLPrograma logica = new BLPrograma(Configuracion.getConnectionString);
 

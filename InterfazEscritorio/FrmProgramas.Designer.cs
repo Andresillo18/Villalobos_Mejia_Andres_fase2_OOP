@@ -114,7 +114,7 @@ namespace InterfazEscritorio
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(748, 16);
+            this.label4.Location = new System.Drawing.Point(747, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 23);
             this.label4.TabIndex = 6;
@@ -206,7 +206,7 @@ namespace InterfazEscritorio
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(508, 104);
+            this.txtEmail.Location = new System.Drawing.Point(507, 104);
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 27);
@@ -265,10 +265,10 @@ namespace InterfazEscritorio
             // DTFechaInicio
             // 
             this.DTFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DTFechaInicio.Location = new System.Drawing.Point(124, 164);
+            this.DTFechaInicio.Location = new System.Drawing.Point(123, 164);
             this.DTFechaInicio.Name = "DTFechaInicio";
             this.DTFechaInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DTFechaInicio.Size = new System.Drawing.Size(296, 27);
+            this.DTFechaInicio.Size = new System.Drawing.Size(297, 27);
             this.DTFechaInicio.TabIndex = 8;
             // 
             // txtCupo
@@ -290,7 +290,7 @@ namespace InterfazEscritorio
             // RDActivo
             // 
             this.RDActivo.AutoSize = true;
-            this.RDActivo.Location = new System.Drawing.Point(825, 10);
+            this.RDActivo.Location = new System.Drawing.Point(825, 11);
             this.RDActivo.Name = "RDActivo";
             this.RDActivo.Size = new System.Drawing.Size(72, 24);
             this.RDActivo.TabIndex = 12;
@@ -333,7 +333,7 @@ namespace InterfazEscritorio
             this.grdListaProgramas.RowHeadersWidth = 51;
             this.grdListaProgramas.RowTemplate.Height = 29;
             this.grdListaProgramas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdListaProgramas.Size = new System.Drawing.Size(945, 213);
+            this.grdListaProgramas.Size = new System.Drawing.Size(945, 237);
             this.grdListaProgramas.TabIndex = 13;
             this.grdListaProgramas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdListaProgramas_CellDoubleClick);
             // 
@@ -432,7 +432,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(242, 471);
+            this.btnCrear.Location = new System.Drawing.Point(244, 497);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 14;
@@ -445,7 +445,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(566, 471);
+            this.btnEliminar.Location = new System.Drawing.Point(567, 497);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 16;
@@ -458,7 +458,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(408, 471);
+            this.btnGuardar.Location = new System.Drawing.Point(409, 497);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 17;
@@ -471,7 +471,7 @@ namespace InterfazEscritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);

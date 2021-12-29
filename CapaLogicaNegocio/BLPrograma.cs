@@ -42,7 +42,7 @@ namespace CapaLogicaNegocio
         // Los métodos de la capa de BL son un PUENTE a la capa de DA
         //Y en la capa de BL se aplicarían las comprobaciones y REGLAS DEL NEGOCIO
 
-        public int Insertar(EntidadadPrograma programa)
+        public int Insertar(EntidadPrograma programa)
         {
             int cod = 0;
 
@@ -63,7 +63,7 @@ namespace CapaLogicaNegocio
 
         #region Modificar
 
-        public int Modificar(EntidadadPrograma programa)
+        public int Modificar(EntidadPrograma programa)
         {
             int filasAfectadas = 0;
             DAPrograma accesoDatos = new DAPrograma(_cadenaConexion);
@@ -104,9 +104,9 @@ namespace CapaLogicaNegocio
 
         #region listarProgramas con un parámetro
 
-        public List<EntidadadPrograma> listarProgramas(string condicion)
+        public List<EntidadPrograma> listarProgramas(string condicion)
         {
-            List<EntidadadPrograma> listarProgramas;
+            List<EntidadPrograma> listarProgramas;
             DAPrograma accesoDatos = new DAPrograma(_cadenaConexion);
 
             try
@@ -124,9 +124,9 @@ namespace CapaLogicaNegocio
 
         #region ObtenerPrograma
 
-        public EntidadadPrograma ObtenerPrograma(int cod)
+        public EntidadPrograma ObtenerPrograma(int cod)
         {
-            EntidadadPrograma programa;
+            EntidadPrograma programa;
             DAPrograma accesoDatos = new DAPrograma(_cadenaConexion);
 
             try

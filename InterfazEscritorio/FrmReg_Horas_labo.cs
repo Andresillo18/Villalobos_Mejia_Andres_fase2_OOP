@@ -122,7 +122,7 @@ namespace InterfazEscritorio
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmEntrenadores FrmEntrenadores = new FrmEntrenadores();
+            FrmEntrenador FrmEntrenadores = new FrmEntrenador();
             FrmEntrenadores.Show();
         }
 

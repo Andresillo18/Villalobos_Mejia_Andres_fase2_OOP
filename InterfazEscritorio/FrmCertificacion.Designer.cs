@@ -79,7 +79,7 @@ namespace InterfazEscritorio
             this.dgvCertificaciones.RowHeadersWidth = 51;
             this.dgvCertificaciones.RowTemplate.Height = 29;
             this.dgvCertificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCertificaciones.Size = new System.Drawing.Size(945, 226);
+            this.dgvCertificaciones.Size = new System.Drawing.Size(945, 262);
             this.dgvCertificaciones.TabIndex = 38;
             this.dgvCertificaciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCertificaciones_CellDoubleClick);
             // 
@@ -136,7 +136,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(420, 471);
+            this.btnGuardar.Location = new System.Drawing.Point(417, 507);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 37;
@@ -149,7 +149,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(568, 471);
+            this.btnEliminar.Location = new System.Drawing.Point(565, 507);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 36;
@@ -162,7 +162,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(259, 471);
+            this.btnCrear.Location = new System.Drawing.Point(256, 507);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 35;
@@ -325,7 +325,7 @@ namespace InterfazEscritorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.dgvCertificaciones);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);

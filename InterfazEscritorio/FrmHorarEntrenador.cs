@@ -13,11 +13,11 @@ using CapaLogicaNegocio;
 
 namespace InterfazEscritorio
 {
-    public partial class FrmHorarEntrenadores : Form
+    public partial class FrmHorarEntrenador : Form
     {
         EntidadHorarEntrenador horarioRegistrado;  // Variable global
 
-        public FrmHorarEntrenadores()
+        public FrmHorarEntrenador()
         {
             InitializeComponent();
         }
@@ -381,7 +381,7 @@ namespace InterfazEscritorio
 
         private void linkLabel1_Click(object sender, EventArgs e)
         {
-            FrmEntrenadores FrmEntrenadores = new FrmEntrenadores();
+            FrmEntrenador FrmEntrenadores = new FrmEntrenador();
             FrmEntrenadores.Show();
         }
 

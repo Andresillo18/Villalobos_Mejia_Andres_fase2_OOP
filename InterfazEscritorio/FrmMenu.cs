@@ -53,7 +53,7 @@ namespace InterfazEscritorio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FrmModulos());
+            AbrirFormInPanel(new FrmModulo());
         }
 
         private void btnModAbiertos_Click(object sender, EventArgs e)
@@ -68,12 +68,12 @@ namespace InterfazEscritorio
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FrmEntrenadores());
+            AbrirFormInPanel(new FrmEntrenador());
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FrmHorarEntrenadores());
+            AbrirFormInPanel(new FrmHorarEntrenador());
 
             //tituloForms.Text = "Horario de Entrenadores";
         }
@@ -106,7 +106,12 @@ namespace InterfazEscritorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new FrmAtletas());
+            AbrirFormInPanel(new FrmAtleta());
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmMatricula());
         }
     }
 }

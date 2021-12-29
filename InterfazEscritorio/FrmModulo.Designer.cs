@@ -1,7 +1,7 @@
 ﻿
 namespace InterfazEscritorio
 {
-    partial class FrmModulos
+    partial class FrmModulo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,12 @@ namespace InterfazEscritorio
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModulos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModulo));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtHorasDuracion = new System.Windows.Forms.ComboBox();
             this.txtCodPrograma = new System.Windows.Forms.TextBox();
             this.txtRequesitos = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace InterfazEscritorio
             this.nombre_modulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horas_modulos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Requesitos_modulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModulos)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(362, 471);
+            this.btnGuardar.Location = new System.Drawing.Point(403, 497);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 22;
@@ -70,7 +70,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(529, 471);
+            this.btnEliminar.Location = new System.Drawing.Point(570, 497);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 21;
@@ -83,7 +83,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(196, 471);
+            this.btnCrear.Location = new System.Drawing.Point(237, 497);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 20;
@@ -110,6 +110,19 @@ namespace InterfazEscritorio
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(945, 233);
             this.panel1.TabIndex = 18;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 110);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(130, 23);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "COD Programa:";
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // txtHorasDuracion
             // 
@@ -216,7 +229,7 @@ namespace InterfazEscritorio
             this.dgvModulos.RowHeadersWidth = 51;
             this.dgvModulos.RowTemplate.Height = 29;
             this.dgvModulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModulos.Size = new System.Drawing.Size(945, 205);
+            this.dgvModulos.Size = new System.Drawing.Size(945, 240);
             this.dgvModulos.TabIndex = 23;
             this.dgvModulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModulos_CellDoubleClick);
             // 
@@ -253,31 +266,18 @@ namespace InterfazEscritorio
             this.Requesitos_modulo.MinimumWidth = 6;
             this.Requesitos_modulo.Name = "Requesitos_modulo";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 110);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(130, 23);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "COD Programa:";
-            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
-            // 
-            // FrmModulos
+            // FrmModulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.dgvModulos);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmModulos";
+            this.Name = "FrmModulo";
             this.Text = "Módulos";
             this.Load += new System.EventHandler(this.FrmModulos_Load);
             this.panel1.ResumeLayout(false);

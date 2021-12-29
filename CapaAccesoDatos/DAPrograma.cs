@@ -42,7 +42,7 @@ namespace CapaAccesoDatos
 
         #region Método para ingresar un nuevo programa
 
-        public int Insertar(EntidadadPrograma programa)
+        public int Insertar(EntidadPrograma programa)
         {
             int cod = 0; // El retorno
 
@@ -110,7 +110,7 @@ namespace CapaAccesoDatos
 
         #region Modificar
 
-        public int Modificar(EntidadadPrograma programa)
+        public int Modificar(EntidadPrograma programa)
         {
             int filasAfectadas = -1;
 
@@ -214,9 +214,9 @@ namespace CapaAccesoDatos
 
         #region Método para leer los programas pero esta devuelve una lista, esta pueda ser más dinamica 
 
-        public List<EntidadadPrograma> listarProgramas(String condicion)
+        public List<EntidadPrograma> listarProgramas(String condicion)
         {
-            List<EntidadadPrograma> listaProgramas; //Se inicializa lo que se creará
+            List<EntidadPrograma> listaProgramas; //Se inicializa lo que se creará
             DataSet TablaDS = new DataSet();
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
@@ -236,7 +236,7 @@ namespace CapaAccesoDatos
 
                 //***Sentencia linQ para convertir el DataSet en una lista 
                 listaProgramas = (from DataRow fila in TablaDS.Tables["Programas"].Rows
-                                  select new EntidadadPrograma()
+                                  select new EntidadPrograma()
                                   {
                                       Cod_programa = (int)fila[0],
                                       Nombre_programa = fila[1].ToString(),
@@ -265,9 +265,9 @@ namespace CapaAccesoDatos
         #region Método para obtener un programa
 
         // Devuelve una entidad porque permite tener solo un registro
-        public EntidadadPrograma ObtenerPrograma(int cod_programa)
+        public EntidadPrograma ObtenerPrograma(int cod_programa)
         {
-            EntidadadPrograma programa = null; // Se inicaliza null porque lo puede devolver vacío
+            EntidadPrograma programa = null; // Se inicaliza null porque lo puede devolver vacío
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();
 
@@ -287,7 +287,7 @@ namespace CapaAccesoDatos
 
                 if (dataReader.HasRows)
                 {
-                    programa = new EntidadadPrograma();
+                    programa = new EntidadPrograma();
                     dataReader.Read();
 
                     //Obtiene el valor de cada columna

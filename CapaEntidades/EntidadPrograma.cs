@@ -2,7 +2,7 @@
 
 namespace CapaEntidades
 {
-    public class EntidadadPrograma
+    public class EntidadPrograma
     {
         #region Atributos
 
@@ -38,7 +38,7 @@ namespace CapaEntidades
 
         #region Constructores
 
-        public EntidadadPrograma(int cod_programa, string nombre_programa, string descripcion_programa, string estado, int cupo_programa, string telefono_programa, string email_programa, string provincia_programa, DateTime fecha_inicio_programa, string observaciones_programa)
+        public EntidadPrograma(int cod_programa, string nombre_programa, string descripcion_programa, string estado, int cupo_programa, string telefono_programa, string email_programa, string provincia_programa, DateTime fecha_inicio_programa, string observaciones_programa)
         {
             this.cod_programa = cod_programa;
             this.nombre_programa = nombre_programa;
@@ -54,7 +54,7 @@ namespace CapaEntidades
         }
 
 
-        public EntidadadPrograma()
+        public EntidadPrograma()
         {
             this.cod_programa = 0;
             this.nombre_programa = string.Empty;

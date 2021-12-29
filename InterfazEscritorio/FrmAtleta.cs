@@ -13,10 +13,14 @@ using CapaLogicaNegocio;
 
 namespace InterfazEscritorio
 {
-    public partial class FrmEntrenadores : Form
+    public partial class FrmAtleta : Form
     {
-        EntidadEntrenador entrenadorRegistrado; //Variable global
-        public FrmEntrenadores()
+        //Variables Globales:
+        EntidadAtleta atletaRegistrado;
+
+        FrmBuscarAtleta formularioBuscar; // Se inicializa una de tipo del formulario 
+
+        public FrmAtleta()
         {
             InitializeComponent();
         }
@@ -25,19 +29,19 @@ namespace InterfazEscritorio
 
         private void limpiar()
         {
-            txtCodEntrenador.Clear();
+            txtCodAtleta.Clear();
             txtID.Clear();
             txtNombre.Clear();
             txtApellido1.Clear();
             txtApellido2.Clear();
             txtTelefono1.Clear();
             txtTelefono2.Clear();
-            txtEmail.Clear();
-            DTFechaNacimie.ResetText();
+            CBGenero.Text = "";
             txtProvincia.Text = "";
             txtDistrito.Clear();
             txtCanton.Clear();
             txtDistrito.Clear();
+            DTFechaNacimie.ResetText();
             RBInactivo.Select();
         }
 
@@ -45,34 +49,33 @@ namespace InterfazEscritorio
 
         #region Método para generar una entidad
 
-        private EntidadEntrenador GenerarEntidad()
+        private EntidadAtleta GenerarEntidad()
         {
-            EntidadEntrenador entrenador;
-            if (!string.IsNullOrEmpty(txtCodEntrenador.Text))
+            EntidadAtleta atleta;
+            if (!string.IsNullOrEmpty(txtCodAtleta.Text))
             {
-                entrenador = entrenadorRegistrado; // Como ya fue seleccionado un programa, ese será modificado 
+                atleta = atletaRegistrado; // Como ya fue seleccionado un programa, ese será modificado 
             }
             else
             {
-                entrenador = new EntidadEntrenador();
-                //MessageBox.Show("Test2");
+                atleta = new EntidadAtleta();
             }
 
             //En este caso no es necesario el txtCodEntrenador            
             //entrenador.Cod_entrenador = Convert.ToInt32(txtCodEntrenador.Text);
-            entrenador.Identificacion = txtID.Text;
-            entrenador.Nombre = txtNombre.Text;
-            entrenador.Apellido1 = txtApellido1.Text;
-            entrenador.Apellido2 = txtApellido2.Text;
-            entrenador.Telefono1 = txtTelefono1.Text;
-            entrenador.Telefono2 = txtTelefono2.Text;
-            entrenador.Correo = txtEmail.Text;
-            entrenador.Fecha_nacimiento = Convert.ToDateTime(DTFechaNacimie.Value);
-            entrenador.Provincia = txtProvincia.Text;
-            entrenador.Distrito = txtDistrito.Text;
-            entrenador.Canton = txtCanton.Text;
+            atleta.Identificacion = txtID.Text;
+            atleta.Nombre = txtNombre.Text;
+            atleta.Apellido1 = txtApellido1.Text;
+            atleta.Apellido2 = txtApellido2.Text;
+            atleta.Telefono1 = txtTelefono1.Text;
+            atleta.Telefono2 = txtTelefono2.Text;
+            atleta.Genero = CBGenero.Text;
+            atleta.Provincia = txtProvincia.Text;
+            atleta.Distrito = txtDistrito.Text;
+            atleta.Canton = txtCanton.Text;
+            atleta.Fecha_nacimiento = Convert.ToDateTime(DTFechaNacimie.Value);
 
-            return entrenador;
+            return atleta;
         }
         #endregion
 
@@ -80,15 +83,15 @@ namespace InterfazEscritorio
 
         private void MostrarListDS(string condicion = "", string orden = "")
         {
-            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
-            DataSet DSEntrenadores;
+            BLAtleta logica = new BLAtleta(Configuracion.getConnectionString);
+            DataSet DSAtletas;
 
             try
             {
-                DSEntrenadores = logica.listarEntrenadores(condicion, orden); // Retorna un DataSet
-                grdListaEntrenadores.DataSource = DSEntrenadores; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
+                DSAtletas = logica.listarAtletas(condicion, orden); // Retorna un DataSet
+                grdListaAtletas.DataSource = DSAtletas; // Le ingresa a la fuente de la DataGridView el DataSet para mostrarlo
 
-                grdListaEntrenadores.DataMember = DSEntrenadores.Tables["entrenadores"].TableName;// Especifica el nombre de la tabla del DataSet
+                grdListaAtletas.DataMember = DSAtletas.Tables["atletas"].TableName;// Especifica el nombre de la tabla del DataSet
             }
             catch (Exception ex)
             {
@@ -99,30 +102,30 @@ namespace InterfazEscritorio
 
         #region Método para cargar los datos de un programa en los textBoxs
 
-        private void cargarEntrenador(int cod)
+        private void cargarAtleta(int cod)
         {
-            EntidadEntrenador entrenador;
-            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
+            EntidadAtleta atleta;
+            BLAtleta logica = new BLAtleta(Configuracion.getConnectionString);
 
             try
             {
-                entrenador = logica.ObtenerEntrenador(cod);                
-                if (entrenador != null) // Si obtuvó algo
-                {
-                    txtCodEntrenador.Text = entrenador.Cod_entrenador.ToString();
-                    txtID.Text = entrenador.Identificacion;
-                    txtNombre.Text = entrenador.Nombre;
-                    txtApellido1.Text = entrenador.Apellido1;
-                    txtApellido2.Text = entrenador.Apellido2;
-                    txtTelefono1.Text = entrenador.Telefono1;
-                    txtTelefono2.Text = entrenador.Telefono2;
-                    txtEmail.Text = entrenador.Correo;
-                    DTFechaNacimie.Value = entrenador.Fecha_nacimiento;
-                    txtProvincia.Text = entrenador.Provincia;
-                    txtDistrito.Text = entrenador.Distrito;
-                    txtCanton.Text = entrenador.Canton;
+                atleta = logica.ObtenerAtleta(cod);
+                if (atleta != null) // Si obtuvó algo
+                { 
+                    txtCodAtleta.Text = atleta.Cod_atleta.ToString();
+                    txtID.Text = atleta.Identificacion;
+                    txtNombre.Text = atleta.Nombre;
+                    txtApellido1.Text = atleta.Apellido1;
+                    txtApellido2.Text = atleta.Apellido2;
+                    txtTelefono1.Text = atleta.Telefono1;
+                    txtTelefono2.Text = atleta.Telefono2;
+                    CBGenero.Text = atleta.Genero;
+                    txtProvincia.Text = atleta.Provincia;
+                    txtDistrito.Text = atleta.Distrito;
+                    txtCanton.Text = atleta.Canton;
+                    DTFechaNacimie.Value = atleta.Fecha_nacimiento;
                     // Si en la entidad esta activo el entrenador se activo el RadioButton, sino se pone desactivado
-                    if (entrenador.Estado)
+                    if (atleta.Estado)
                     {
                         RBActivo.Checked = true;
                     }
@@ -131,11 +134,11 @@ namespace InterfazEscritorio
                         RBInactivo.Checked = true;
                     }
 
-                    entrenadorRegistrado = entrenador;
+                    atletaRegistrado = atleta;
                 }
                 else
                 {
-                    MessageBox.Show("El Entrenador seleccionado no se encuentra en la Base de Datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El Atleta seleccionado no se encuentra en la Base de Datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarListDS();
                 }
             }
@@ -149,7 +152,7 @@ namespace InterfazEscritorio
 
         #region Eventos
 
-        private void FrmEntrenadores_Load(object sender, EventArgs e)
+        private void FrmAtletas_Load(object sender, EventArgs e)
         {
             txtID.Select();
             try
@@ -164,8 +167,8 @@ namespace InterfazEscritorio
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
-            EntidadEntrenador entrenador;
+            BLAtleta logica = new BLAtleta(Configuracion.getConnectionString);
+            EntidadAtleta atleta;
             int elResultado = 0;
 
             try
@@ -173,16 +176,15 @@ namespace InterfazEscritorio
                 // Hace que todos los campos sean obligatorios
                 if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido1.Text) && !string.IsNullOrEmpty(txtApellido2.Text) && !string.IsNullOrEmpty(txtTelefono1.Text) && !string.IsNullOrEmpty(txtProvincia.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtCanton.Text))
                 {
-                    entrenador = GenerarEntidad();
-                    //MessageBox.Show("Test");
-                    if (!entrenador.Estado)
+                    atleta = GenerarEntidad();
+                    if (!atleta.Estado)
                     {
                         //MessageBox.Show(modulosPrograma.Cod_modulo.ToString());
-                        elResultado = logica.Insertar(entrenador);
+                        elResultado = logica.Insertar(atleta);
                     }
                     else
                     {
-                        elResultado = logica.Modificar(entrenador);
+                        elResultado = logica.Modificar(atleta);
                     }
 
                     if (elResultado > 0) // Si retorna algo alguna función se completa la acción
@@ -210,22 +212,22 @@ namespace InterfazEscritorio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EntidadEntrenador entrenador;
+            EntidadAtleta atleta;
             int resultado; // Lo que retornará los métodos al obtener un progreso
-            BLEntrenador logica = new BLEntrenador(Configuracion.getConnectionString);
+            BLAtleta logica = new BLAtleta(Configuracion.getConnectionString);
 
             try
             {
-                if (!String.IsNullOrEmpty(txtCodEntrenador.Text)) //Debe tener datos en los txtboxs para poder eliminar
+                if (!String.IsNullOrEmpty(txtCodAtleta.Text)) //Debe tener datos en los txtboxs para poder eliminar
                 {
                     //busca primero el programa antes de borrarlo para ver si existe
-                    entrenador = logica.ObtenerEntrenador(Convert.ToInt32(txtCodEntrenador.Text));
+                    atleta = logica.ObtenerAtleta(Convert.ToInt32(txtCodAtleta.Text));
 
-                    if (entrenador != null)
+                    if (atleta != null)
                     {
                         MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                        resultado = logica.EliminarEntrenador(Convert.ToInt32(txtCodEntrenador.Text)); // Si pudo encontralo lo borra
+                        resultado = logica.EliminarAtleta(Convert.ToInt32(txtCodAtleta.Text)); // Si pudo encontralo lo borra
 
                         MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();
@@ -233,13 +235,13 @@ namespace InterfazEscritorio
                     }
                     else
                     {
-                        MessageBox.Show("El entrenador no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El Atleta no existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     // No se sucede nada si no lo selecciona
-                    MessageBox.Show("Debe Seleccionar un entrenador antes de eliminar algo", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe Seleccionar un atleta antes de eliminar algún registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -254,17 +256,53 @@ namespace InterfazEscritorio
             limpiar();
         }
 
-        private void grdListaEntrenadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void grdListaAtletas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int cod = 0;
             try
             {
-                cod = (int)grdListaEntrenadores.SelectedRows[0].Cells[0].Value;
-                cargarEntrenador(cod);
+                cod = (int)grdListaAtletas.SelectedRows[0].Cells[0].Value;
+                cargarAtleta(cod);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            formularioBuscar = new FrmBuscarAtleta(); // Se crea el objeto
+            formularioBuscar.Aceptar += new EventHandler(Aceptar); // Se le envia un evento al objeto
+            // Especificamos que deseamos utilizar el evento Aceptar
+
+            formularioBuscar.ShowDialog();
+        }
+
+        #endregion
+
+        #region Evento Aceptar
+        // Esto es una forma de pasar el ID desde un formulario a otro
+
+        private void Aceptar(object id, EventArgs e)
+        //implementa el evento aceptar y recibe un id el cual se manda desde el formulario que se abre y aqui se carga el cliente
+        {
+            try
+            {
+                int idCliente = (int)id;
+                if (idCliente != -1)
+                {
+                    cargarAtleta(idCliente);
+                }
+                else
+                {
+                    limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

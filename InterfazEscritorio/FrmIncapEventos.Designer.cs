@@ -31,6 +31,11 @@ namespace InterfazEscritorio
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIncapEventos));
             this.dgvIncapEvent = new System.Windows.Forms.DataGridView();
+            this.cod_incap_event = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dia_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dia_fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -49,11 +54,6 @@ namespace InterfazEscritorio
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.cod_incap_event = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dia_inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dia_fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIncapEvent)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,15 +78,56 @@ namespace InterfazEscritorio
             this.dgvIncapEvent.RowHeadersWidth = 51;
             this.dgvIncapEvent.RowTemplate.Height = 29;
             this.dgvIncapEvent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIncapEvent.Size = new System.Drawing.Size(945, 226);
+            this.dgvIncapEvent.Size = new System.Drawing.Size(945, 256);
             this.dgvIncapEvent.TabIndex = 43;
             this.dgvIncapEvent.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIncapEvent_CellDoubleClick);
+            // 
+            // cod_incap_event
+            // 
+            this.cod_incap_event.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cod_incap_event.DataPropertyName = "COD_INCAPACIDADES_EVENTOS";
+            this.cod_incap_event.HeaderText = "Cod";
+            this.cod_incap_event.MinimumWidth = 6;
+            this.cod_incap_event.Name = "cod_incap_event";
+            this.cod_incap_event.Width = 65;
+            // 
+            // cod_entrenador
+            // 
+            this.cod_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cod_entrenador.DataPropertyName = "COD_ENTRENADOR";
+            this.cod_entrenador.HeaderText = "Cod Entrenador";
+            this.cod_entrenador.MinimumWidth = 6;
+            this.cod_entrenador.Name = "cod_entrenador";
+            // 
+            // dia_inicio
+            // 
+            this.dia_inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dia_inicio.DataPropertyName = "DIA_INICIO_INCAPACIDADES_EVENTOS";
+            this.dia_inicio.HeaderText = "Día de Inicio";
+            this.dia_inicio.MinimumWidth = 6;
+            this.dia_inicio.Name = "dia_inicio";
+            // 
+            // dia_fin
+            // 
+            this.dia_fin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dia_fin.DataPropertyName = "DIA_FINAL_INCAPACIDADES_EVENTOS";
+            this.dia_fin.HeaderText = "Día de Fin";
+            this.dia_fin.MinimumWidth = 6;
+            this.dia_fin.Name = "dia_fin";
+            // 
+            // observaciones
+            // 
+            this.observaciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.observaciones.DataPropertyName = "OBSERVACIONES_INCAPACIDADES_EVENTOS";
+            this.observaciones.HeaderText = "Observaciones";
+            this.observaciones.MinimumWidth = 6;
+            this.observaciones.Name = "observaciones";
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(421, 477);
+            this.btnGuardar.Location = new System.Drawing.Point(414, 507);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 42;
@@ -99,7 +140,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(569, 477);
+            this.btnEliminar.Location = new System.Drawing.Point(562, 507);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 41;
@@ -112,7 +153,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(260, 477);
+            this.btnCrear.Location = new System.Drawing.Point(253, 507);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 40;
@@ -277,52 +318,11 @@ namespace InterfazEscritorio
             this.txtCod.TabIndex = 1;
             this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // cod_incap_event
-            // 
-            this.cod_incap_event.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cod_incap_event.DataPropertyName = "COD_INCAPACIDADES_EVENTOS";
-            this.cod_incap_event.HeaderText = "Cod";
-            this.cod_incap_event.MinimumWidth = 6;
-            this.cod_incap_event.Name = "cod_incap_event";
-            this.cod_incap_event.Width = 65;
-            // 
-            // cod_entrenador
-            // 
-            this.cod_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cod_entrenador.DataPropertyName = "COD_ENTRENADOR";
-            this.cod_entrenador.HeaderText = "Cod Entrenador";
-            this.cod_entrenador.MinimumWidth = 6;
-            this.cod_entrenador.Name = "cod_entrenador";
-            // 
-            // dia_inicio
-            // 
-            this.dia_inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dia_inicio.DataPropertyName = "DIA_INICIO_INCAPACIDADES_EVENTOS";
-            this.dia_inicio.HeaderText = "Día de Inicio";
-            this.dia_inicio.MinimumWidth = 6;
-            this.dia_inicio.Name = "dia_inicio";
-            // 
-            // dia_fin
-            // 
-            this.dia_fin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dia_fin.DataPropertyName = "DIA_FINAL_INCAPACIDADES_EVENTOS";
-            this.dia_fin.HeaderText = "Día de Fin";
-            this.dia_fin.MinimumWidth = 6;
-            this.dia_fin.Name = "dia_fin";
-            // 
-            // observaciones
-            // 
-            this.observaciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.observaciones.DataPropertyName = "OBSERVACIONES_INCAPACIDADES_EVENTOS";
-            this.observaciones.HeaderText = "Observaciones";
-            this.observaciones.MinimumWidth = 6;
-            this.observaciones.Name = "observaciones";
-            // 
             // FrmIncapEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 552);
+            this.ClientSize = new System.Drawing.Size(945, 578);
             this.Controls.Add(this.dgvIncapEvent);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
