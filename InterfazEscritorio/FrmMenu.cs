@@ -103,5 +103,10 @@ namespace InterfazEscritorio
         {
             AbrirFormInPanel(new FrmReg_Horas_labo());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new FrmAtletas());
+        }
     }
 }

@@ -15,7 +15,10 @@ namespace InterfazEscritorio
 {
     public partial class FrmAtletas : Form
     {
+        //Variables Globales:
         EntidadAtleta atletaRegistrado;
+
+        FrmBuscarAtleta formularioBuscar; // Se inicializa una de tipo del formulario 
 
         public FrmAtletas()
         {
@@ -56,7 +59,6 @@ namespace InterfazEscritorio
             else
             {
                 atleta = new EntidadAtleta();
-                //MessageBox.Show("Test2");
             }
 
             //En este caso no es necesario el txtCodEntrenador            
@@ -267,7 +269,43 @@ namespace InterfazEscritorio
                 MessageBox.Show(ex.Message);
             }
         }
-#endregion
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            formularioBuscar = new FrmBuscarAtleta(); // Se crea el objeto
+            formularioBuscar.Aceptar += new EventHandler(Aceptar); // Se le envia un evento al objeto
+            // Especificamos que deseamos utilizar el evento Aceptar
+
+            formularioBuscar.ShowDialog();
+        }
+
+        #endregion
+
+        #region Evento Aceptar
+        // Esto es una forma de pasar el ID desde un formulario a otro
+
+        private void Aceptar(object id, EventArgs e)
+        //implementa el evento aceptar y recibe un id el cual se manda desde el formulario que se abre y aqui se carga el cliente
+        {
+            try
+            {
+                int idCliente = (int)id;
+                if (idCliente != -1)
+                {
+                    cargarAtleta(idCliente);
+                }
+                else
+                {
+                    limpiar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
     }
 }

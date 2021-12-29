@@ -81,13 +81,13 @@ namespace InterfazEscritorio
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.Info;
-            this.button2.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 612);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(227, 45);
             this.button2.TabIndex = 10;
-            this.button2.Text = "button2";
+            this.button2.Text = "Matriculas";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -97,14 +97,15 @@ namespace InterfazEscritorio
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Javanese Text", 10.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.Info;
-            this.button1.Image = global::InterfazEscritorio.Properties.Resources.outline_library_books_black_24dp;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 561);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(227, 45);
             this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
+            this.button1.Text = "Atletas";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button8
             // 

@@ -107,8 +107,7 @@ namespace CapaAccesoDatos
 
             String sentencia =
                 "UPDATE ATLETAS " +
-                "SET ID_ATLETA=@id_atleta, " +
-                "NOMBRE_ATLETA = @nombre_atleta, " +
+                "SET NOMBRE_ATLETA = @nombre_atleta, " +
                 "APELLIDO1_ATLETA = @apellido1, " +
                 "APELLIDO2_ATLETA = @apellido2, " +
                 "TELEFONO1_ATLETA = @telefono1, " +
@@ -119,13 +118,13 @@ namespace CapaAccesoDatos
                 "CANTON_ATLETA = @canton, " +
                 "FECHA_NACIMIENTO_ATLETA = @fecha_nacimiento, " +
                     "ESTADO_ATLETA=@estado" +
-                    " WHERE COD_ATLETA=@cod_atleta";
+                    " WHERE COD_ATLETA = @cod_atleta";
 
             comando.CommandText = sentencia;
             comando.Connection = conexion;
 
             comando.Parameters.AddWithValue("@cod_atleta", atleta.Cod_atleta);
-            comando.Parameters.AddWithValue("@id_atleta", atleta.Identificacion);
+            //comando.Parameters.AddWithValue("@id_atleta", atleta.Identificacion);
             comando.Parameters.AddWithValue("@nombre_atleta", atleta.Nombre);
             comando.Parameters.AddWithValue("@apellido1", atleta.Apellido1);
             comando.Parameters.AddWithValue("@apellido2", atleta.Apellido2);
@@ -221,16 +220,17 @@ namespace CapaAccesoDatos
                                 select new EntidadAtleta()
                                 {
                                     Cod_atleta = (int)fila[0],
-                                    Nombre = fila[1].ToString(),
-                                    Apellido1 = fila[2].ToString(),
-                                    Apellido2 = fila[3].ToString(),
-                                    Telefono1 = fila[4].ToString(),
-                                    Telefono2 = fila[5].ToString(),
-                                    Genero = fila[6].ToString(),
-                                    Provincia = fila[7].ToString(),
-                                    Distrito = fila[8].ToString(),
-                                    Canton = fila[9].ToString(),
-                                    Fecha_nacimiento = Convert.ToDateTime(fila[10]),
+                                    Identificacion = fila[1].ToString(),
+                                    Nombre = fila[2].ToString(),
+                                    Apellido1 = fila[3].ToString(),
+                                    Apellido2 = fila[4].ToString(),
+                                    Telefono1 = fila[5].ToString(),
+                                    Telefono2 = fila[6].ToString(),
+                                    Genero = fila[7].ToString(),
+                                    Provincia = fila[8].ToString(),
+                                    Distrito = fila[9].ToString(),
+                                    Canton = fila[10].ToString(),
+                                    Fecha_nacimiento = Convert.ToDateTime(fila[11]),
                                     Estado = true
                                 }).ToList();
 

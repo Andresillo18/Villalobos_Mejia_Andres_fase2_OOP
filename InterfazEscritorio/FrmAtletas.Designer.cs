@@ -30,7 +30,7 @@ namespace InterfazEscritorio
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAtletas));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -85,17 +85,18 @@ namespace InterfazEscritorio
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.PowderBlue;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(662, 482);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 69);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Buscar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(662, 482);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(130, 69);
+            this.btnBuscar.TabIndex = 34;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGuardar
             // 
@@ -346,11 +347,11 @@ namespace InterfazEscritorio
             // 
             this.CBGenero.FormattingEnabled = true;
             this.CBGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
+            "M",
+            "F"});
             this.CBGenero.Location = new System.Drawing.Point(108, 95);
             this.CBGenero.Name = "CBGenero";
-            this.CBGenero.Size = new System.Drawing.Size(133, 28);
+            this.CBGenero.Size = new System.Drawing.Size(130, 28);
             this.CBGenero.TabIndex = 7;
             // 
             // label8
@@ -631,7 +632,7 @@ namespace InterfazEscritorio
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 559);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
@@ -652,7 +653,7 @@ namespace InterfazEscritorio
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCrear;
