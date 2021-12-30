@@ -54,6 +54,10 @@ namespace InterfazEscritorio
         {
             if (grdAtletas.SelectedRows.Count > 0) //si ha seleccionado una fila
             {
+                //MessageBox.Show("Campo 1: " + Convert.ToString(grdAtletas.SelectedRows[0].Cells[1].Value));
+                //MessageBox.Show("Campo 2: " + Convert.ToString(grdAtletas.SelectedRows[0].Cells[2].Value));
+                //MessageBox.Show("Campo 3: " + Convert.ToString(grdAtletas.SelectedRows[0].Cells[3].Value));
+                //MessageBox.Show("Campo 4: " + Convert.ToString(grdAtletas.SelectedRows[0].Cells[4].Value));
                 cod_atleta = (int)grdAtletas.SelectedRows[0].Cells[0].Value;
                 Aceptar(cod_atleta, null);
                 //le manda el id al evento aceptar que esta en el otro form

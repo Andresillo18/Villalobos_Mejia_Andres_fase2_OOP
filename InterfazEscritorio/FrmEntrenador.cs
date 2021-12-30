@@ -55,7 +55,6 @@ namespace InterfazEscritorio
             else
             {
                 entrenador = new EntidadEntrenador();
-                //MessageBox.Show("Test2");
             }
 
             //En este caso no es necesario el txtCodEntrenador            
@@ -106,7 +105,7 @@ namespace InterfazEscritorio
 
             try
             {
-                entrenador = logica.ObtenerEntrenador(cod);                
+                entrenador = logica.ObtenerEntrenador(cod);
                 if (entrenador != null) // Si obtuvó algo
                 {
                     txtCodEntrenador.Text = entrenador.Cod_entrenador.ToString();
@@ -174,10 +173,8 @@ namespace InterfazEscritorio
                 if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido1.Text) && !string.IsNullOrEmpty(txtApellido2.Text) && !string.IsNullOrEmpty(txtTelefono1.Text) && !string.IsNullOrEmpty(txtProvincia.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtCanton.Text))
                 {
                     entrenador = GenerarEntidad();
-                    //MessageBox.Show("Test");
                     if (!entrenador.Estado)
                     {
-                        //MessageBox.Show(modulosPrograma.Cod_modulo.ToString());
                         elResultado = logica.Insertar(entrenador);
                     }
                     else

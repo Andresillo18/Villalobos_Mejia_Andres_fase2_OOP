@@ -47,10 +47,12 @@ namespace InterfazEscritorio
             this.tituloForms = new System.Windows.Forms.Label();
             this.btnSlide1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lbBievenida = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide1)).BeginInit();
+            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -313,12 +315,23 @@ namespace InterfazEscritorio
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContenedor.Controls.Add(this.lbBievenida);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(227, 50);
             this.panelContenedor.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(965, 635);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // lbBievenida
+            // 
+            this.lbBievenida.AutoSize = true;
+            this.lbBievenida.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lbBievenida.Location = new System.Drawing.Point(335, 139);
+            this.lbBievenida.Name = "lbBievenida";
+            this.lbBievenida.Size = new System.Drawing.Size(307, 20);
+            this.lbBievenida.TabIndex = 0;
+            this.lbBievenida.Text = "Bienvenido al Insituto de Triatlón, está es la a";
             // 
             // FrmMenu
             // 
@@ -340,6 +353,8 @@ namespace InterfazEscritorio
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide1)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
+            this.panelContenedor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -363,6 +378,7 @@ namespace InterfazEscritorio
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label tituloForms;
+        private System.Windows.Forms.Label lbBievenida;
     }
 }
 

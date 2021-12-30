@@ -272,7 +272,7 @@ namespace InterfazEscritorio
             this.CBTipoPago.Location = new System.Drawing.Point(788, 133);
             this.CBTipoPago.Name = "CBTipoPago";
             this.CBTipoPago.Size = new System.Drawing.Size(151, 28);
-            this.CBTipoPago.TabIndex = 35;
+            this.CBTipoPago.TabIndex = 8;
             // 
             // CBTipoCobro
             // 
@@ -283,7 +283,7 @@ namespace InterfazEscritorio
             this.CBTipoCobro.Location = new System.Drawing.Point(788, 79);
             this.CBTipoCobro.Name = "CBTipoCobro";
             this.CBTipoCobro.Size = new System.Drawing.Size(151, 28);
-            this.CBTipoCobro.TabIndex = 34;
+            this.CBTipoCobro.TabIndex = 7;
             // 
             // NPMontoCancelado
             // 
@@ -295,7 +295,7 @@ namespace InterfazEscritorio
             0});
             this.NPMontoCancelado.Name = "NPMontoCancelado";
             this.NPMontoCancelado.Size = new System.Drawing.Size(150, 27);
-            this.NPMontoCancelado.TabIndex = 33;
+            this.NPMontoCancelado.TabIndex = 6;
             this.NPMontoCancelado.ThousandsSeparator = true;
             // 
             // label6
@@ -343,7 +343,7 @@ namespace InterfazEscritorio
             this.NPNotaFinal.Location = new System.Drawing.Point(472, 129);
             this.NPNotaFinal.Name = "NPNotaFinal";
             this.NPNotaFinal.Size = new System.Drawing.Size(150, 27);
-            this.NPNotaFinal.TabIndex = 27;
+            this.NPNotaFinal.TabIndex = 5;
             this.NPNotaFinal.ThousandsSeparator = true;
             // 
             // label1
@@ -367,7 +367,7 @@ namespace InterfazEscritorio
             this.CBEstado.Location = new System.Drawing.Point(471, 75);
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(151, 28);
-            this.CBEstado.TabIndex = 27;
+            this.CBEstado.TabIndex = 4;
             // 
             // label2
             // 
@@ -396,7 +396,7 @@ namespace InterfazEscritorio
             this.DTFechaMatricula.Name = "DTFechaMatricula";
             this.DTFechaMatricula.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DTFechaMatricula.Size = new System.Drawing.Size(296, 27);
-            this.DTFechaMatricula.TabIndex = 24;
+            this.DTFechaMatricula.TabIndex = 3;
             // 
             // linkLabel2
             // 
@@ -430,7 +430,7 @@ namespace InterfazEscritorio
             this.txtCod_Atleta.MaxLength = 200;
             this.txtCod_Atleta.Name = "txtCod_Atleta";
             this.txtCod_Atleta.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_Atleta.TabIndex = 2;
+            this.txtCod_Atleta.TabIndex = 1;
             // 
             // txtCod_ModuloAb
             // 
@@ -438,7 +438,7 @@ namespace InterfazEscritorio
             this.txtCod_ModuloAb.MaxLength = 40;
             this.txtCod_ModuloAb.Name = "txtCod_ModuloAb";
             this.txtCod_ModuloAb.Size = new System.Drawing.Size(125, 27);
-            this.txtCod_ModuloAb.TabIndex = 3;
+            this.txtCod_ModuloAb.TabIndex = 2;
             // 
             // FrmMatricula
             // 

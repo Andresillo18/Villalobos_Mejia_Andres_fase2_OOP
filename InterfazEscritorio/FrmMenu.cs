@@ -17,7 +17,7 @@ namespace InterfazEscritorio
         {
             InitializeComponent();           
         }
-
+        
         private void btnSlide1_Click(object sender, EventArgs e)
         {
             if (MenuVertical.Width == 227)
@@ -49,6 +49,7 @@ namespace InterfazEscritorio
         {
             //Se envia en los parámetros el formulario que se quiere abrir
             AbrirFormInPanel(new FrmProgramas());
+            lbBievenida.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

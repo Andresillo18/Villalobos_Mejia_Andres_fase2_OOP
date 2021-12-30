@@ -212,7 +212,7 @@ namespace InterfazEscritorio
 
             try
             {
-                if (!string.IsNullOrEmpty(txtCodEntrenador.Text) && CBGimnasio.Checked == true && CBNatacion.Checked == true && CBMaraton.Checked == true && CBCiclismo.Checked == true)
+                if (!string.IsNullOrEmpty(txtCodEntrenador.Text) && CBGimnasio.Checked == true) // Al menos el primer curso debe tener el entrenador
                 {
                     // en este caso un usuario puede guardar los datos sin ser obligatorios
                     certificacion = GenerarEntidad();

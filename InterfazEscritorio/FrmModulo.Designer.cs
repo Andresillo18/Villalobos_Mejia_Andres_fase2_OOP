@@ -144,6 +144,7 @@ namespace InterfazEscritorio
             this.txtCodPrograma.Name = "txtCodPrograma";
             this.txtCodPrograma.Size = new System.Drawing.Size(125, 27);
             this.txtCodPrograma.TabIndex = 5;
+            this.txtCodPrograma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtRequesitos
             // 
@@ -278,6 +279,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmModulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulos";
             this.Load += new System.EventHandler(this.FrmModulos_Load);
             this.panel1.ResumeLayout(false);

@@ -210,13 +210,13 @@ namespace InterfazEscritorio
                 if (!String.IsNullOrEmpty(txtCod_ModuloAb.Text)) //Debe tener datos en los txtboxs para poder eliminar
                 {
                     //busca primero el programa antes de borrarlo para ver si existe
-                    modAbierto = logica.ObtenerMatricula(Convert.ToInt32(txtCod_ModuloAb.Text));
+                    modAbierto = logica.ObtenerMatricula(Convert.ToInt32(txtCodMatricula.Text));
 
                     if (modAbierto != null)
                     {
                         MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                        resultado = logica.EliminarMatricula(Convert.ToInt32(txtCod_ModuloAb.Text)); // Si pudo encontralo lo borra
+                        resultado = logica.EliminarMatricula(Convert.ToInt32(txtCodMatricula.Text)); // Si pudo encontralo lo borra
 
                         MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();

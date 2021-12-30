@@ -142,7 +142,7 @@ namespace CapaLogicaNegocio
         public int EliminarIncapEvent(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
-            DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
+            DAIncapEvent accesoDatos = new DAIncapEvent(_cadenaConexion);
 
             try
             {

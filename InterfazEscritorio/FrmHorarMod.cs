@@ -283,7 +283,6 @@ namespace InterfazEscritorio
                 else
                 {
                     elResultado = logica.Modificar(horarioMod);
-                    MessageBox.Show("Test");
                 }
 
                 if (elResultado > 0) // Si retorna algo alguna función se completa la acción

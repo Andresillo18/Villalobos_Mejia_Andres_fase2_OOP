@@ -112,7 +112,7 @@ namespace CapaAccesoDatos
                     "REQUESITOS_MODULO=@requesitos" +
                     " WHERE COD_MODULO=@cod_modulo";
 
-            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo);
+            //comando.Parameters.AddWithValue("@nombre", modulo.Nombre_modulo); ***No se actualiza el nombre por la creación de un Trigger en la BD
             comando.Parameters.AddWithValue("@horas_duracion", modulo.Horas_duracion);
             comando.Parameters.AddWithValue("@requesitos", modulo.Requesitos_modulo);
             comando.Parameters.AddWithValue("@cod_modulo", modulo.Cod_modulo);
