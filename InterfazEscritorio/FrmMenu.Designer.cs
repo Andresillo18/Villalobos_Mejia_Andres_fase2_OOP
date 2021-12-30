@@ -327,11 +327,11 @@ namespace InterfazEscritorio
             // 
             this.lbBievenida.AutoSize = true;
             this.lbBievenida.BackColor = System.Drawing.Color.DodgerBlue;
-            this.lbBievenida.Location = new System.Drawing.Point(335, 139);
+            this.lbBievenida.Location = new System.Drawing.Point(195, 61);
             this.lbBievenida.Name = "lbBievenida";
-            this.lbBievenida.Size = new System.Drawing.Size(307, 20);
+            this.lbBievenida.Size = new System.Drawing.Size(531, 120);
             this.lbBievenida.TabIndex = 0;
-            this.lbBievenida.Text = "Bienvenido al Insituto de Triatlón, está es la a";
+            this.lbBievenida.Text = resources.GetString("lbBievenida.Text");
             // 
             // FrmMenu
             // 

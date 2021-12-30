@@ -79,7 +79,6 @@ namespace InterfazEscritorio
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdListaEntrenadores)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,7 +88,7 @@ namespace InterfazEscritorio
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(347, 497);
+            this.btnGuardar.Location = new System.Drawing.Point(405, 497);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 69);
             this.btnGuardar.TabIndex = 27;
@@ -102,7 +101,7 @@ namespace InterfazEscritorio
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.PowderBlue;
             this.btnEliminar.Image = global::InterfazEscritorio.Properties.Resources.outline_clear_black_24dp;
-            this.btnEliminar.Location = new System.Drawing.Point(498, 497);
+            this.btnEliminar.Location = new System.Drawing.Point(556, 497);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(130, 69);
             this.btnEliminar.TabIndex = 26;
@@ -115,7 +114,7 @@ namespace InterfazEscritorio
             // 
             this.btnCrear.BackColor = System.Drawing.Color.PowderBlue;
             this.btnCrear.Image = global::InterfazEscritorio.Properties.Resources.outline_create_black_24dp;
-            this.btnCrear.Location = new System.Drawing.Point(196, 497);
+            this.btnCrear.Location = new System.Drawing.Point(254, 497);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(130, 69);
             this.btnCrear.TabIndex = 25;
@@ -611,24 +610,11 @@ namespace InterfazEscritorio
             this.txtCod.TabIndex = 1;
             this.txtCod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.PowderBlue;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(641, 497);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 69);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Buscar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // FrmEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 578);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrear);
@@ -683,7 +669,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DateTimePicker DTFechaNacimie;
         private System.Windows.Forms.RadioButton RBInactivo;
         private System.Windows.Forms.RadioButton RBActivo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_entrenador;

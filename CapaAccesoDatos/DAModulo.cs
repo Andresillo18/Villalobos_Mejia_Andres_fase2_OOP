@@ -59,12 +59,14 @@ namespace CapaAccesoDatos
             comando.Parameters.AddWithValue("@horas_duracion_modulo", modulo.Horas_duracion);
             comando.Parameters.AddWithValue("@requesitos_modulo", modulo.Requesitos_modulo);
 
+
             //Esta sentencia y su inicialización de los parámetros es para poder actualizar la tabla de unión MODULOS_PROGRAMA***
-            //string sentencia2 = "INSERT INTO MODULOS_PROGRAMA (COD_PROGRAMA, COD_MODULO)" + "VALUES (@cod_programa,  @cod_modulo)" + "SELECT @@IDENTITY";
+            //string sentencia2 = "INSERT INTO MODULOS_PROGRAMA (COD_PROGRAMA, COD_MODULO)" + "VALUES (@cod_programa,  @cod_modulo)";
             //comando.Parameters.AddWithValue("@cod_programa", ModProg.Cod_programa);
             //comando.Parameters.AddWithValue("@cod_modulo", ModProg.Cod_modulo);
 
             //ModProg.IdentityGenerado = Convert.ToInt32(sentencia2);
+
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
             comando.CommandText = sentencia;
