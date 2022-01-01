@@ -327,9 +327,9 @@ namespace InterfazEscritorio
             // 
             this.lbBievenida.AutoSize = true;
             this.lbBievenida.BackColor = System.Drawing.Color.DodgerBlue;
-            this.lbBievenida.Location = new System.Drawing.Point(195, 61);
+            this.lbBievenida.Location = new System.Drawing.Point(198, 90);
             this.lbBievenida.Name = "lbBievenida";
-            this.lbBievenida.Size = new System.Drawing.Size(531, 120);
+            this.lbBievenida.Size = new System.Drawing.Size(531, 160);
             this.lbBievenida.TabIndex = 0;
             this.lbBievenida.Text = resources.GetString("lbBievenida.Text");
             // 
