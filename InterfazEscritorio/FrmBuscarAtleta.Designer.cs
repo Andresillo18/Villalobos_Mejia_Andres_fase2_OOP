@@ -50,13 +50,6 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdAtletas = new System.Windows.Forms.DataGridView();
-            this.Cod_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_entrenador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -276,14 +269,6 @@ namespace InterfazEscritorio
             this.grdAtletas.AllowUserToResizeColumns = false;
             this.grdAtletas.AllowUserToResizeRows = false;
             this.grdAtletas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdAtletas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cod_entrenador,
-            this.id,
-            this.nombre_entrenador,
-            this.apellido1,
-            this.apellido2,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
             this.grdAtletas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.grdAtletas.Location = new System.Drawing.Point(12, 102);
             this.grdAtletas.Name = "grdAtletas";
@@ -292,68 +277,6 @@ namespace InterfazEscritorio
             this.grdAtletas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdAtletas.Size = new System.Drawing.Size(727, 233);
             this.grdAtletas.TabIndex = 35;
-            // 
-            // Cod_entrenador
-            // 
-            this.Cod_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cod_entrenador.DataPropertyName = "COD_ATLETA";
-            this.Cod_entrenador.Frozen = true;
-            this.Cod_entrenador.HeaderText = "Cod";
-            this.Cod_entrenador.MinimumWidth = 6;
-            this.Cod_entrenador.Name = "Cod_entrenador";
-            this.Cod_entrenador.Width = 65;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id.DataPropertyName = "ID_ATLETA";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            // 
-            // nombre_entrenador
-            // 
-            this.nombre_entrenador.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre_entrenador.DataPropertyName = "NOMBRE_ATLETA";
-            this.nombre_entrenador.HeaderText = "Nombre";
-            this.nombre_entrenador.MinimumWidth = 6;
-            this.nombre_entrenador.Name = "nombre_entrenador";
-            // 
-            // apellido1
-            // 
-            this.apellido1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellido1.DataPropertyName = "APELLIDO1_ATLETA";
-            this.apellido1.HeaderText = "Apellido 1";
-            this.apellido1.MinimumWidth = 6;
-            this.apellido1.Name = "apellido1";
-            // 
-            // apellido2
-            // 
-            this.apellido2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.apellido2.DataPropertyName = "APELLIDO2_ATLETA";
-            this.apellido2.HeaderText = "Apellido 2";
-            this.apellido2.MinimumWidth = 6;
-            this.apellido2.Name = "apellido2";
-            this.apellido2.Visible = false;
-            this.apellido2.Width = 107;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "TELEFONO1_ATLETA";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Teléfono";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "TELEFONO2_ATLETA";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Teléfono 2";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            this.dataGridViewTextBoxColumn8.Width = 108;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -364,7 +287,7 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Visible = false;
-            this.dataGridViewTextBoxColumn9.Width = 86;
+            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -374,7 +297,7 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Visible = false;
-            this.dataGridViewTextBoxColumn10.Width = 98;
+            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -384,7 +307,7 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Visible = false;
-            this.dataGridViewTextBoxColumn11.Width = 87;
+            this.dataGridViewTextBoxColumn11.Width = 125;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -394,7 +317,7 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Visible = false;
-            this.dataGridViewTextBoxColumn12.Width = 85;
+            this.dataGridViewTextBoxColumn12.Width = 125;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -413,10 +336,11 @@ namespace InterfazEscritorio
             this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Visible = false;
-            this.dataGridViewTextBoxColumn14.Width = 83;
+            this.dataGridViewTextBoxColumn14.Width = 125;
             // 
             // FrmBuscarAtleta
             // 
+            this.AcceptButton = this.btnBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 430);
@@ -429,7 +353,7 @@ namespace InterfazEscritorio
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmBuscarAtleta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBuscarPersona";
+            this.Text = "Buscar Atleta";
             ((System.ComponentModel.ISupportInitialize)(this.grdAtletas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -458,13 +382,6 @@ namespace InterfazEscritorio
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView grdAtletas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_entrenador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_entrenador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;

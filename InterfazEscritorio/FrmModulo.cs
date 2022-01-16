@@ -154,7 +154,7 @@ namespace InterfazEscritorio
                     else
                     {
                         elResultado = logica.Modificar(modulo);
-                        MessageBox.Show("Test");
+                        //MessageBox.Show("Test");
                     }
 
                     if (elResultado > 0) // Si retorna algo alguna función se completa la acción
@@ -199,7 +199,7 @@ namespace InterfazEscritorio
 
                         resultado = logica.EliminarModulo(Convert.ToInt32(txtCod.Text)); // Si pudo encontralo lo borra
 
-                        MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);                
                         limpiar();
                         MostrarListDS();
                     }

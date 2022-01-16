@@ -331,7 +331,7 @@ namespace InterfazEscritorio
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmReg_Horas_labo";
-            this.Text = "FrmReg_Horas_labo";
+            this.Text = "Registro de Horas Laboradas";
             this.Load += new System.EventHandler(this.FrmReg_Horas_labo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegHoraLabo)).EndInit();
             this.panel1.ResumeLayout(false);
