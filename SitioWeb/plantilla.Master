@@ -50,8 +50,9 @@
     </header>
 
     <main>
+        <h1 class="titulo">Instituto de Triatlón</h1>
+
         <form id="form1" runat="server">
-            <h1 class="titulo">Instituto de Triatlón</h1>
 
             <asp:ContentPlaceHolder ID="main" runat="server">
             </asp:ContentPlaceHolder>

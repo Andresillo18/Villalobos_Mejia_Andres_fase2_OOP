@@ -42,13 +42,26 @@ img {
     font-family: 'Mochiy Pop P One', sans-serif;
     color: #fff;
     text-decoration: underline;
-    margin-left: 35%;
+    margin-left: 40%;
     margin-block:2%;
 
 }
 
-.subTitulos{
+#form1{
+    margin: 70px;
+    width: 90%;
+}
+
+.subTitulos {
     font-size: 150%;
     color: #fff;
-    margin-left:10%;
+    margin-left: 5%;    
+    margin-block: 1%;
+}
+
+.texto {
+    color: #fff;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: inline
 }
