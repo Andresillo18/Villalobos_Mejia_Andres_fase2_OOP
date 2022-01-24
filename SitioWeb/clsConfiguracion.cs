@@ -6,7 +6,7 @@ using System.Configuration; // Para utilizar ConfigurationManager
 
 namespace SitioWeb
 {
-    public class clsConfiguracion
+    public static class clsConfiguracion
     {
         //Se crea un método para enviar la cadena de conexion y SE DEFINE ESTATICA PARA UTILIZAR EL GET SIN HACER UNA INSTANCIA
         public static string getConnectionString

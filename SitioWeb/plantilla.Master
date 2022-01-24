@@ -13,8 +13,8 @@
     <link href="styles.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -51,11 +51,11 @@
 
     <main>
         <form id="form1" runat="server">
-            <h1 id="titulo"  >Instituto de Triatlón</h1>
-            
-                <asp:ContentPlaceHolder ID="main" runat="server">
-                </asp:ContentPlaceHolder>
-            
+            <h1 class="titulo">Instituto de Triatlón</h1>
+
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+
 
         </form>
     </main>

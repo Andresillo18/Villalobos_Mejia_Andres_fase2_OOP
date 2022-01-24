@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SitioWeb._default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Programas</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-    <h2 id="subTitulos">Creación de programas</h2>
-    <asp:GridView ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" ForeColor="White" GridLines="Horizontal" Height="235px" Width="100%">
+    <h2 class="subTitulos">Creación de programas</h2>
+    <asp:GridView ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="235px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal">
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>
