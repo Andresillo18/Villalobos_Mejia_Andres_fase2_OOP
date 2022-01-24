@@ -1,0 +1,50 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #2a2f32
+}
+
+img {
+    max-width: 100%;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar > a{
+    color:black
+}
+
+.container-fluid {
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+/*.logoNav {
+    height: 70px;
+    width: 120px;
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+.logo img {
+    height: 1200%;
+    width: 100%;
+}*/
+
+
+#titulo {
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #fff;    
+    text-decoration:underline;
+}
+
+#subTitulos{
+    font-size: 150%;
+    color: #fff;
+}
