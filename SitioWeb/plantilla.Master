@@ -31,8 +31,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
 
-                        <a class="nav-link active" aria-current="page" href="#">Programas</a>
-                        <a class="nav-link" href="#">Módulos</a>
+                        <a class="nav-link active" aria-current="page" href="/Pages/default.aspx">Programas</a>
+                        <a class="nav-link" href="/Pages/modulo.aspx">Módulos</a>
                         <a class="nav-link" href="#">Abrir Módulo</a>
                         <a class="nav-link" href="#">Horario de Módulos</a>
                         <a class="nav-link" href="#">Entrenadores</a>
@@ -52,7 +52,7 @@
     <main>
         <h1 class="titulo">Instituto de Triatlón</h1>
 
-        <form id="form1" runat="server">
+        <form class="form1" id="form1" runat="server">
 
             <asp:ContentPlaceHolder ID="main" runat="server">
             </asp:ContentPlaceHolder>

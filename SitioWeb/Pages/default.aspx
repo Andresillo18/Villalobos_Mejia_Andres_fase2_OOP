@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SitioWeb._default" %>
+﻿<%@ Page Title="Programas" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="SitioWeb._default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Programas</title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
@@ -11,7 +10,7 @@
     <asp:TextBox ID="txtPrograma" runat="server"></asp:TextBox>
     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
 
-    <asp:GridView class="grdLista" ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="235px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal">
+    <asp:GridView class="grdLista" ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal">
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>

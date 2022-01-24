@@ -108,6 +108,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Pages\default.aspx" />
+    <Content Include="Pages\modulo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="Pages\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\modulo.aspx.cs">
+      <DependentUpon>modulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\modulo.aspx.designer.cs">
+      <DependentUpon>modulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="plantilla.Master.cs">
       <DependentUpon>plantilla.Master</DependentUpon>
