@@ -288,9 +288,9 @@ namespace CapaAccesoDatos
                     }                    
 
                     //Al dejar ese espacio en blanco da error, entonces preguntando si el valor esta vacío
-                    if (dataReader[9] != DBNull.Value)
+                    if (dataReader[4] != DBNull.Value)
                     {
-                        programa.Observaciones_programa = dataReader.GetString(9);
+                        programa.Observaciones_programa = dataReader.GetString(4);
                     }
 
                     programa.Existe = true;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="FrmEdicionProgram.aspx.cs" Inherits="SitioWeb.Pages.FrmEdicionProgram" %>
+﻿<%@ Page Title="Mantenimiento de Programas" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="FrmEdicionProgram.aspx.cs" Inherits="SitioWeb.Pages.FrmEdicionProgram" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

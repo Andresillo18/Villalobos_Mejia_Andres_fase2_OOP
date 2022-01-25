@@ -37,19 +37,19 @@ namespace SitioWeb.Pages
             // Si tiene la variable session se le ingresa algo
             if (Session["cod_programa"] != null)
             {
-                programa.Cod_programa= int.Parse(Session["cod_programa"].ToString());
+                programa.Cod_programa = int.Parse(Session["cod_programa"].ToString());
                 programa.Existe = true;
             }
             // Si la variable no tiene ningún COD se crea uno nuevo
             else
             {
-                programa.Cod_programa= -1;
+                programa.Cod_programa = -1;
                 programa.Existe = false;
             }
 
             //Estos otro txt se les ingresa el resto de info
-            programa.Nombre_programa= txtNombre.Text;
-            programa.Descripcion_programa= txtDescripcion.Text;
+            programa.Nombre_programa = txtNombre.Text;
+            programa.Descripcion_programa = txtDescripcion.Text;
 
             if (RBActivo.Checked)
             {
@@ -60,7 +60,7 @@ namespace SitioWeb.Pages
                 programa.Estado = "Inactivo";
             }
 
-            programa.Observaciones_programa= txtObservaciones.Text;
+            programa.Observaciones_programa = txtObservaciones.Text;
 
             return programa;
         }
@@ -121,11 +121,13 @@ namespace SitioWeb.Pages
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
-                ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
+                {
+                    script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
+                    ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
-                //Redireccionar (regresar) al formulario principal
-                Response.Redirect("Default.aspx");
+                    //Redireccionar (regresar) al formulario principal
+                    Response.Redirect("Default.aspx");
+                }
             }
         }
 
@@ -160,15 +162,17 @@ namespace SitioWeb.Pages
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
                 }
 
-                Response.Redirect("Default.aspx");
 
             }
             catch (Exception ex)
             {
-                script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
-                ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
-            }
+                {
+                    script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
+                    ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
+                    Response.Redirect("Default.aspx");
+                }
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -176,5 +180,6 @@ namespace SitioWeb.Pages
             //Si le da cancelar lo manda al formulario que estaba
             Response.Redirect("default.aspx");
         }
+
     }
 }

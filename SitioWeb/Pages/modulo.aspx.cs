@@ -13,5 +13,15 @@ namespace SitioWeb.Pages
         {
 
         }
+
+        protected void lnkModificar_Command(object sender, CommandEventArgs e)
+        {
+
+        }
+
+        protected void grdLista_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 }

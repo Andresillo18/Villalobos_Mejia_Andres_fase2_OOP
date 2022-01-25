@@ -120,9 +120,8 @@ namespace SitioWeb
             Session["cod_programa"] = e.CommandArgument.ToString();
 
             // Redireccionamos al otro formulario (FrmClientes)
-            
-            Response.Redirect("FrmEdicionProgram.aspx");
 
+            Response.Redirect("FrmEdicionProgram.aspx");
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -133,7 +132,6 @@ namespace SitioWeb
 
             // Redireccionamos al otro formulario:
             Response.Redirect("FrmEdicionProgram.aspx");
-
         }
     }
 }

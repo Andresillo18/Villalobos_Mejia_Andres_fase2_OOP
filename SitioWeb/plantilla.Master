@@ -12,6 +12,7 @@
     <%--estilos personales--%>
     <link href="styles.css" rel="stylesheet" />
 
+    <%--Script para mostrar un mensaje desde el navegador, se hace en el head porque es la unica función necesaria--%>
     <script type="text/javascript">
         function mostrarMensaje(mensaje) {
             alert(mensaje);
