@@ -12,6 +12,12 @@
     <%--estilos personales--%>
     <link href="styles.css" rel="stylesheet" />
 
+    <script type="text/javascript">
+        function mostrarMensaje(mensaje) {
+            alert(mensaje);
+        }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
@@ -24,7 +30,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+
+                <asp:Image alt="Logo" ID="Logo" class="logo" runat="server" ImageUrl="source/muscle.ico" />
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
