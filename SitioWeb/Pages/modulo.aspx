@@ -6,10 +6,10 @@
 
     <h1 class="subTitulos">Creación de Módulos</h1>
      <p class="texto">Nombre del Programa:</p>
-    <asp:TextBox ID="txtPrograma" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtModulo" runat="server"></asp:TextBox>
     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
 
-    <asp:Button class="nuevoRegistro" runat="server" Text="Agregar Programa" ID="btnAgregar" />
+    <asp:Button class="nuevoRegistro" runat="server" Text="Agregar Módulo" ID="btnAgregar" />
 
     <asp:GridView class="grdLista" ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal" OnPageIndexChanging="grdLista_PageIndexChanging" PageSize="8">
         <Columns>

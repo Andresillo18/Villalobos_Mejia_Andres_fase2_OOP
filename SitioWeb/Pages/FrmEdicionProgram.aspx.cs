@@ -141,27 +141,34 @@ namespace SitioWeb.Pages
             {
                 programa = GenerarEntidad();
 
-                // Si el cliente ya existe, se MODIFICA
-                if (programa.Existe)
+                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text)) // Los campos deben ser requeridos
                 {
-                    resultado = logica.Modificar(programa);
+                    // Si el cliente ya existe, se MODIFICA
+                    if (programa.Existe)
+                    {
+                        resultado = logica.Modificar(programa);
+                    }
+                    // Si el cliente no existe, se CREA uno nuevo
+                    else
+                    {
+                        resultado = logica.Insertar(programa);
+                    }
+                    if (resultado > 0)
+                    {
+                        script = string.Format("javascript:mostrarMensaje('Operación realizada satisfactoriamente')");
+                        ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
+                    }
+                    else
+                    {
+                        script = string.Format("javascript:mostrarMensaje('No se pudo ejecutar la operación')");
+                        ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
+                    }
                 }
-                // Si el cliente no existe, se CREA uno nuevo
                 else
                 {
-                    resultado = logica.Insertar(programa);
-                }
-                if (resultado > 0)
-                {
-                    script = string.Format("javascript:mostrarMensaje('Operación realizada satisfactoriamente')");
+                    script = string.Format("javascript:mostrarMensaje('Debe ingresar la información en los campos')");
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
                 }
-                else
-                {
-                    script = string.Format("javascript:mostrarMensaje('No se pudo ejecutar la operación')");
-                    ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
-                }
-
 
             }
             catch (Exception ex)
@@ -170,7 +177,7 @@ namespace SitioWeb.Pages
                     script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Default.aspx"); // Lo manda la formulario devuelta ya que cancela
                 }
             }
         }
