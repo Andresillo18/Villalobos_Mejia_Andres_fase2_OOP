@@ -149,7 +149,7 @@ namespace InterfazEscritorio
                     if (!modulo.Existe)
                     {
                         //MessageBox.Show(modulosPrograma.Cod_modulo.ToString());
-                        elResultado = logica.Insertar(modulo, modulosPrograma);
+                        elResultado = logica.Insertar(modulo);
                     }
                     else
                     {

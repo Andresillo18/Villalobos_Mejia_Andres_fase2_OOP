@@ -82,7 +82,7 @@ namespace SitioWeb.Pages
                         }
                         else
                         {
-                            script = string.Format("javascript:mostrarMensaje('Programa no encontrado')");
+                            script = string.Format("javascript:mostrarMensaje('Módulo no encontrado')");
                             ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
                         }
                     }

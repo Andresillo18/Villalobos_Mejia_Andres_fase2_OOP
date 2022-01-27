@@ -15,15 +15,6 @@ namespace SitioWeb.Pages
     {
 
         /// <summary>
-        /// Control MultiView1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView1;
-
-        /// <summary>
         /// Control lblCodModulo.
         /// </summary>
         /// <remarks>
@@ -33,22 +24,22 @@ namespace SitioWeb.Pages
         protected global::System.Web.UI.WebControls.Label lblCodModulo;
 
         /// <summary>
-        /// Control txtCodModulo.
+        /// Control txtCodModAbiert.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodModulo;
+        protected global::System.Web.UI.WebControls.TextBox txtCodModAbiert;
 
         /// <summary>
-        /// Control lblCodEntrenador.
+        /// Control HLCodEntrenador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCodEntrenador;
+        protected global::System.Web.UI.WebControls.HyperLink HLCodEntrenador;
 
         /// <summary>
         /// Control txtCodEntrenador.
@@ -60,13 +51,13 @@ namespace SitioWeb.Pages
         protected global::System.Web.UI.WebControls.TextBox txtCodEntrenador;
 
         /// <summary>
-        /// Control lblCodMod.
+        /// Control HLCodMod.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCodMod;
+        protected global::System.Web.UI.WebControls.HyperLink HLCodMod;
 
         /// <summary>
         /// Control txtCodMod.
@@ -78,13 +69,13 @@ namespace SitioWeb.Pages
         protected global::System.Web.UI.WebControls.TextBox txtCodMod;
 
         /// <summary>
-        /// Control lblCodHor.
+        /// Control HLCodHor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCodHor;
+        protected global::System.Web.UI.WebControls.HyperLink HLCodHor;
 
         /// <summary>
         /// Control txtCodHorMod.
