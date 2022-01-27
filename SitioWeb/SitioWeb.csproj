@@ -110,6 +110,7 @@
     <Content Include="Pages\abrirModulo.aspx" />
     <Content Include="Pages\default.aspx" />
     <Content Include="Pages\FrmEdicionProgram.aspx" />
+    <Content Include="Pages\mantenimientoModAbiert.aspx" />
     <Content Include="Pages\mantenimientoModulos.aspx" />
     <Content Include="Pages\modulo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -151,6 +152,13 @@
     </Compile>
     <Compile Include="Pages\FrmEdicionProgram.aspx.designer.cs">
       <DependentUpon>FrmEdicionProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mantenimientoModAbiert.aspx.cs">
+      <DependentUpon>mantenimientoModAbiert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoModAbiert.aspx.designer.cs">
+      <DependentUpon>mantenimientoModAbiert.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\mantenimientoModulos.aspx.cs">
       <DependentUpon>mantenimientoModulos.aspx</DependentUpon>

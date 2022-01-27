@@ -78,7 +78,7 @@ namespace SitioWeb
 
         protected void grdLista_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            grdLista.PageIndex = e.NewPageIndex;
+            grdLista.PageIndex = e.NewPageIndex; // el método de cambio de página genera una nueva página al recibir el evento
             CargarListaDataSet();
         }
 

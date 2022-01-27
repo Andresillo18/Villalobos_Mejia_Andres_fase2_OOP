@@ -82,11 +82,10 @@ namespace SitioWeb.Pages
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             // Eliminamos la variable de sesión, así no se confundirá que tiene la variable por el doble uso
-
             Session.Remove("cod_modulo");
 
             // Redireccionamos al otro formulario:
-            Response.Redirect("mantenimientoModulos.aspx"); //****
+            Response.Redirect("mantenimientoModulos.aspx"); 
         }
 
         protected void lnkEliminar_Command1(object sender, CommandEventArgs e)
