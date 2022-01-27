@@ -70,6 +70,11 @@ img {
     width: 480px;
 }
 
+.textBoxSmall{
+    width:10px;
+    height:30px;
+}
+
 #btnGuardar{
     margin-left:15px;
     margin-right:15px

@@ -42,12 +42,12 @@ namespace SitioWeb.Pages
         protected global::System.Web.UI.WebControls.Button btnAgregar;
 
         /// <summary>
-        /// Control grdLista.
+        /// Control grdModulos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdLista;
+        protected global::System.Web.UI.WebControls.GridView grdModulos;
     }
 }

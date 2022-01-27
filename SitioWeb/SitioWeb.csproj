@@ -107,8 +107,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Pages\abrirModulo.aspx" />
     <Content Include="Pages\default.aspx" />
     <Content Include="Pages\FrmEdicionProgram.aspx" />
+    <Content Include="Pages\mantenimientoModulos.aspx" />
     <Content Include="Pages\modulo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -129,6 +131,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConfiguracion.cs" />
+    <Compile Include="Pages\abrirModulo.aspx.cs">
+      <DependentUpon>abrirModulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\abrirModulo.aspx.designer.cs">
+      <DependentUpon>abrirModulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +151,13 @@
     </Compile>
     <Compile Include="Pages\FrmEdicionProgram.aspx.designer.cs">
       <DependentUpon>FrmEdicionProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mantenimientoModulos.aspx.cs">
+      <DependentUpon>mantenimientoModulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoModulos.aspx.designer.cs">
+      <DependentUpon>mantenimientoModulos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\modulo.aspx.cs">
       <DependentUpon>modulo.aspx</DependentUpon>

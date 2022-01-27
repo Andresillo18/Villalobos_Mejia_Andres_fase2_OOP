@@ -42,7 +42,7 @@
 
                         <a class="nav-link active" aria-current="page" href="/Pages/default.aspx">Programas</a>
                         <a class="nav-link" href="/Pages/modulo.aspx">Módulos</a>
-                        <a class="nav-link" href="#">Abrir Módulo</a>
+                        <a class="nav-link" href="/Pages/abrirModulo.aspx">Abrir Módulo</a>
                         <a class="nav-link" href="#">Horario de Módulos</a>
                         <a class="nav-link" href="#">Entrenadores</a>
                         <a class="nav-link" href="#">Horario Entrenadores</a>

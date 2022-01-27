@@ -4,14 +4,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
 
-    <h1 class="subTitulos">Creación de Módulos</h1>
-     <p class="texto">Nombre del Programa:</p>
+    <h2 class="subTitulos">Creación de Módulos</h2>
+     <p class="texto">Nombre del Módulo:</p>
     <asp:TextBox ID="txtModulo" runat="server"></asp:TextBox>
-    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
 
-    <asp:Button class="nuevoRegistro" runat="server" Text="Agregar Módulo" ID="btnAgregar" />
+    <asp:Button class="nuevoRegistro" runat="server" Text="Agregar Módulo" ID="btnAgregar" OnClick="btnAgregar_Click" />
 
-    <asp:GridView class="grdLista" ID="grdLista" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal" OnPageIndexChanging="grdLista_PageIndexChanging" PageSize="8">
+    <asp:GridView class="grdLista" ID="grdModulos" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal" OnPageIndexChanging="grdLista_PageIndexChanging" PageSize="8">
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>
@@ -20,10 +20,10 @@
             </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton ID="lnkModificar" runat="server" CommandArgument='<%# Eval("COD_MODULO").ToString() %>' CommandName="Modificar" ForeColor="Black">Eliminar</asp:LinkButton>
+                    <asp:LinkButton ID="lnkEliminar" runat="server" CommandArgument='<%# Eval("COD_MODULO").ToString() %>' CommandName="Eliminar" ForeColor="Black" OnCommand="lnkEliminar_Command1">Eliminar</asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="NOMBRE_PROGRAMA" HeaderText="Nombre" />
+            <asp:BoundField DataField="NOMBRE_MODULO" HeaderText="Nombre" />
             <asp:BoundField DataField="HORAS_DURACION_MODULO" HeaderText="Horas de Duración" />
             <asp:BoundField DataField="REQUESITOS_MODULO" HeaderText="Requesitos" />
         </Columns>

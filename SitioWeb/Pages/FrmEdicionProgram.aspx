@@ -4,6 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
+    <h1 class="subTitulos">Ingreso o modificación de Programas</h1>
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -14,27 +15,27 @@
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto" ID="lblNombre" runat="server" Text="Nombre: "></asp:Label>
-                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" runat="server" TabIndex="1"></asp:TextBox>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto" ID="lblDescripcion" runat="server" Text="Descripción: "></asp:Label>
-                <asp:TextBox ID="txtDescripcion" class="textBoxBig" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDescripcion" class="textBoxBig" runat="server" TabIndex="2"></asp:TextBox>
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto Estado" ID="lblEstado" runat="server" Text="Estado: "></asp:Label>
-                <asp:RadioButton ID="RBActivo" class="texto" runat="server" GroupName="Estado" Text="Activo" />
+                <asp:RadioButton ID="RBActivo" class="texto" runat="server" GroupName="Estado" Text="Activo" TabIndex="3" />
                 <asp:RadioButton ID="RBInactivo" class="texto" runat="server" GroupName="Estado" Text="Inactivo" />
             </div>
         </div>
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto" ID="lblObservaciones" runat="server" Text="Observaciones: "></asp:Label>
-                <asp:TextBox ID="txtObservaciones" class="textBoxBig" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtObservaciones" class="textBoxBig" runat="server" TabIndex="4"></asp:TextBox>
             </div>
         </div>
 

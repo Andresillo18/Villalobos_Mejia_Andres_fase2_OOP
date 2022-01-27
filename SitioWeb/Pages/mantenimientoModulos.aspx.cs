@@ -11,7 +11,7 @@ using CapaEntidades;
 
 namespace SitioWeb.Pages
 {
-    public partial class FrmEdicionProgram : System.Web.UI.Page
+    public partial class mantenimientoModulos : System.Web.UI.Page
     {
         //CODE BEHIND:
 
@@ -19,58 +19,45 @@ namespace SitioWeb.Pages
 
         #region Método Limpiar
         public void limpiar()
-        {
-            txtCodPrograma.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            RBInactivo.Checked = true;
-            txtDescripcion.Text = string.Empty;
-            txtObservaciones.Text = string.Empty;
+        {            
+            txtNombre.Text = string.Empty;         
+            txtRequesitos.Text = string.Empty;
         }
         #endregion
 
         #region Generar Entidad
 
-        private EntidadPrograma GenerarEntidad()
+        private EntidadModulo GenerarEntidad()
         {
-            EntidadPrograma programa = new EntidadPrograma();
+            EntidadModulo modulo= new EntidadModulo();
 
             // Si la variable session tiene algo, se le ingresa a la entidad para saber cual modificar
-            if (Session["cod_programa"] != null)
+            if (Session["cod_modulo"] != null)
             {
-                programa.Cod_programa = int.Parse(Session["cod_programa"].ToString());
-                programa.Existe = true;
+                modulo.Cod_modulo= int.Parse(Session["cod_modulo"].ToString());
+                modulo.Existe = true;
             }
             // Si la variable no tiene ningún COD se crea uno nuevo
             else
             {
-                programa.Cod_programa = -1;
-                programa.Existe = false;
+                modulo.Cod_modulo= -1;
+                modulo.Existe = false;
             }
 
             //Estos otros txt se les ingresa el resto de info
-            programa.Nombre_programa = txtNombre.Text;
-            programa.Descripcion_programa = txtDescripcion.Text;
+            modulo.Nombre_modulo= txtNombre.Text;
+            modulo.Horas_duracion= Convert.ToInt32(cboHoras.SelectedValue);
+            modulo.Requesitos_modulo = txtRequesitos.Text;            
 
-            if (RBActivo.Checked)
-            {
-                programa.Estado = "Activo";
-            }
-            else if (RBInactivo.Checked)
-            {
-                programa.Estado = "Inactivo";
-            }
-
-            programa.Observaciones_programa = txtObservaciones.Text;
-
-            return programa;
+            return modulo;
         }
 
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            EntidadPrograma programa;
-            BLPrograma logica = new BLPrograma(clsConfiguracion.getConnectionString);
+            EntidadModulo modulo;
+            BLModulo logica = new BLModulo(clsConfiguracion.getConnectionString);
             int cod;
             try
             {
@@ -78,30 +65,20 @@ namespace SitioWeb.Pages
                 {
                     //Se usa una variable session para enviar del otro formulario a este el COD o el identity para saber si el registro existe
                     //Si la variable de SESION contiene un valor, MODIFICAMOS un registro 
-                    if (Session["cod_programa"] != null)
+                    if (Session["cod_modulo"] != null)
                     {
-                        cod = int.Parse(Session["cod_programa"].ToString());
-                        programa = logica.ObtenerPrograma(cod);
+                        cod = int.Parse(Session["cod_modulo"].ToString());
+                        modulo = logica.ObtenerModulo(cod);
 
-                        if (programa.Existe)
+                        if (modulo.Existe)
                         {
-                            txtCodPrograma.Text = programa.Cod_programa.ToString();
-                            txtNombre.Text = programa.Nombre_programa;
-                            txtDescripcion.Text = programa.Descripcion_programa;
+                            txtCodModulo.Text = modulo.Cod_modulo.ToString();
+                            txtNombre.Text = modulo.Nombre_modulo;
+                            cboHoras.SelectedIndex = modulo.Horas_duracion;
+                            txtRequesitos.Text = modulo.Requesitos_modulo;
 
-                            if (programa.Estado == "Activo")
-                            {
-                                RBActivo.Checked = true;
-                            }
-                            else if (programa.Estado == "Inactivo")
-                            {
-                                RBInactivo.Checked = true;
-                            }
-
-                            txtObservaciones.Text = programa.Observaciones_programa;
-
-                            lblCodPrograma.Visible = true;
-                            txtCodPrograma.Visible = true;
+                            lblCodModulo.Visible = true;
+                            txtCodModulo.Visible = true;
                         }
                         else
                         {
@@ -113,10 +90,10 @@ namespace SitioWeb.Pages
                     else
                     {
                         limpiar();
-                        txtCodPrograma.Text = "-1";
+                        txtCodModulo.Text = "-1";
 
-                        lblCodPrograma.Visible = false;
-                        txtCodPrograma.Visible = false;
+                        lblCodModulo.Visible = false;
+                        txtCodModulo.Visible = false;
                     }
                 }
             }
@@ -127,32 +104,37 @@ namespace SitioWeb.Pages
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
                     //Redireccionar (regresar) al formulario principal
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("modulo.aspx");
                 }
             }
         }
 
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("modulo.aspx");
+        }
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadPrograma programa;
-            BLPrograma logica = new BLPrograma(clsConfiguracion.getConnectionString);
+            EntidadModulo modulo;
+            BLModulo logica = new BLModulo(clsConfiguracion.getConnectionString);
             int resultado;
 
             try
             {
-                programa = GenerarEntidad();
+                modulo = GenerarEntidad();
 
-                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text)) // Los campos deben ser requeridos
+                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtRequesitos.Text)) // Los campos deben ser requeridos
                 {
                     // Si el cliente ya existe, se MODIFICA
-                    if (programa.Existe)
+                    if (modulo.Existe)
                     {
-                        resultado = logica.Modificar(programa);
+                        resultado = logica.Modificar(modulo);
                     }
                     // Si el cliente no existe, se CREA uno nuevo
                     else
                     {
-                        resultado = logica.Insertar(programa);
+                        resultado = logica.Insertar(modulo);
                     }
                     if (resultado > 0)
                     {
@@ -178,16 +160,9 @@ namespace SitioWeb.Pages
                     script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
-                    Response.Redirect("Default.aspx"); // Lo manda la formulario devuelta ya que cancela
+                    Response.Redirect("modulo.aspx"); // Lo manda la formulario devuelta ya que cancela
                 }
             }
         }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            //Si le da cancelar lo manda al formulario que estaba
-            Response.Redirect("default.aspx");
-        }
-
     }
 }

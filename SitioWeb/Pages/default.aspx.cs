@@ -64,7 +64,7 @@ namespace SitioWeb
         {
             try
             {
-                string condicion = string.Format("Programa LIKE '%{0}%'", txtPrograma.Text); // Se une todo en un string para hacer la condición según lo que escriba el usuario
+                string condicion = string.Format("NOMBRE_PROGRAMA LIKE '%{0}%'", txtPrograma.Text); // Se une todo en un string para hacer la condición según lo que escriba el usuario
                 CargarListaDataSet(condicion);
                 //Response.Write("hola");
             }
