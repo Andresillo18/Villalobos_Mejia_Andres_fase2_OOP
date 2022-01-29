@@ -109,8 +109,10 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Pages\abrirModulo.aspx" />
     <Content Include="Pages\default.aspx" />
+    <Content Include="Pages\entrenador.aspx" />
     <Content Include="Pages\FrmEdicionProgram.aspx" />
     <Content Include="Pages\horarioModulo.aspx" />
+    <Content Include="Pages\MantenimientoHorMod.aspx" />
     <Content Include="Pages\mantenimientoModAbiert.aspx" />
     <Content Include="Pages\mantenimientoModulos.aspx" />
     <Content Include="Pages\modulo.aspx" />
@@ -147,6 +149,13 @@
     <Compile Include="Pages\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\entrenador.aspx.cs">
+      <DependentUpon>entrenador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\entrenador.aspx.designer.cs">
+      <DependentUpon>entrenador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FrmEdicionProgram.aspx.cs">
       <DependentUpon>FrmEdicionProgram.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,6 +169,13 @@
     </Compile>
     <Compile Include="Pages\horarioModulo.aspx.designer.cs">
       <DependentUpon>horarioModulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MantenimientoHorMod.aspx.cs">
+      <DependentUpon>MantenimientoHorMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MantenimientoHorMod.aspx.designer.cs">
+      <DependentUpon>MantenimientoHorMod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\mantenimientoModAbiert.aspx.cs">
       <DependentUpon>mantenimientoModAbiert.aspx</DependentUpon>

@@ -298,6 +298,7 @@ namespace CapaAccesoDatos
 
                     horarioMod.Hora_inicio = dataReader.GetTimeSpan(8);
                     horarioMod.Hora_fin = dataReader.GetTimeSpan(9);
+                    horarioMod.Existe = true; // Si ya ha seleccionado un registro este pasa a que ya existe para ser modificado
                 }
                 conexion.Close();
             }

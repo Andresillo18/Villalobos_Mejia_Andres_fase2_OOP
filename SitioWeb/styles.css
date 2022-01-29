@@ -61,6 +61,13 @@ img {
     display: inline
 }
 
+.texto2 {
+    color: #fff;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block
+}
+
 .row{
     margin:15px;
 }

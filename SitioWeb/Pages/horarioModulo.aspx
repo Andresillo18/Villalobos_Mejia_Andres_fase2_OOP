@@ -10,17 +10,23 @@
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton ID="lnkModificar" runat="server" CommandArgument='<%# Eval("COD_MODULO").ToString() %>' CommandName="Modificar" Font-Underline="True" ForeColor="Black" OnCommand="lnkModificar_Command">Modificar</asp:LinkButton>
+                    <asp:LinkButton ID="lnkModificar" runat="server" CommandArgument='<%# Eval("COD_HORARIO_MODULOS").ToString() %>' CommandName="Modificar" Font-Underline="True" ForeColor="Black" OnCommand="lnkModificar_Command">Modificar</asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField>
                 <ItemTemplate>
-                    <asp:LinkButton ID="lnkEliminar" runat="server" CommandArgument='<%# Eval("COD_MODULO").ToString() %>' CommandName="Eliminar" ForeColor="Black" OnCommand="lnkEliminar_Command1">Eliminar</asp:LinkButton>
+                    <asp:LinkButton ID="lnkEliminar" runat="server" CommandArgument='<%# Eval("COD_HORARIO_MODULOS").ToString() %>' CommandName="Eliminar" ForeColor="Black" OnCommand="lnkEliminar_Command">Eliminar</asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="NOMBRE_MODULO" HeaderText="Nombre" />
-            <asp:BoundField DataField="HORAS_DURACION_MODULO" HeaderText="Horas de Duración" />
-            <asp:BoundField DataField="REQUESITOS_MODULO" HeaderText="Requesitos" />
+            <asp:BoundField DataField="DIA_LUNES" HeaderText="Día Lunes" />
+            <asp:BoundField DataField="DIA_MARTES" HeaderText="Día Martes" />
+            <asp:BoundField DataField="DIA_MIERCOLES" HeaderText="Día Miércoles" />
+            <asp:BoundField DataField="DIA_JUEVES" HeaderText="Día Jueves" />
+            <asp:BoundField DataField="DIA_VIERNES" HeaderText="Día Viernes" />
+            <asp:BoundField DataField="DIA_SABADO" HeaderText="Día Sabado" />
+            <asp:BoundField DataField="DIA_DOMINGO" HeaderText="Día Domingo" />
+            <asp:BoundField DataField="HORA_INICIO_HORARIO" HeaderText="Hora Inicio" />
+            <asp:BoundField DataField="HORA_FIN_HORARIO" HeaderText="Hora Final" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />
         <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
