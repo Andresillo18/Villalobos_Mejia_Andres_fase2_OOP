@@ -41,6 +41,7 @@
         <div class="row">
             <div class="auto-style1">
                 <asp:Label class="texto" ID="lblFechaInicio" runat="server" Text="Fecha Inicio: "></asp:Label>
+                <%--Se usa un calendario de asp--%>
                 <asp:Calendar ID="CalFechaInicio" runat="server" BackColor="Black" BorderColor="White" BorderWidth="1px" class="calendario" Font-Names="Verdana" Font-Size="9pt" ForeColor="White" Height="190px" NextPrevFormat="FullMonth" TabIndex="4" Width="314px">
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
@@ -78,9 +79,6 @@
                 <asp:Button class="btn btn-primary" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
                 <asp:Button class="btn btn-danger" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
             </div>
-        </div>
-
-        <div class="row">
         </div>
 
     </div>

@@ -30,10 +30,10 @@ namespace SitioWeb.Pages
                 DSHoraMod = logica.listarHorario(condicion, orden);
                 if (DSHoraMod != null)
                 {
-                    grdModulos.DataSource = DSHoraMod;
-                    grdModulos.DataMember = DSHoraMod.Tables[0].TableName; // la primera tabla devuelta
+                    grdHorarios.DataSource = DSHoraMod;
+                    grdHorarios.DataMember = DSHoraMod.Tables[0].TableName; // la primera tabla devuelta
 
-                    grdModulos.DataBind(); // Es necesario para que se visualicen los datos, los enlaza
+                    grdHorarios.DataBind(); // Es necesario para que se visualicen los datos, los enlaza
                 }
             }
             catch (Exception)
@@ -72,7 +72,7 @@ namespace SitioWeb.Pages
 
         protected void grdLista_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            grdModulos.PageIndex = e.NewPageIndex;
+            grdHorarios.PageIndex = e.NewPageIndex;
             CargarListaDataSet();
         }       
 

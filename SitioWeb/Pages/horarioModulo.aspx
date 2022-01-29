@@ -6,7 +6,7 @@
 
     <h2 class="subTitulos">Creación de Horarios para Módulos</h2>
      <asp:Button class="nuevoRegistro" runat="server" Text="Agregar Horario" ID="btnAgregar" OnClick="btnAgregar_Click" />
-        <asp:GridView class="grdLista" ID="grdModulos" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal" OnPageIndexChanging="grdLista_PageIndexChanging" PageSize="8">
+        <asp:GridView class="grdLista" ID="grdHorarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" EmptyDataText="No hay registros para mostrar" Height="135px" ShowHeaderWhenEmpty="True" Width="100%" GridLines="Horizontal" OnPageIndexChanging="grdLista_PageIndexChanging" PageSize="8">
         <Columns>
             <asp:TemplateField>
                 <ItemTemplate>

@@ -112,6 +112,7 @@
     <Content Include="Pages\entrenador.aspx" />
     <Content Include="Pages\FrmEdicionProgram.aspx" />
     <Content Include="Pages\horarioModulo.aspx" />
+    <Content Include="Pages\mantenimientoEntrenador.aspx" />
     <Content Include="Pages\MantenimientoHorMod.aspx" />
     <Content Include="Pages\mantenimientoModAbiert.aspx" />
     <Content Include="Pages\mantenimientoModulos.aspx" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="Pages\horarioModulo.aspx.designer.cs">
       <DependentUpon>horarioModulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mantenimientoEntrenador.aspx.cs">
+      <DependentUpon>mantenimientoEntrenador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoEntrenador.aspx.designer.cs">
+      <DependentUpon>mantenimientoEntrenador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MantenimientoHorMod.aspx.cs">
       <DependentUpon>MantenimientoHorMod.aspx</DependentUpon>
