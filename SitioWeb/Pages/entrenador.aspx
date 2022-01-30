@@ -30,7 +30,7 @@
             <asp:BoundField DataField="TELEFONO1_ENTRENADOR" HeaderText="Teléfono 1" />
             <asp:BoundField DataField="TELEFONO2_ENTRENADOR" HeaderText="Teléfono 2" />
             <asp:BoundField DataField="CORREO_ENTRENADOR" HeaderText="Correo" />
-            <asp:BoundField DataField="FECHA_NACIMIENTO_ENTRENADOR" HeaderText="Fecha de Nacimiento" />
+            <asp:BoundField DataField="FECHA_NACIMIENTO_ENTRENADOR" HeaderText="Fecha de Nacimiento" DataFormatString="{0:d}" />
             <asp:BoundField DataField="PROVINCIA_ENTRENADOR" HeaderText="Provincia" />
             <asp:BoundField DataField="DISTRITO_ENTRENADOR" HeaderText="Distrito" />
             <asp:BoundField DataField="CANTON_ENTRENADOR" HeaderText="Cantón" />

@@ -74,8 +74,16 @@
 
         <div class="row">
             <div class="col-4">
-                <asp:Label class="texto" ID="lblProvincia" runat="server" Text="Provincia: "></asp:Label>
-                <asp:TextBox ID="txtProvincia" runat="server" TabIndex="9" MaxLength="20"></asp:TextBox>
+                <asp:Label class="texto" ID="lblProvincia" runat="server" Text="Provincia: "></asp:Label>                
+                <asp:DropDownList ID="CBProvincia" TabIndex="9" runat="server">
+                    <asp:ListItem>Alajuela</asp:ListItem>
+                    <asp:ListItem>San José</asp:ListItem>
+                    <asp:ListItem>Guanacaste</asp:ListItem>
+                    <asp:ListItem>Puntarenas</asp:ListItem>
+                    <asp:ListItem>Heredia</asp:ListItem>
+                    <asp:ListItem>Cartago</asp:ListItem>
+                    <asp:ListItem>Limón</asp:ListItem>
+                </asp:DropDownList>
             </div>
 
                <div class="col-4">

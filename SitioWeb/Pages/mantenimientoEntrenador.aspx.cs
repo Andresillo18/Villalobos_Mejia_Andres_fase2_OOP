@@ -26,10 +26,10 @@ namespace SitioWeb.Pages
             txtTelefono1.Text = string.Empty;
             txtTelefono2.Text = string.Empty;
             txtCorreo.Text = string.Empty;
-            txtProvincia.Text = string.Empty;
+            CBProvincia.Text = string.Empty;
             txtDistrito.Text = string.Empty;
             txtCanton.Text = string.Empty;
-            RBActivo.Checked = true;
+            
         }
         #endregion
 
@@ -53,17 +53,32 @@ namespace SitioWeb.Pages
             }
 
             //Estos otros txt se les ingresa el resto de info
-            entrenador.Nombre_modulo = txtNombre.Text;
-            entrenador.Horas_duracion = Convert.ToInt32(cboHoras.SelectedValue);
-            entrenador.Requesitos_modulo = txtRequesitos.Text;
-
+            entrenador.Identificacion = txtIdEntrenador.Text;
+            entrenador.Nombre = txtNombre.Text;
+            entrenador.Apellido1 = txtApellido1.Text;
+            entrenador.Apellido2 = txtApellido2.Text;
+            entrenador.Telefono1 = txtTelefono1.Text;
+            entrenador.Telefono2 = txtTelefono2.Text;
+            entrenador.Correo = txtCorreo.Text;
+            entrenador.Fecha_nacimiento = CalFechaNacimiento.SelectedDate;
+            entrenador.Provincia = CBProvincia.Text;
+            entrenador.Distrito = txtDistrito.Text;
+            entrenador.Canton = txtDistrito.Text;
+            //if (RBActivo.Checked == true)
+            //{
+            //    entrenador.Estado = true;
+            //}
+            //else if (RBInactivo.Checked == true)
+            //{
+            //    entrenador.Estado = false;
+            //}
             return entrenador;
         }
 
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             EntidadEntrenador entrenador;
             BLEntrenador logica = new BLEntrenador(clsConfiguracion.getConnectionString);
             int cod;
@@ -81,16 +96,32 @@ namespace SitioWeb.Pages
                         if (entrenador.Estado) // Se pregunta por el estado para saber si existe
                         {
                             txtCodEntrenador.Text = entrenador.Cod_entrenador.ToString();
-                            txtNombre.Text = modulo.Nombre_modulo;
-                            cboHoras.SelectedIndex = modulo.Horas_duracion;
-                            txtRequesitos.Text = modulo.Requesitos_modulo;
+                            txtIdEntrenador.Text = entrenador.Identificacion;
+                            txtNombre.Text= entrenador.Nombre;
+                            txtApellido1.Text = entrenador.Apellido1;
+                            txtApellido2.Text = entrenador.Apellido2;
+                            txtTelefono1.Text = entrenador.Telefono1;
+                            txtTelefono2.Text = entrenador.Telefono2;
+                            txtCorreo.Text = entrenador.Correo;
+                            CalFechaNacimiento.SelectedDate = entrenador.Fecha_nacimiento;
+                            CBProvincia.Text = entrenador.Provincia;
+                            txtDistrito.Text = entrenador.Distrito;
+                            txtCanton.Text = entrenador.Canton;
+                            if (entrenador.Estado == true)
+                            {
+                                RBActivo.Checked = true;
+                            }
+                            else if (entrenador.Estado == false)
+                            {
+                                RBInactivo.Checked = true;
+                            }
 
-                            lblCodModulo.Visible = true;
-                            txtCodModulo.Visible = true;
+                            lblCodEntrenador.Visible = true;
+                            txtCodEntrenador.Visible = true;
                         }
                         else
                         {
-                            script = string.Format("javascript:mostrarMensaje('Módulo no encontrado')");
+                            script = string.Format("javascript:mostrarMensaje('Entrenador no encontrado')");
                             ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
                         }
                     }
@@ -98,10 +129,11 @@ namespace SitioWeb.Pages
                     else
                     {
                         limpiar();
-                        txtCodModulo.Text = "-1";
+                        RBActivo.Checked = true;
+                        txtCodEntrenador.Text = "-1";
 
-                        lblCodModulo.Visible = false;
-                        txtCodModulo.Visible = false;
+                        lblCodEntrenador.Visible = false;
+                        txtCodEntrenador.Visible = false;
                     }
                 }
             }
@@ -112,32 +144,32 @@ namespace SitioWeb.Pages
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
                     //Redireccionar (regresar) al formulario principal
-                    Response.Redirect("modulo.aspx");
+                    Response.Redirect("entrenador.aspx");
                 }
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadModulo modulo;
-            BLModulo logica = new BLModulo(clsConfiguracion.getConnectionString);
+            EntidadEntrenador entrenador;
+            BLEntrenador logica = new BLEntrenador(clsConfiguracion.getConnectionString);
             int resultado;
 
             try
             {
-                modulo = GenerarEntidad();
+                entrenador = GenerarEntidad();
 
-                if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtRequesitos.Text)) // Los campos deben ser requeridos
+                if (!string.IsNullOrEmpty(txtIdEntrenador.Text) && !string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtApellido1.Text) && !string.IsNullOrEmpty(txtApellido2.Text) && !string.IsNullOrEmpty(txtTelefono1.Text)  && !string.IsNullOrEmpty(CBProvincia.Text) && !string.IsNullOrEmpty(txtDistrito.Text) && !string.IsNullOrEmpty(txtCanton.Text) ) // Los campos deben ser requeridos
                 {
                     // Si el cliente ya existe, se MODIFICA
-                    if (modulo.Existe)
+                    if (entrenador.Estado)
                     {
-                        resultado = logica.Modificar(modulo);
+                        resultado = logica.Modificar(entrenador);
                     }
                     // Si el cliente no existe, se CREA uno nuevo
                     else
                     {
-                        resultado = logica.Insertar(modulo);
+                        resultado = logica.Insertar(entrenador);
                     }
                     if (resultado > 0)
                     {
@@ -163,7 +195,7 @@ namespace SitioWeb.Pages
                     script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
-                    Response.Redirect("modulo.aspx"); // Lo manda la formulario devuelta ya que cancela
+                    Response.Redirect("entrenador.aspx"); // Lo manda la formulario devuelta ya que cancela
                 }
             }
         }

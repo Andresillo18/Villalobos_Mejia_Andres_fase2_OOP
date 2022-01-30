@@ -49,7 +49,7 @@
                         <a class="nav-link" href="#">Eventos</a>
                         <a class="nav-link" href="#">Registro de Horas</a>
                         <a class="nav-link" href="/Pages/abrirModulo.aspx">Abrir Módulo</a>
-                        <a class="nav-link" href="#">Atletas</a>
+                        <a class="nav-link" href="/Pages/atleta.aspx">Atletas</a>
                         <a class="nav-link" href="#">Matrículas</a>
                     </div>
                 </div>
