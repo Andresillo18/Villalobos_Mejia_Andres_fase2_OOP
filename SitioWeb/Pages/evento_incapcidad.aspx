@@ -20,8 +20,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="COD_ENTRENADOR" HeaderText="Cod Entrenador" />
-            <asp:BoundField DataField="DIA_INICIO_INCAPACIDADES_EVENTOS" HeaderText="Día Inicio" />
-            <asp:BoundField DataField="DIA_FINAL_INCAPACIDADES_EVENTOS" HeaderText="Día Final" />
+            <asp:BoundField DataField="DIA_INICIO_INCAPACIDADES_EVENTOS" HeaderText="Día Inicio" DataFormatString="{0:d}" />
+            <asp:BoundField DataField="DIA_FINAL_INCAPACIDADES_EVENTOS" HeaderText="Día Final" DataFormatString="{0:d}" />
             <asp:BoundField DataField="OBSERVACIONES_INCAPACIDADES_EVENTOS" HeaderText="Observaciones" />
         </Columns>
         <FooterStyle BackColor="White" ForeColor="#333333" />

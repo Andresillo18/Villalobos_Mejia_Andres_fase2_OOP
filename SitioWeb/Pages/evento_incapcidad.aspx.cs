@@ -85,7 +85,7 @@ namespace SitioWeb.Pages
                     if (logica.EliminarIncapEvent(id) > 0)
                     {
 
-                        script = string.Format("javascript:mostrarMensaje('Incapacidad eliminado satisfactoriamente')");
+                        script = string.Format("javascript:mostrarMensaje('Incapacidad o Evento eliminado satisfactoriamente')");
                         ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
                         CargarListaDataSet();

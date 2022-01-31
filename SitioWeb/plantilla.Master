@@ -46,7 +46,7 @@
                         <a class="nav-link" href="/Pages/entrenador.aspx">Entrenadores</a>
                         <a class="nav-link" href="/Pages/horarioEntrenador.aspx">Horario Entrenadores</a>
                         <a class="nav-link" href="/Pages/certificacion.aspx">Certificaciones</a>
-                        <a class="nav-link" href="#">Eventos</a>
+                        <a class="nav-link" href="/Pages/evento_incapcidad.aspx">Eventos</a>
                         <a class="nav-link" href="#">Registro de Horas</a>
                         <a class="nav-link" href="/Pages/abrirModulo.aspx">Abrir Módulo</a>
                         <a class="nav-link" href="/Pages/atleta.aspx">Atletas</a>

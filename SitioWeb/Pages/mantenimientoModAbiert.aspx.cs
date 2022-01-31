@@ -38,7 +38,7 @@ namespace SitioWeb.Pages
                             txtCodEntrenador.Text = modulo.Cod_entrenador.ToString();
                             txtCodHorMod.Text = modulo.Cod_hora_mod.ToString();
                             txtCodMod.Text = modulo.Cod_mod.ToString();
-                            CalFechaInicio.SelectedDate = modulo.Fecha_inicio;
+                            CalFechaInicio.SelectedDate = modulo.Fecha_inicio;// Establece la fecha o obtiene el método selectedDate
                             txtObservaciones.Text = modulo.Observaciones.ToString();
 
                             lblCodModulo.Visible = true;
@@ -107,7 +107,7 @@ namespace SitioWeb.Pages
             modulo.Cod_entrenador = Convert.ToInt32(txtCodEntrenador.Text);
             modulo.Cod_mod = Convert.ToInt32(txtCodMod.Text);
             modulo.Cod_hora_mod= Convert.ToInt32(txtCodHorMod.Text);
-            modulo.Fecha_inicio = CalFechaInicio.SelectedDate;
+            modulo.Fecha_inicio = CalFechaInicio.SelectedDate;// Establece la fecha o obtiene el método selectedDate
             modulo.Observaciones= txtObservaciones.Text;
 
             return modulo;
