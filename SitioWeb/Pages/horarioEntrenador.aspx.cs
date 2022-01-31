@@ -11,8 +11,7 @@ using CapaEntidades;
 
 namespace SitioWeb.Pages
 {
-
-    public partial class horarioModulo : System.Web.UI.Page
+    public partial class horarioEntrenador : System.Web.UI.Page
     {
         //CODE BEHIND
 
@@ -22,16 +21,16 @@ namespace SitioWeb.Pages
 
         private void CargarListaDataSet(string condicion = "", string orden = "")
         {
-            BLHorarMod logica = new BLHorarMod(clsConfiguracion.getConnectionString); // Se hace una instancia de la capa lógica
-            DataSet DSHoraMod;
+            BLHorarEntrenador logica = new BLHorarEntrenador(clsConfiguracion.getConnectionString); // Se hace una instancia de la capa lógica
+            DataSet DSHoraEntrenador;
 
             try
             {
-                DSHoraMod = logica.listarHorario(condicion, orden);
-                if (DSHoraMod != null)
+                DSHoraEntrenador = logica.listarHorario(condicion, orden);
+                if (DSHoraEntrenador != null)
                 {
-                    grdHorarios.DataSource = DSHoraMod;
-                    grdHorarios.DataMember = DSHoraMod.Tables[0].TableName; // la primera tabla devuelta
+                    grdHorarios.DataSource = DSHoraEntrenador;
+                    grdHorarios.DataMember = DSHoraEntrenador.Tables[0].TableName; // la primera tabla devuelta
 
                     grdHorarios.DataBind(); // Es necesario para que se visualicen los datos, los enlaza
                 }
@@ -64,30 +63,24 @@ namespace SitioWeb.Pages
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             // Eliminamos la variable de sesión, así no se confundirá que tiene la variable por el doble uso
-            Session.Remove("horaMod");
+            Session.Remove("cod_horaEntrenador");
 
             // Redireccionamos al otro formulario:
-            Response.Redirect("MantenimientoHorMod.aspx");
+            Response.Redirect("mantenimientoHorEntrenador.aspx");
         }
-
-        protected void grdLista_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            grdHorarios.PageIndex = e.NewPageIndex;
-            CargarListaDataSet();
-        }       
 
         protected void lnkEliminar_Command(object sender, CommandEventArgs e)
         {
             int id = int.Parse(e.CommandArgument.ToString()); // Se lee el ID, se usa el evento Eval() y esta es la forma de tener el objeto en un int
-            BLHorarMod logica = new BLHorarMod(clsConfiguracion.getConnectionString);
-            EntidadHorarMod horaMod = new EntidadHorarMod();
+            BLHorarEntrenador logica = new BLHorarEntrenador(clsConfiguracion.getConnectionString);
+            EntidadHorarEntrenador horaEntrenador = new EntidadHorarEntrenador();
 
             try
             {
-                horaMod = logica.ObtenerHorario(id); // Le devuelve la consulta o el registro según el ID al presionar ELIMINAR Así se sabe si existe                
-                if (horaMod.Existe)
+                horaEntrenador = logica.ObtenerHorario(id); // Le devuelve la consulta o el registro según el ID al presionar ELIMINAR Así se sabe si existe                
+                if (horaEntrenador.Existe)
                 {
-                    if (logica.EliminarHorarioMod(id) > 0)
+                    if (logica.EliminarHorarEntrenador(id) > 0)
                     {
 
                         script = string.Format("javascript:mostrarMensaje('Horario eliminado satisfactoriamente')");
@@ -111,11 +104,17 @@ namespace SitioWeb.Pages
             //Aquí se le asigna el valor de session, que será lo que le enviará el ID al otro formulario
 
             // En el valor de SESION es el valor que contenga el Command ( EvaL() )
-            Session["horaMod"] = e.CommandArgument.ToString();
+            Session["cod_horaEntrenador"] = e.CommandArgument.ToString();
 
             // Redireccionamos al otro formulario (FrmClientes)
 
-            Response.Redirect("MantenimientoHorMod.aspx");
+            Response.Redirect("mantenimientoHorEntrenador.aspx");
+        }
+
+        protected void grdLista_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdHorarios.PageIndex = e.NewPageIndex;
+            CargarListaDataSet();
         }
     }
 }

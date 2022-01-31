@@ -9,10 +9,9 @@ using System.Data; // Se ocupa para el uso de dataset y para guardar la informac
 using CapaLogicaNegocio;
 using CapaEntidades;
 
-
 namespace SitioWeb.Pages
 {
-    public partial class MantenimientoHorMod : System.Web.UI.Page
+    public partial class mantenimientoHorEntrenador : System.Web.UI.Page
     {
         //CODE BEHIND:
 
@@ -21,6 +20,7 @@ namespace SitioWeb.Pages
         #region Método Limpiar
         public void limpiar()
         {
+            txtCodEntrenador.Text = string.Empty;
             CBLunes.Checked = false;
             CBMartes.Checked = false;
             CBMiercoles.Checked = false;
@@ -37,99 +37,101 @@ namespace SitioWeb.Pages
 
         #region Generar Entidad
 
-        private EntidadHorarMod GenerarEntidad()
+        private EntidadHorarEntrenador GenerarEntidad()
         {
-            EntidadHorarMod horaMod = new EntidadHorarMod();
+            EntidadHorarEntrenador horaEntrenador = new EntidadHorarEntrenador();
 
             // Si la variable session tiene algo, se le ingresa a la entidad para saber cual modificar
-            if (Session["horaMod"] != null)
+            if (Session["cod_horaEntrenador"] != null)
             {
-                horaMod.Cod_Horario_Modulos = int.Parse(Session["horaMod"].ToString());
-                horaMod.Existe = true;
+                horaEntrenador.Cod_Horario_entrenador = int.Parse(Session["cod_horaEntrenador"].ToString());
+                horaEntrenador.Existe = true;
             }
             // Si la variable no tiene ningún COD se crea uno nuevo
             else
             {
-                horaMod.Cod_Horario_Modulos = -1;
-                horaMod.Existe = false;
+                horaEntrenador.Cod_Horario_entrenador = -1;
+                horaEntrenador.Existe = false;
             }
 
             //Estos otros txt se les ingresa el resto de info
+            horaEntrenador.Cod_entrenador = int.Parse(txtCodEntrenador.Text);
+
             if (CBLunes.Checked)
             {
-                horaMod.Dia_lunes = true;
+                horaEntrenador.Dia_lunes = true;
             }
             else
             {
-                horaMod.Dia_lunes = false;
+                horaEntrenador.Dia_lunes = false;
             }
 
             if (CBMartes.Checked)
             {
-                horaMod.Dia_martes = true;
+                horaEntrenador.Dia_martes = true;
             }
             else
             {
-                horaMod.Dia_martes = false;
+                horaEntrenador.Dia_martes = false;
             }
 
             if (CBMiercoles.Checked)
             {
-                horaMod.Dia_miercoles = true;
+                horaEntrenador.Dia_miercoles = true;
             }
             else
             {
-                horaMod.Dia_miercoles = false;
+                horaEntrenador.Dia_miercoles = false;
             }
 
             if (CBJueves.Checked)
             {
-                horaMod.Dia_jueves = true;
+                horaEntrenador.Dia_jueves = true;
             }
             else
             {
-                horaMod.Dia_jueves = false;
+                horaEntrenador.Dia_jueves = false;
             }
 
             if (CBViernes.Checked)
             {
-                horaMod.Dia_viernes = true;
+                horaEntrenador.Dia_viernes = true;
             }
             else
             {
-                horaMod.Dia_viernes = false;
+                horaEntrenador.Dia_viernes = false;
             }
 
             if (CBSabado.Checked)
             {
-                horaMod.Dia_sabado = true;
+                horaEntrenador.Dia_sabado = true;
             }
             else
             {
-                horaMod.Dia_sabado = false;
+                horaEntrenador.Dia_sabado = false;
             }
 
             if (CBDomingo.Checked)
             {
-                horaMod.Dia_domingo = true;
+                horaEntrenador.Dia_domingo = true;
             }
             else
             {
-                horaMod.Dia_domingo = false;
+                horaEntrenador.Dia_domingo = false;
             }
+            
+            horaEntrenador.Hora_inicio = TimeSpan.Parse(txtTimeStart.Text);
+            horaEntrenador.Hora_fin = TimeSpan.Parse(txtTimeEnd.Text);
 
-            horaMod.Hora_inicio = TimeSpan.Parse(txtTimeStart.Text);
-            horaMod.Hora_fin = TimeSpan.Parse(txtTimeEnd.Text);
-
-            return horaMod;
+            return horaEntrenador;
         }
 
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            EntidadHorarMod HoraMod;
-            BLHorarMod logica = new BLHorarMod(clsConfiguracion.getConnectionString);
+            EntidadHorarEntrenador HoraEntrenador;
+            BLHorarEntrenador logica = new BLHorarEntrenador(clsConfiguracion.getConnectionString);
             int cod;
             try
             {
@@ -137,15 +139,16 @@ namespace SitioWeb.Pages
                 {
                     //Se usa una variable session para enviar del otro formulario a este el COD o el identity para saber si el registro existe
                     //Si la variable de SESION contiene un valor, MODIFICAMOS un registro 
-                    if (Session["horaMod"] != null)
+                    if (Session["cod_horaEntrenador"] != null)
                     {
-                        cod = int.Parse(Session["horaMod"].ToString());
-                        HoraMod = logica.ObtenerHorario(cod);
+                        cod = int.Parse(Session["cod_horaEntrenador"].ToString());
+                        HoraEntrenador = logica.ObtenerHorario(cod);
 
-                        if (HoraMod.Existe)
+                        if (HoraEntrenador.Existe)
                         {
-                            txtCodHoraMod.Text = HoraMod.Cod_Horario_Modulos.ToString();
-                            if (HoraMod.Dia_lunes == true)
+                            txtCodHoraEntrenador.Text = HoraEntrenador.Cod_Horario_entrenador.ToString();
+                            txtCodEntrenador.Text = HoraEntrenador.Cod_entrenador.ToString();
+                            if (HoraEntrenador.Dia_lunes == true)
                             {
                                 CBLunes.Checked = true;
                             }
@@ -154,7 +157,7 @@ namespace SitioWeb.Pages
                                 CBLunes.Checked = false;
                             }
 
-                            if (HoraMod.Dia_martes == true)
+                            if (HoraEntrenador.Dia_martes == true)
                             {
                                 CBMartes.Checked = true;
                             }
@@ -162,7 +165,7 @@ namespace SitioWeb.Pages
                             {
                                 CBMartes.Checked = false;
                             }
-                            if (HoraMod.Dia_miercoles == true)
+                            if (HoraEntrenador.Dia_miercoles == true)
                             {
                                 CBMiercoles.Checked = true;
                             }
@@ -171,7 +174,7 @@ namespace SitioWeb.Pages
                                 CBMiercoles.Checked = false;
                             }
 
-                            if (HoraMod.Dia_jueves == true)
+                            if (HoraEntrenador.Dia_jueves == true)
                             {
                                 CBJueves.Checked = true;
                             }
@@ -180,7 +183,7 @@ namespace SitioWeb.Pages
                                 CBJueves.Checked = false;
                             }
 
-                            if (HoraMod.Dia_viernes == true)
+                            if (HoraEntrenador.Dia_viernes == true)
                             {
                                 CBViernes.Checked = true;
                             }
@@ -189,7 +192,7 @@ namespace SitioWeb.Pages
                                 CBViernes.Checked = false;
                             }
 
-                            if (HoraMod.Dia_sabado == true)
+                            if (HoraEntrenador.Dia_sabado == true)
                             {
                                 CBSabado.Checked = true;
                             }
@@ -198,7 +201,7 @@ namespace SitioWeb.Pages
                                 CBSabado.Checked = false;
                             }
 
-                            if (HoraMod.Dia_domingo == true)
+                            if (HoraEntrenador.Dia_domingo == true)
                             {
                                 CBDomingo.Checked = true;
                             }
@@ -207,11 +210,11 @@ namespace SitioWeb.Pages
                                 CBDomingo.Checked = false;
                             }
 
-                            txtTimeStart.Text = HoraMod.Hora_inicio.ToString();
-                            txtTimeEnd.Text = HoraMod.Hora_fin.ToString();
+                            txtTimeStart.Text = HoraEntrenador.Hora_inicio.ToString();
+                            txtTimeEnd.Text = HoraEntrenador.Hora_fin.ToString();
 
-                            lblCodHoraMod.Visible = true;
-                            txtCodHoraMod.Visible = true;
+                            lblCodHoraEntrenador.Visible = true;
+                            txtCodHoraEntrenador.Visible = true;
                         }
                         else
                         {
@@ -223,10 +226,10 @@ namespace SitioWeb.Pages
                     else
                     {
                         limpiar();
-                        txtCodHoraMod.Text = "-1";
+                        txtCodHoraEntrenador.Text = "-1";
 
-                        lblCodHoraMod.Visible = false;
-                        txtCodHoraMod.Visible = false;
+                        lblCodHoraEntrenador.Visible = false;
+                        txtCodHoraEntrenador.Visible = false;
                     }
                 }
             }
@@ -237,30 +240,30 @@ namespace SitioWeb.Pages
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
                     //Redireccionar (regresar) al formulario principal
-                    Response.Redirect("horarioModulo.aspx");
+                    Response.Redirect("horarioEntrenador.aspx");
                 }
             }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            EntidadHorarMod horaMod;
-            BLHorarMod logica = new BLHorarMod(clsConfiguracion.getConnectionString);
+            EntidadHorarEntrenador horaEntrenador;
+            BLHorarEntrenador logica = new BLHorarEntrenador(clsConfiguracion.getConnectionString);
             int resultado;
 
             try
             {
-                horaMod = GenerarEntidad();
+                horaEntrenador = GenerarEntidad();
 
                 // Si el cliente ya existe, se MODIFICA
-                if (horaMod.Existe)
+                if (horaEntrenador.Existe)
                 {
-                    resultado = logica.Modificar(horaMod);
+                    resultado = logica.Modificar(horaEntrenador);
                 }
                 // Si el cliente no existe, se CREA uno nuevo
                 else
                 {
-                    resultado = logica.Insertar(horaMod);
+                    resultado = logica.Insertar(horaEntrenador);
                 }
                 if (resultado > 0)
                 {
@@ -281,14 +284,14 @@ namespace SitioWeb.Pages
                     script = string.Format("javascript:mostrarMensaje('{0}')", ex.Message);
                     ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
-                    Response.Redirect("horarioModulo.aspx"); // Lo manda la formulario devuelta ya que cancela
+                    Response.Redirect("horarioEntrenador.aspx"); // Lo manda la formulario devuelta ya que cancela
                 }
             }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("horarioModulo.aspx");
+            Response.Redirect("horarioEntrenador.aspx");
         }
     }
 }

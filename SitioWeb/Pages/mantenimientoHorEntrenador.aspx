@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Mantenimiento de Horarios" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="MantenimientoHorMod.aspx.cs" Inherits="SitioWeb.Pages.MantenimientoHorMod" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="mantenimientoHorEntrenador.aspx.cs" Inherits="SitioWeb.Pages.mantenimientoHorEntrenador" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,8 +8,15 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <asp:Label class="texto" ID="lblCodHoraMod" runat="server" Text="COD: "></asp:Label>
-                <asp:TextBox ID="txtCodHoraMod" runat="server" ReadOnly="True"></asp:TextBox>
+                <asp:Label class="texto" ID="lblCodHoraEntrenador" runat="server" Text="COD: "></asp:Label>
+                <asp:TextBox ID="txtCodHoraEntrenador" runat="server" ReadOnly="True"></asp:TextBox>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <asp:Label class="texto" ID="lblCodEntrenador" runat="server" Text="COD del Entrenador: "></asp:Label>
+                <asp:TextBox ID="txtCodEntrenador" runat="server"></asp:TextBox>
             </div>
         </div>
 

@@ -300,6 +300,7 @@ namespace CapaAccesoDatos
 
                     horarEntrenador.Hora_inicio = dataReader.GetTimeSpan(9);
                     horarEntrenador.Hora_fin = dataReader.GetTimeSpan(10);
+                    horarEntrenador.Existe = true;
                 }
                 conexion.Close();
             }
