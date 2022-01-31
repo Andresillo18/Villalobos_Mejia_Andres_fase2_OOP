@@ -267,6 +267,7 @@ namespace CapaAccesoDatos
                     {
                         certificacion.Ciclismo_especifi= dataReader.GetBoolean(5);
                     }
+                    certificacion.Existe = true; //***
                     
                 }
                 conexion.Close();

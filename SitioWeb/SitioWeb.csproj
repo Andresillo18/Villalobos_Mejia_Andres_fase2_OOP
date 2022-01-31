@@ -109,13 +109,17 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Pages\abrirModulo.aspx" />
     <Content Include="Pages\atleta.aspx" />
+    <Content Include="Pages\certificacion.aspx" />
     <Content Include="Pages\default.aspx" />
     <Content Include="Pages\entrenador.aspx" />
+    <Content Include="Pages\evento_incapcidad.aspx" />
     <Content Include="Pages\FrmEdicionProgram.aspx" />
     <Content Include="Pages\horarioEntrenador.aspx" />
     <Content Include="Pages\horarioModulo.aspx" />
     <Content Include="Pages\mantenimientoAtleta.aspx" />
+    <Content Include="Pages\mantenimientoCertificacion.aspx" />
     <Content Include="Pages\mantenimientoEntrenador.aspx" />
+    <Content Include="Pages\mantenimientoEventIncapacidades.aspx" />
     <Content Include="Pages\mantenimientoHorEntrenador.aspx" />
     <Content Include="Pages\MantenimientoHorMod.aspx" />
     <Content Include="Pages\mantenimientoModAbiert.aspx" />
@@ -154,6 +158,13 @@
     <Compile Include="Pages\atleta.aspx.designer.cs">
       <DependentUpon>atleta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\certificacion.aspx.cs">
+      <DependentUpon>certificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\certificacion.aspx.designer.cs">
+      <DependentUpon>certificacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +178,13 @@
     </Compile>
     <Compile Include="Pages\entrenador.aspx.designer.cs">
       <DependentUpon>entrenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\evento_incapcidad.aspx.cs">
+      <DependentUpon>evento_incapcidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\evento_incapcidad.aspx.designer.cs">
+      <DependentUpon>evento_incapcidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FrmEdicionProgram.aspx.cs">
       <DependentUpon>FrmEdicionProgram.aspx</DependentUpon>
@@ -196,12 +214,26 @@
     <Compile Include="Pages\mantenimientoAtleta.aspx.designer.cs">
       <DependentUpon>mantenimientoAtleta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\mantenimientoCertificacion.aspx.cs">
+      <DependentUpon>mantenimientoCertificacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoCertificacion.aspx.designer.cs">
+      <DependentUpon>mantenimientoCertificacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\mantenimientoEntrenador.aspx.cs">
       <DependentUpon>mantenimientoEntrenador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\mantenimientoEntrenador.aspx.designer.cs">
       <DependentUpon>mantenimientoEntrenador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mantenimientoEventIncapacidades.aspx.cs">
+      <DependentUpon>mantenimientoEventIncapacidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoEventIncapacidades.aspx.designer.cs">
+      <DependentUpon>mantenimientoEventIncapacidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\mantenimientoHorEntrenador.aspx.cs">
       <DependentUpon>mantenimientoHorEntrenador.aspx</DependentUpon>

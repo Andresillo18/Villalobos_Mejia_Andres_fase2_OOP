@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="horarioEntrenador.aspx.cs" Inherits="SitioWeb.Pages.horarioEntrenador" %>
+﻿<%@ Page Title="Horario de Entrenadores" Language="C#" MasterPageFile="~/plantilla.Master" AutoEventWireup="true" CodeBehind="horarioEntrenador.aspx.cs" Inherits="SitioWeb.Pages.horarioEntrenador" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 

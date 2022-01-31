@@ -137,9 +137,9 @@ namespace CapaLogicaNegocio
 
         #endregion
 
-        #region EliminarHorarEntrenador
+        #region EliminarCertificacion
 
-        public int EliminarHorarEntrenador(int cod)
+        public int EliminarCertificacion(int cod)
         {
             int filasEliminadas = 0; // Se inicializa lo que se devolverá
             DACertificacion accesoDatos = new DACertificacion(_cadenaConexion);
