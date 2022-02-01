@@ -122,6 +122,7 @@
     <Content Include="Pages\mantenimientoEventIncapacidades.aspx" />
     <Content Include="Pages\mantenimientoHorEntrenador.aspx" />
     <Content Include="Pages\MantenimientoHorMod.aspx" />
+    <Content Include="Pages\mantenimientoMatricula.aspx" />
     <Content Include="Pages\mantenimientoModAbiert.aspx" />
     <Content Include="Pages\mantenimientoModulos.aspx" />
     <Content Include="Pages\mantenimientoRegisHora.aspx" />
@@ -251,6 +252,13 @@
     </Compile>
     <Compile Include="Pages\MantenimientoHorMod.aspx.designer.cs">
       <DependentUpon>MantenimientoHorMod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mantenimientoMatricula.aspx.cs">
+      <DependentUpon>mantenimientoMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoMatricula.aspx.designer.cs">
+      <DependentUpon>mantenimientoMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\mantenimientoModAbiert.aspx.cs">
       <DependentUpon>mantenimientoModAbiert.aspx</DependentUpon>

@@ -49,7 +49,7 @@ namespace CapaEntidades
             this.tipo_cobro = tipo_cobro;
             this.tipo_pago = tipo_pago;
             this.actividad = actividad;
-            this.cod_matricula = cod_matricula;
+            //this.cod_matricula = cod_matricula;
         }
 
         public EntidadMatricula()
@@ -63,7 +63,7 @@ namespace CapaEntidades
             this.tipo_cobro = string.Empty;
             this.tipo_pago = string.Empty;
             this.actividad = false;
-            this.cod_matricula = 0;
+            //this.cod_matricula = 0;
         }
         #endregion
     }

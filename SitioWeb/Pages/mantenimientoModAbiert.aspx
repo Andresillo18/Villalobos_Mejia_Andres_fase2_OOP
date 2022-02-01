@@ -80,8 +80,8 @@
                 <asp:Button class="btn btn-danger" ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
             </div>
         </div>
-
     </div>
+
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
