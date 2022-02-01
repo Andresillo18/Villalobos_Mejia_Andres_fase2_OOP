@@ -102,8 +102,8 @@
             <div class="col-4">
                 <%--Se usa el estado para saber si existe, remplazo del atributo "existe"--%>
                 <asp:Label class="texto" ID="lblEstadp" runat="server" Text="Estado: "></asp:Label>
-                <asp:RadioButton ID="RBActivo" runat="server" ForeColor="White" Text="Activo" ValidationGroup="estado" TabIndex="12" />
-                <asp:RadioButton ID="RBInactivo" runat="server" ForeColor="White" Text="Inactivo" ValidationGroup="estado" />
+                <asp:RadioButton ID="RBActivo" runat="server" ForeColor="White" Text="Activo" TabIndex="12" GroupName="estado" />
+                <asp:RadioButton ID="RBInactivo" runat="server" ForeColor="White" Text="Inactivo" GroupName="estado" />
             </div>
         </div>
         <div class="col-4">

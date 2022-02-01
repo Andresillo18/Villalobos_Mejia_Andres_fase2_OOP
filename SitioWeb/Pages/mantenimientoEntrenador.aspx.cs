@@ -72,6 +72,7 @@ namespace SitioWeb.Pages
             //{
             //    entrenador.Estado = false;
             //}
+
             return entrenador;
         }
 

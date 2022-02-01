@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto" ID="lblCodEntrenador" runat="server" Text="COD del Entrenador: "></asp:Label>
-                <asp:TextBox ID="txtCodEntrenador" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCodEntrenador" runat="server" TabIndex="1"></asp:TextBox>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
             <div class="auto-style1">
                 <asp:Label class="texto" ID="lblDiaRegistro" runat="server" Text="Fecha Registrado: "></asp:Label>
                 <%--Se usa un calendario de asp--%>
-                <asp:Calendar ID="CalDiaRegistro" runat="server" BackColor="Black" BorderColor="White" BorderWidth="1px" class="calendario" Font-Names="Verdana" Font-Size="9pt" ForeColor="White" Height="190px" NextPrevFormat="FullMonth" TabIndex="4" Width="314px">
+                <asp:Calendar ID="CalDiaRegistro" runat="server" BackColor="Black" BorderColor="White" BorderWidth="1px" class="calendario" Font-Names="Verdana" Font-Size="9pt" ForeColor="White" Height="190px" NextPrevFormat="FullMonth" TabIndex="2" Width="314px">
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
                     <OtherMonthDayStyle ForeColor="#999999" />
@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-4">
                 <asp:Label ID="lblHoraInicio" class="texto" runat="server" Text="Hora de Inicio: "></asp:Label>
-                <asp:TextBox ID="txtTimeStart" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTimeStart" runat="server" TabIndex="3"></asp:TextBox>
                 <asp:RegularExpressionValidator
                     ID="regextxtSessionTime" runat="server"
                     ControlToValidate="txtTimeStart"
@@ -58,7 +58,7 @@
 
             <div class="col-4">
                 <asp:Label ID="lblHoraFin" class="texto" runat="server" Text="Hora de Fin: "></asp:Label>
-                <asp:TextBox ID="txtTimeEnd" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTimeEnd" runat="server" TabIndex="4"></asp:TextBox>
                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator1" runat="server"
                     ControlToValidate="txtTimeEnd"

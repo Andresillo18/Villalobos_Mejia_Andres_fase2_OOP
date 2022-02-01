@@ -15,34 +15,34 @@
 
         <div class="row">
             <div class="col-4">
-                <asp:CheckBox ID="CBLunes" runat="server" ForeColor="White" Text="Lunes" ValidationGroup="lunes" />
+                <asp:CheckBox ID="CBLunes" runat="server" ForeColor="White" Text="Lunes" ValidationGroup="lunes" TabIndex="1" />
             </div>
             <div class="col-4">
-                <asp:CheckBox ID="CBMartes" runat="server" ForeColor="White" Text="Martes" ValidationGroup="martes" />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4">
-                <asp:CheckBox ID="CBMiercoles" runat="server" ForeColor="White" Text="Miércoles" ValidationGroup="miercoles" />
-            </div>
-            <div class="col-4">
-                <asp:CheckBox ID="CBJueves" runat="server" ForeColor="White" Text="Jueves" ValidationGroup="jueves" />
+                <asp:CheckBox ID="CBMartes" runat="server" ForeColor="White" Text="Martes" ValidationGroup="martes" TabIndex="2" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <asp:CheckBox ID="CBViernes" runat="server" ForeColor="White" Text="Viernes" ValidationGroup="viernes" />
+                <asp:CheckBox ID="CBMiercoles" runat="server" ForeColor="White" Text="Miércoles" ValidationGroup="miercoles" TabIndex="3" />
             </div>
             <div class="col-4">
-                <asp:CheckBox ID="CBSabado" runat="server" ForeColor="White" Text="Sabado" ValidationGroup="sabado" />
+                <asp:CheckBox ID="CBJueves" runat="server" ForeColor="White" Text="Jueves" ValidationGroup="jueves" TabIndex="4" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <asp:CheckBox ID="CBDomingo" runat="server" ForeColor="White" Text="Domingo" ValidationGroup="domingo" />
+                <asp:CheckBox ID="CBViernes" runat="server" ForeColor="White" Text="Viernes" ValidationGroup="viernes" TabIndex="5" />
+            </div>
+            <div class="col-4">
+                <asp:CheckBox ID="CBSabado" runat="server" ForeColor="White" Text="Sabado" ValidationGroup="sabado" TabIndex="6" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <asp:CheckBox ID="CBDomingo" runat="server" ForeColor="White" Text="Domingo" ValidationGroup="domingo" TabIndex="7" />
             </div>
         </div>
 
@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-4">
                 <asp:Label ID="lblHoraInicio" class="texto" runat="server" Text="Hora de Inicio: "></asp:Label>
-                <asp:TextBox ID="txtTimeStart" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTimeStart" runat="server" TabIndex="8"></asp:TextBox>
                 <asp:RegularExpressionValidator
                     ID="regextxtSessionTime" runat="server"
                     ControlToValidate="txtTimeStart"
@@ -62,7 +62,7 @@
 
             <div class="col-4">
                 <asp:Label ID="lblHoraFin" class="texto" runat="server" Text="Hora de Fin: "></asp:Label>
-                <asp:TextBox ID="txtTimeEnd" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTimeEnd" runat="server" TabIndex="9"></asp:TextBox>
                 <asp:RegularExpressionValidator
                     ID="RegularExpressionValidator1" runat="server"
                     ControlToValidate="txtTimeEnd"

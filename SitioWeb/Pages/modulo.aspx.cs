@@ -102,7 +102,7 @@ namespace SitioWeb.Pages
                     if (logica.EliminarModulo(id) > 0)
                     {
 
-                        script = string.Format("javascript:mostrarMensaje('Programa eliminado satisfactoriamente')");
+                        script = string.Format("javascript:mostrarMensaje('Módulo eliminado satisfactoriamente')");
                         ScriptManager.RegisterStartupScript(this, typeof(string), "MensajeRetorno", script, true);
 
                         CargarListaDataSet();

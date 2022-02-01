@@ -18,25 +18,25 @@
         <div class="row">
             <div class="col-4">
                 <asp:Label class="texto" ID="lblCodEntrenador" runat="server" Text="COD del Entrenador: "></asp:Label>
-                <asp:TextBox ID="txtCodEntrenador" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCodEntrenador" runat="server" TabIndex="1"></asp:TextBox>
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <asp:CheckBox ID="CBGimnasio" runat="server" ForeColor="White" Text="Gimnasio" ValidationGroup="gimnasio" />
+                <asp:CheckBox ID="CBGimnasio" runat="server" ForeColor="White" Text="Gimnasio" ValidationGroup="gimnasio" TabIndex="2" />
             </div>
             <div class="col-4">
-                <asp:CheckBox ID="CBNatacion" runat="server" ForeColor="White" Text="Natación" ValidationGroup="natacion" />
+                <asp:CheckBox ID="CBNatacion" runat="server" ForeColor="White" Text="Natación" ValidationGroup="natacion" TabIndex="3" />
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <asp:CheckBox ID="CBMaraton" runat="server" ForeColor="White" Text="Maratón" ValidationGroup="maraton" />
+                <asp:CheckBox ID="CBMaraton" runat="server" ForeColor="White" Text="Maratón" ValidationGroup="maraton" TabIndex="4" />
             </div>
             <div class="col-4">
-                <asp:CheckBox ID="CBCiclismo" runat="server" ForeColor="White" Text="Ciclismo" ValidationGroup="ciclismo" />
+                <asp:CheckBox ID="CBCiclismo" runat="server" ForeColor="White" Text="Ciclismo" ValidationGroup="ciclismo" TabIndex="5" />
             </div>
         </div>
 
