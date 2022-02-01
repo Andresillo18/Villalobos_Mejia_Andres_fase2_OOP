@@ -47,10 +47,10 @@
                         <a class="nav-link" href="/Pages/horarioEntrenador.aspx">Horario Entrenadores</a>
                         <a class="nav-link" href="/Pages/certificacion.aspx">Certificaciones</a>
                         <a class="nav-link" href="/Pages/evento_incapcidad.aspx">Eventos</a>
-                        <a class="nav-link" href="#">Registro de Horas</a>
+                        <a class="nav-link" href="/Pages/registroHora.aspx">Registro de Horas</a>
                         <a class="nav-link" href="/Pages/abrirModulo.aspx">Abrir Módulo</a>
                         <a class="nav-link" href="/Pages/atleta.aspx">Atletas</a>
-                        <a class="nav-link" href="#">Matrículas</a>
+                        <a class="nav-link" href="/Pages/matricula.aspx">Matrículas</a>
                     </div>
                 </div>
             </div>

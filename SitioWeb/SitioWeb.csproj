@@ -124,7 +124,10 @@
     <Content Include="Pages\MantenimientoHorMod.aspx" />
     <Content Include="Pages\mantenimientoModAbiert.aspx" />
     <Content Include="Pages\mantenimientoModulos.aspx" />
+    <Content Include="Pages\mantenimientoRegisHora.aspx" />
+    <Content Include="Pages\matricula.aspx" />
     <Content Include="Pages\modulo.aspx" />
+    <Content Include="Pages\registroHora.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -263,12 +266,33 @@
     <Compile Include="Pages\mantenimientoModulos.aspx.designer.cs">
       <DependentUpon>mantenimientoModulos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\mantenimientoRegisHora.aspx.cs">
+      <DependentUpon>mantenimientoRegisHora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\mantenimientoRegisHora.aspx.designer.cs">
+      <DependentUpon>mantenimientoRegisHora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\matricula.aspx.cs">
+      <DependentUpon>matricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\matricula.aspx.designer.cs">
+      <DependentUpon>matricula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\modulo.aspx.cs">
       <DependentUpon>modulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\modulo.aspx.designer.cs">
       <DependentUpon>modulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\registroHora.aspx.cs">
+      <DependentUpon>registroHora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\registroHora.aspx.designer.cs">
+      <DependentUpon>registroHora.aspx</DependentUpon>
     </Compile>
     <Compile Include="plantilla.Master.cs">
       <DependentUpon>plantilla.Master</DependentUpon>
