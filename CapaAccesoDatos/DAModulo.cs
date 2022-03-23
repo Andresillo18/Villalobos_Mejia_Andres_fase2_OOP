@@ -38,7 +38,7 @@ namespace CapaAccesoDatos
 
         #region Método para ingresar un nuevo registro
 
-        public int Insertar(EntidadModulo modulo, EntidadModulosPrograma ModProg)
+        public int Insertar(EntidadModulo modulo)
         {
             int cod = 0; // El retorno
 

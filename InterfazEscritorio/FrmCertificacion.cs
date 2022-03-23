@@ -267,7 +267,7 @@ namespace InterfazEscritorio
                     {
                         MessageBox.Show($"Esta seguro que lo desea eliminar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-                        resultado = logica.EliminarHorarEntrenador(Convert.ToInt32(txtCodCertif.Text)); // Si pudo encontralo lo borra
+                        resultado = logica.EliminarCertificacion(Convert.ToInt32(txtCodCertif.Text)); // Si pudo encontralo lo borra
 
                         MessageBox.Show($"Se han afectado {resultado} registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpiar();

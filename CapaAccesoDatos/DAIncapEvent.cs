@@ -49,7 +49,7 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO INCAPACIDADES_EVENTOS ( COD_ENTRENADOR, DIA_INICIO_INCAPACIDADES_EVENTOS, DIA_FINAL_INCAPACIDADES_EVENTOS, OBSERVACIONES_INCAPACIDADES_EVENTOS)" + " VALUES (@cod_entrenador, @dia_inicio_IE, @dia_fin_IE, @observaciones)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
+            string sentencia = "INSERT INTO INCAPACIDADES_EVENTOS (COD_ENTRENADOR, DIA_INICIO_INCAPACIDADES_EVENTOS, DIA_FINAL_INCAPACIDADES_EVENTOS, OBSERVACIONES_INCAPACIDADES_EVENTOS)" + " VALUES (@cod_entrenador, @dia_inicio_IE, @dia_fin_IE, @observaciones)" + "SELECT @@IDENTITY"; // Devuelve el último IDENTITY generado, en este caso el que se ingreso
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
@@ -68,7 +68,6 @@ namespace CapaAccesoDatos
             try
             {
                 conexion.Open();
-
                 cod = Convert.ToInt32(comando.ExecuteScalar()); // Devuelve un valor fijo o en este caso el IDENTITY generado
                 conexion.Close();
             }
@@ -254,6 +253,7 @@ namespace CapaAccesoDatos
                     {
                         incap_event.Observaciones = dataReader.GetString(4);
                     }
+                    incap_event.Existe = true;
 
                 }
                 conexion.Close();

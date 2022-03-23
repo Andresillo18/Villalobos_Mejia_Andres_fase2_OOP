@@ -251,7 +251,7 @@ namespace CapaAccesoDatos
                     horasLabo.Dia_regisHoraLabo = dataReader.GetDateTime(2);
                     horasLabo.Hora_inicio = dataReader.GetTimeSpan(3);
                     horasLabo.Hora_fin = dataReader.GetTimeSpan(4);
-
+                    horasLabo.Existe = true;
                 }
                 conexion.Close();
             }

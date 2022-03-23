@@ -54,7 +54,7 @@ namespace CapaAccesoDatos
 
             //Se le debe asignar lo que será añadido o modificado en la base de datos con esta sentencia
             //Se debe hacer como si fuera en la misma, se puede hacer todo junto sin concatenar
-            string sentencia = "INSERT INTO PROGRAMAS (NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA, EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA)" + " VALUES (@nombre_programa,  @descripcion_programa, @estado, @cupo_programa, @telefono_programa, @email_programa, @provincia_programa, @fecha_inicio_programa, @observaciones_programa)" + " SELECT @@IDENTITY";
+            string sentencia = "INSERT INTO PROGRAMAS (NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, OBSERVACIONES_PROGRAMA)" + " VALUES (@nombre_programa,  @descripcion_programa, @estado, @observaciones_programa)" + " SELECT @@IDENTITY";
 
             comando.Connection = conexion; // Se le pasa la conexión al atributo del objeto comando creado
 
@@ -72,12 +72,7 @@ namespace CapaAccesoDatos
                 estado_Actual = 0;
             }
             
-            comando.Parameters.AddWithValue("@estado", estado_Actual);
-            comando.Parameters.AddWithValue("@cupo_programa", programa.Cupo_programa);
-            comando.Parameters.AddWithValue("@telefono_programa", programa.Telefono_programa);
-            comando.Parameters.AddWithValue("@email_programa", programa.Email_programa);
-            comando.Parameters.AddWithValue("@provincia_programa", programa.Provincia_programa);
-            comando.Parameters.AddWithValue("@fecha_inicio_programa", programa.Fecha_inicio_programa);
+            comando.Parameters.AddWithValue("@estado", estado_Actual);           
             comando.Parameters.AddWithValue("@observaciones_programa", programa.Observaciones_programa);
 
             // La sentencia a alterar se guarda en el CommandText porque es la sentencia dado por el provedor
@@ -122,11 +117,7 @@ namespace CapaAccesoDatos
                  "UPDATE PROGRAMAS " +
                 "SET NOMBRE_PROGRAMA=@nombre_programa, " +
                 "DESCRIPCION_PROGRAMA=@descripcion_programa, " +
-                "ESTADO=@estado, " +
-                "CUPO_PROGRAMA=@cupo_programa, " +
-                "TELEFONO_PROGRAMA=@telefono_programa, " +
-                "PROVINCIA_PROGRAMA=@provincia_programa, " +
-                "FECHA_INICIO_PROGRAMA=@fecha_inicio_programa, " +
+                "ESTADO=@estado, " +               
                 "OBSERVACIONES_PROGRAMA=@observaciones_programa " +
                     "WHERE COD_PROGRAMA=@cod_programa";
 
@@ -146,13 +137,7 @@ namespace CapaAccesoDatos
             {
                 estado_Actual = 0;
             }
-            comando.Parameters.AddWithValue("@estado", estado_Actual);
-
-            comando.Parameters.AddWithValue("@cupo_programa", programa.Cupo_programa);
-            comando.Parameters.AddWithValue("@telefono_programa", programa.Telefono_programa);
-            comando.Parameters.AddWithValue("@email_programa", programa.Email_programa);
-            comando.Parameters.AddWithValue("@provincia_programa", programa.Provincia_programa);
-            comando.Parameters.AddWithValue("@fecha_inicio_programa", programa.Fecha_inicio_programa);
+            comando.Parameters.AddWithValue("@estado", estado_Actual);           
             comando.Parameters.AddWithValue("@observaciones_programa", programa.Observaciones_programa);
 
             try
@@ -186,7 +171,7 @@ namespace CapaAccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador; // Es el puente entre el DataSet y la BD
 
-            string sentencia = "SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA FROM PROGRAMAS";
+            string sentencia = "SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, OBSERVACIONES_PROGRAMA FROM PROGRAMAS";
 
             // El uso de las condicion y el orden
             if (!string.IsNullOrEmpty(condicion))
@@ -222,7 +207,7 @@ namespace CapaAccesoDatos
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlDataAdapter adaptador;
 
-            string sentencia = "SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA FROM PROGRAMAS";
+            string sentencia = "SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, OBSERVACIONES_PROGRAMA FROM PROGRAMAS";
 
             if (!string.IsNullOrEmpty(condicion))
             {
@@ -241,12 +226,7 @@ namespace CapaAccesoDatos
                                       Cod_programa = (int)fila[0],
                                       Nombre_programa = fila[1].ToString(),
                                       Descripcion_programa = fila[2].ToString(),
-                                      Estado = fila[3].ToString(),
-                                      Cupo_programa = (int)fila[4],
-                                      Telefono_programa = fila[5].ToString(),
-                                      Email_programa = fila[6].ToString(),
-                                      Provincia_programa = fila[7].ToString(),
-                                      Fecha_inicio_programa = (DateTime)fila[8],
+                                      Estado = fila[3].ToString(),                                      
                                       Observaciones_programa = fila[9].ToString(),
                                       Existe = true
                                   }).ToList();
@@ -274,7 +254,7 @@ namespace CapaAccesoDatos
             SqlDataReader dataReader;
             // Para llenarlo se hace mediante un EXECUTE, permitiendo obtener datos de la base de datos
 
-            string sentencia = string.Format("SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, CUPO_PROGRAMA, TELEFONO_PROGRAMA ,EMAIL_PROGRAMA, PROVINCIA_PROGRAMA, FECHA_INICIO_PROGRAMA, OBSERVACIONES_PROGRAMA FROM PROGRAMAS WHERE COD_PROGRAMA = {0}", cod_programa);
+            string sentencia = string.Format("SELECT COD_PROGRAMA, NOMBRE_PROGRAMA, DESCRIPCION_PROGRAMA, ESTADO, OBSERVACIONES_PROGRAMA FROM PROGRAMAS WHERE COD_PROGRAMA = {0}", cod_programa);
 
             comando.Connection = conexion;
             comando.CommandText = sentencia;
@@ -305,18 +285,12 @@ namespace CapaAccesoDatos
                     {
                         programa.Estado = "Inactivo";
 
-                    }
-
-                    programa.Cupo_programa = dataReader.GetByte(4);
-                    programa.Telefono_programa = dataReader.GetString(5);
-                    programa.Email_programa = dataReader.GetString(6);
-                    programa.Provincia_programa = dataReader.GetString(7);
-                    programa.Fecha_inicio_programa = dataReader.GetDateTime(8);
+                    }                    
 
                     //Al dejar ese espacio en blanco da error, entonces preguntando si el valor esta vacío
-                    if (dataReader[9] != DBNull.Value)
+                    if (dataReader[4] != DBNull.Value)
                     {
-                        programa.Observaciones_programa = dataReader.GetString(9);
+                        programa.Observaciones_programa = dataReader.GetString(4);
                     }
 
                     programa.Existe = true;
@@ -336,7 +310,7 @@ namespace CapaAccesoDatos
 
         public int EliminarRegistro(int cod_programa)
         {
-            int filasEliminadas = 0;
+            int filasEliminadas = -1;
 
             SqlConnection conexion = new SqlConnection(_cadenaConexion);
             SqlCommand comando = new SqlCommand();

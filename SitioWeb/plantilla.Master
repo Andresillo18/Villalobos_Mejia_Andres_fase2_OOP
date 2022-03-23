@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="plantilla.master.cs" Inherits="SitioWeb.plantilla" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <%--estilos personales--%>
+    <link href="styles.css" rel="stylesheet" />
+
+    <%--Script para mostrar un mensaje desde el navegador, se hace en el head porque es la unica función necesaria--%>
+    <script type="text/javascript">
+        function mostrarMensaje(mensaje) {
+            alert(mensaje);
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <asp:Image alt="Logo" ID="Logo" class="logo" runat="server" ImageUrl="source/muscle.ico" />
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+
+                        <a class="nav-link active" aria-current="page" href="/Pages/default.aspx">Programas</a>
+                        <a class="nav-link" href="/Pages/modulo.aspx">Módulos</a>
+                        <a class="nav-link" href="/Pages/horarioModulo.aspx">Horario de Módulos</a>
+                        <a class="nav-link" href="/Pages/entrenador.aspx">Entrenadores</a>
+                        <a class="nav-link" href="/Pages/horarioEntrenador.aspx">Horario Entrenadores</a>
+                        <a class="nav-link" href="/Pages/certificacion.aspx">Certificaciones</a>
+                        <a class="nav-link" href="/Pages/evento_incapcidad.aspx">Eventos</a>
+                        <a class="nav-link" href="/Pages/registroHora.aspx">Registro de Horas</a>
+                        <a class="nav-link" href="/Pages/abrirModulo.aspx">Abrir Módulo</a>
+                        <a class="nav-link" href="/Pages/atleta.aspx">Atletas</a>
+                        <a class="nav-link" href="/Pages/matricula.aspx">Matrículas</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <h1 class="titulo">Instituto de Triatlón</h1>
+
+        <form class="form1" id="form1" runat="server">
+
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        </form>
+    </main>
+
+    <footer>
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
+    </footer>
+</body>
+</html>

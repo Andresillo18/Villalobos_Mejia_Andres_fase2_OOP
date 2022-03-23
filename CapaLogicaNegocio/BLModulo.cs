@@ -36,7 +36,7 @@ namespace CapaLogicaNegocio
 
         #region Método Insertar        
 
-        public int Insertar(EntidadModulo modulo, EntidadModulosPrograma ModProg)
+        public int Insertar(EntidadModulo modulo)
         {
             int cod = 0;
 
@@ -44,7 +44,7 @@ namespace CapaLogicaNegocio
 
             try
             {
-                cod = accesoDatos.Insertar(modulo, ModProg);
+                cod = accesoDatos.Insertar(modulo);
             }
             catch (Exception)
             {
