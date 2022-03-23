@@ -1,0 +1,2 @@
+Al momento de abrir la solución seleccionar como proyecto de inicio el Witio Web y en la carpeta pages la página default 
+para que tenga el mejor al ejecutarlo.
